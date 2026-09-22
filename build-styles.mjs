@@ -160,7 +160,10 @@ const BASE_CSS = `
  .full img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
  .brandbar{position:absolute;left:0;right:0;bottom:0;height:132px;display:flex;
    align-items:center;justify-content:center;gap:20px}
- .brandbar img{height:76px}
+ /* The 16:9 build has always put the logo on a white pill; without it the
+    coloured emblem disappears into any light or busy photograph. */
+ .brandbar img{height:76px;background:rgba(255,255,255,.94);
+   padding:10px 24px;border-radius:999px}
 ${ART_CSS}`;
 
 function shell(styleCss, body, cfg) {

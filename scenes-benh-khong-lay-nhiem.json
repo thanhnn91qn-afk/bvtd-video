@@ -1,0 +1,159 @@
+{
+  "brand": {
+    "name": "Bệnh viện Việt Nam - Thụy Điển Uông Bí",
+    "web": "vsh.org.vn",
+    "outName": "clip-benh-khong-lay-nhiem-9x16"
+  },
+  "scenes": [
+    {
+      "id": "n01",
+      "style": "kinetic",
+      "kicker": "Ngày An toàn người bệnh Thế giới",
+      "headline": "Bệnh không lây nhiễm - không thể chủ quan",
+      "sub": "Bệnh viện Việt Nam - Thụy Điển Uông Bí",
+      "wordMs": 280,
+      "art": "pulse",
+      "voice": "Bệnh không lây nhiễm: không thể chủ quan."
+    },
+    {
+      "id": "n02",
+      "style": "lines",
+      "kicker": "Những bệnh phổ biến",
+      "headline": "Bốn nhóm bệnh không lây nhiễm",
+      "lines": [
+        "Bệnh tim mạch",
+        "Đái tháo đường",
+        "Ung thư",
+        "Bệnh hô hấp mạn tính"
+      ],
+      "voice": "Bệnh tim mạch, đái tháo đường, ung thư, bệnh hô hấp mạn tính, là những bệnh không lây nhiễm phổ biến."
+    },
+    {
+      "id": "n03",
+      "style": "plain",
+      "kicker": "Đặc điểm",
+      "headline": "Tiến triển kéo dài, dễ để lại biến chứng",
+      "sub": "Nhiều bệnh diễn biến âm thầm trong thời gian dài, khiến người bệnh dễ chủ quan khi chưa xuất hiện triệu chứng rõ rệt.",
+      "art": "clock",
+      "voice": "Những bệnh này thường tiến triển kéo dài và có thể để lại nhiều biến chứng nếu không được phát hiện, điều trị và theo dõi đúng cách. Đáng lưu ý, nhiều bệnh diễn biến âm thầm trong thời gian dài, khiến người bệnh dễ chủ quan khi chưa xuất hiện triệu chứng rõ rệt."
+    },
+    {
+      "id": "n04",
+      "style": "lines",
+      "kicker": "Tại bệnh viện",
+      "headline": "Số người bệnh đang được quản lý, điều trị",
+      "lines": [
+        "3.508 người bệnh tim mạch",
+        "3.278 người bệnh nội tiết",
+        "343 người bệnh hô hấp",
+        "Hơn 900 người bệnh ung bướu"
+      ],
+      "voice": "Tại Bệnh viện Việt Nam Thụy Điển Uông Bí, hiện có ba nghìn năm trăm linh tám người bệnh tim mạch, ba nghìn hai trăm bảy mươi tám người bệnh nội tiết, ba trăm bốn mươi ba người bệnh mắc bệnh lý hô hấp, và hơn chín trăm người bệnh ung bướu đang được quản lý, điều trị. Số người mắc các bệnh lý này có xu hướng gia tăng qua các năm."
+    },
+    {
+      "id": "n05",
+      "style": "kinetic",
+      "kicker": "Đừng chờ có triệu chứng",
+      "headline": "Vẫn sinh hoạt bình thường, nhưng bệnh đã âm thầm tiến triển",
+      "sub": "Huyết áp đã âm thầm tăng, đường huyết đã dần vượt ngưỡng an toàn, các yếu tố nguy cơ tim mạch tích lũy qua từng ngày.",
+      "wordMs": 240,
+      "art": "drop",
+      "voice": "Một người có thể vẫn sinh hoạt, làm việc bình thường, nhưng huyết áp đã âm thầm tăng, đường huyết đã dần vượt ngưỡng an toàn, hoặc các yếu tố nguy cơ tim mạch đang tích lũy qua từng ngày."
+    },
+    {
+      "id": "n06",
+      "style": "plain",
+      "kicker": "Nếu phát hiện muộn",
+      "headline": "Điều trị trở nên phức tạp hơn",
+      "sub": "Khi bệnh đã xuất hiện biến chứng, việc điều trị ảnh hưởng không nhỏ đến sức khỏe và chất lượng cuộc sống.",
+      "art": "doc",
+      "voice": "Khi bệnh được phát hiện ở giai đoạn muộn hoặc đã xuất hiện biến chứng, quá trình điều trị có thể trở nên phức tạp hơn, ảnh hưởng không nhỏ đến sức khỏe và chất lượng cuộc sống."
+    },
+    {
+      "id": "n07",
+      "style": "lines",
+      "kicker": "Nhóm nguy cơ cao",
+      "headline": "Cần khám định kỳ và sàng lọc sớm",
+      "lines": [
+        "Người cao tuổi",
+        "Người thừa cân, ít vận động",
+        "Người hút thuốc lá",
+        "Người dùng rượu bia thường xuyên",
+        "Có người thân mắc bệnh mạn tính"
+      ],
+      "voice": "Khám sức khỏe định kỳ, sàng lọc và phát hiện sớm các yếu tố nguy cơ có ý nghĩa rất quan trọng, đặc biệt với người cao tuổi, người thừa cân, ít vận động, hút thuốc, sử dụng rượu bia thường xuyên, hoặc có tiền sử gia đình mắc các bệnh mạn tính."
+    },
+    {
+      "id": "n08",
+      "style": "glass",
+      "kicker": "Ngày 17 tháng 9 năm 2026",
+      "headline": "Chăm sóc an toàn cho các bệnh không lây nhiễm",
+      "sub": "Chủ đề Ngày An toàn người bệnh Thế giới do Tổ chức Y tế Thế giới lựa chọn năm 2026.",
+      "photo": "klm-antoan.jpg",
+      "zoom": "in",
+      "voice": "Hưởng ứng Ngày An toàn người bệnh Thế giới mười bảy tháng chín năm hai nghìn không trăm hai mươi sáu, với chủ đề Chăm sóc an toàn cho các bệnh không lây nhiễm, bệnh viện tiếp tục đẩy mạnh các hoạt động khám, điều trị, chăm sóc và truyền thông giáo dục sức khỏe cho người bệnh."
+    },
+    {
+      "id": "n09",
+      "style": "lines",
+      "kicker": "Suốt hành trình điều trị",
+      "headline": "Người bệnh cần chủ động",
+      "lines": [
+        "Dùng thuốc đúng hướng dẫn",
+        "Tái khám đúng hẹn",
+        "Làm xét nghiệm theo chỉ định",
+        "Báo rõ thuốc đang dùng và tiền sử dị ứng",
+        "Báo ngay biểu hiện bất thường của cơ thể"
+      ],
+      "voice": "Với người mắc bệnh mạn tính, an toàn không chỉ đặt ra trong những ngày nằm viện mà cần duy trì suốt hành trình sống chung với bệnh. Người bệnh cần sử dụng thuốc đúng hướng dẫn, tái khám đúng hẹn, thực hiện các xét nghiệm theo chỉ định, đồng thời chủ động thông báo với nhân viên y tế về các loại thuốc đang sử dụng, tiền sử dị ứng và những biểu hiện bất thường của cơ thể."
+    },
+    {
+      "id": "n10",
+      "style": "kinetic",
+      "kicker": "Đặc biệt lưu ý",
+      "headline": "Không tự ý ngừng thuốc hay đổi liều",
+      "sub": "Cũng không dùng thuốc của người khác khi chưa có hướng dẫn của nhân viên y tế.",
+      "wordMs": 270,
+      "art": "pill",
+      "voice": "Đặc biệt, người bệnh không nên tự ý ngừng thuốc, thay đổi liều thuốc, hoặc sử dụng thuốc của người khác khi chưa có hướng dẫn của nhân viên y tế. Tuân thủ đúng kế hoạch điều trị giúp kiểm soát bệnh và hạn chế biến chứng."
+    },
+    {
+      "id": "n11",
+      "style": "split",
+      "kicker": "Truyền thông giáo dục sức khỏe",
+      "headline": "Hiểu đúng về bệnh của mình",
+      "sub": "Khoa Nội tiết phối hợp cùng chuyên gia Thụy Điển tổ chức buổi giáo dục sức khỏe cho người bệnh đái tháo đường tại Khoa Khám bệnh.",
+      "photo": "klm-noitiet.jpg",
+      "zoom": "in",
+      "voice": "Tại bệnh viện, hoạt động tư vấn và truyền thông giáo dục sức khỏe được thực hiện thường xuyên. Khoa Nội tiết đã phối hợp cùng chuyên gia Thụy Điển tổ chức buổi giáo dục sức khỏe cho người bệnh đái tháo đường tại Khoa Khám bệnh."
+    },
+    {
+      "id": "n12",
+      "style": "shot",
+      "kicker": "Ghi nhớ",
+      "headline": "Bốn nhóm bệnh, bốn yếu tố nguy cơ, sáu việc nên làm",
+      "sub": "Phòng bệnh từ lối sống lành mạnh và khám sức khỏe định kỳ.",
+      "photo": "klm-poster-who.jpg",
+      "voice": "Phần lớn bệnh không lây nhiễm có thể phòng ngừa và kiểm soát được. Hãy bắt đầu từ những việc đơn giản: không hút thuốc, hạn chế rượu bia, ăn uống lành mạnh, giảm muối, đường và thực phẩm chế biến sẵn, tăng cường rau xanh, duy trì vận động thường xuyên, kiểm soát cân nặng, huyết áp, đường huyết và khám sức khỏe định kỳ."
+    },
+    {
+      "id": "n13",
+      "style": "caption",
+      "kicker": "Cùng đồng hành",
+      "headline": "Nhân viên y tế - người bệnh - gia đình - cộng đồng",
+      "sub": "Khoa Nội thận - Tiết niệu - Hô hấp truyền thông giáo dục sức khỏe cho người bệnh và người nhà.",
+      "photo": "klm-hohap.jpg",
+      "zoom": "out",
+      "wordMs": 250,
+      "voice": "Sự an toàn của người bệnh không chỉ đến từ các quy trình chuyên môn trong bệnh viện, mà còn cần sự đồng hành giữa nhân viên y tế, người bệnh, gia đình và cộng đồng."
+    },
+    {
+      "id": "n14",
+      "style": "logo",
+      "kicker": "Vsh.org.vn",
+      "headline": "Chăm sóc an toàn hôm nay - Bảo vệ sức khỏe suốt đời",
+      "sub": "Bệnh viện Việt Nam - Thụy Điển Uông Bí",
+      "voice": "Bệnh không lây nhiễm có thể tiến triển âm thầm, nhưng chúng ta hoàn toàn có thể chủ động phòng ngừa, phát hiện sớm và kiểm soát tốt. Chăm sóc an toàn hôm nay, bảo vệ sức khỏe suốt đời."
+    }
+  ]
+}
