@@ -1,0 +1,131 @@
+{
+  "brand": {
+    "name": "Bệnh viện Việt Nam - Thụy Điển Uông Bí",
+    "hotline": "0348 539 336",
+    "web": "vsh.org.vn"
+  },
+  "scenes": [
+    {
+      "id": "v01",
+      "style": "shot",
+      "kicker": "Đơn vị Tiêm chủng",
+      "headline": "Chủ động tiêm vắc xin cúm ngay hôm nay",
+      "sub": "Bệnh viện Việt Nam - Thụy Điển Uông Bí",
+      "photo": "tiemchung-cum.jpg",
+      "voice": "Chủ động tiêm vắc xin cúm ngay hôm nay, tại Đơn vị Tiêm chủng, Bệnh viện Việt Nam Thụy Điển Uông Bí."
+    },
+    {
+      "id": "v02",
+      "style": "kinetic",
+      "kicker": "Xu hướng chăm sóc sức khỏe",
+      "headline": "Không chỉ chữa bệnh, mà chủ động phòng bệnh",
+      "sub": "Tiêm chủng đầy đủ, đúng lịch là biện pháp dự phòng quan trọng, giúp giảm nguy cơ mắc bệnh truyền nhiễm và hạn chế biến chứng.",
+      "wordMs": 260,
+      "art": "shield",
+      "voice": "Trong cuộc sống hiện đại, chăm sóc sức khỏe không chỉ dừng lại ở điều trị khi mắc bệnh, mà ngày càng hướng đến chủ động phòng ngừa. Tiêm chủng đầy đủ, đúng lịch là một trong những biện pháp dự phòng quan trọng, góp phần giảm nguy cơ mắc bệnh truyền nhiễm và hạn chế các biến chứng liên quan."
+    },
+    {
+      "id": "v03",
+      "style": "plain",
+      "kicker": "Bệnh cúm mùa",
+      "headline": "Lây lan nhanh trong cộng đồng",
+      "sub": "Cúm là bệnh nhiễm trùng đường hô hấp do virus cúm gây ra, thường xuất hiện theo mùa và mức độ ảnh hưởng khác nhau tùy từng người.",
+      "art": "virus",
+      "voice": "Cúm là bệnh nhiễm trùng đường hô hấp do virus cúm gây ra và có khả năng lây lan nhanh trong cộng đồng. Bệnh thường xuất hiện theo mùa, mức độ ảnh hưởng có thể khác nhau tùy từng người."
+    },
+    {
+      "id": "v04",
+      "style": "kinetic",
+      "kicker": "Đừng chủ quan",
+      "headline": "Bệnh không phải lúc nào cũng diễn biến nhẹ",
+      "sub": "Một số người nguy cơ cao có thể gặp biến chứng hô hấp, trong đó có viêm phổi, phải nhập viện và điều trị tích cực.",
+      "wordMs": 270,
+      "art": "lungs",
+      "voice": "Ở đa số các trường hợp, người mắc cúm có thể tự hồi phục. Tuy nhiên bệnh không phải lúc nào cũng diễn biến nhẹ. Một số người có nguy cơ cao có thể xuất hiện biến chứng hô hấp, trong đó có viêm phổi, phải nhập viện và cần được điều trị tích cực."
+    },
+    {
+      "id": "v05",
+      "style": "lines",
+      "kicker": "Nhóm cần đặc biệt lưu ý",
+      "headline": "Nguy cơ diễn biến nặng cao hơn ở",
+      "lines": [
+        "Người hen phế quản, bệnh phổi tắc nghẽn mạn tính",
+        "Người đái tháo đường",
+        "Người suy giảm miễn dịch",
+        "Phụ nữ mang thai",
+        "Người cao tuổi và trẻ nhỏ"
+      ],
+      "voice": "Nguy cơ diễn biến nặng có thể cao hơn ở những người có bệnh lý nền. Người mắc hen phế quản, bệnh phổi tắc nghẽn mạn tính. Người đái tháo đường. Người suy giảm miễn dịch. Phụ nữ mang thai. Cùng với người cao tuổi và trẻ nhỏ."
+    },
+    {
+      "id": "v06",
+      "style": "plain",
+      "kicker": "Vì sao nguy hiểm hơn",
+      "headline": "Bệnh nền làm nhiễm trùng nặng thêm",
+      "sub": "Đường thở vốn đã tổn thương dễ vào đợt cấp; đường huyết khó kiểm soát khi nhiễm trùng; miễn dịch suy yếu thì cơ thể khó khống chế bệnh.",
+      "art": "none",
+      "voice": "Với người có bệnh hô hấp mạn tính, tình trạng viêm đường thở có thể trở nên nghiêm trọng hơn, làm tăng nguy cơ đợt cấp và viêm phổi. Với người đái tháo đường, việc kiểm soát đường huyết có thể bị ảnh hưởng khi cơ thể nhiễm trùng. Còn khi hệ miễn dịch suy yếu, cơ thể khó kiểm soát tình trạng nhiễm trùng, làm tăng nguy cơ bệnh diễn biến nặng."
+    },
+    {
+      "id": "v07",
+      "style": "kinetic",
+      "kicker": "Phụ nữ mang thai",
+      "headline": "Nên được tư vấn tiêm chủng và phòng bệnh",
+      "sub": "Thay đổi về miễn dịch, tim mạch và hô hấp trong thai kỳ có thể khiến bệnh cúm nghiêm trọng hơn và ảnh hưởng đến thai kỳ.",
+      "wordMs": 250,
+      "art": "pulse",
+      "voice": "Phụ nữ mang thai cũng thuộc nhóm được đặc biệt quan tâm. Những thay đổi về miễn dịch, tim mạch và hô hấp trong thai kỳ có thể khiến bệnh cúm trở nên nghiêm trọng hơn, đồng thời nhiễm cúm ở mẹ có thể gây ảnh hưởng đến thai kỳ. Vì vậy, thai phụ nên được tư vấn về tiêm chủng và các biện pháp phòng bệnh phù hợp."
+    },
+    {
+      "id": "v08",
+      "style": "plain",
+      "kicker": "Tiêm nhắc hằng năm",
+      "headline": "Virus cúm thay đổi theo thời gian",
+      "sub": "Thành phần vắc xin được cập nhật theo các chủng đang lưu hành, nên cần tham khảo lịch tiêm của cơ sở tiêm chủng để chọn thời điểm phù hợp.",
+      "art": "syringe",
+      "voice": "Tiêm vắc xin cúm hằng năm là một trong những biện pháp được khuyến nghị nhằm chủ động phòng cúm. Do virus cúm có thể thay đổi theo thời gian, và thành phần vắc xin được cập nhật phù hợp với các chủng virus đang lưu hành, người dân nên tham khảo lịch tiêm và tư vấn của cơ sở tiêm chủng để lựa chọn thời điểm phù hợp."
+    },
+    {
+      "id": "v09",
+      "style": "kinetic",
+      "kicker": "Có bệnh lý nền",
+      "headline": "Hãy trao đổi với nhân viên y tế trước khi tiêm",
+      "sub": "Để được đánh giá tình trạng sức khỏe và tư vấn lịch tiêm phù hợp.",
+      "wordMs": 260,
+      "art": "check",
+      "voice": "Đặc biệt, những người thuộc nhóm nguy cơ cao hoặc đang có bệnh lý nền nên trao đổi với nhân viên y tế trước khi tiêm, để được đánh giá tình trạng sức khỏe và tư vấn lịch tiêm phù hợp."
+    },
+    {
+      "id": "v10",
+      "style": "lines",
+      "kicker": "Tại Đơn vị Tiêm chủng",
+      "headline": "Tiêm chủng thuận tiện, an tâm",
+      "lines": [
+        "Danh mục vắc xin đa dạng, có vắc xin cúm",
+        "Tư vấn nhu cầu, tiền sử và lịch tiêm",
+        "Hướng dẫn lưu ý trước, trong và sau tiêm",
+        "Theo dõi sau tiêm theo quy định chuyên môn"
+      ],
+      "voice": "Đơn vị Tiêm chủng, Bệnh viện Việt Nam Thụy Điển Uông Bí cung cấp dịch vụ tiêm chủng với danh mục vắc xin đa dạng, trong đó có vắc xin cúm. Khách hàng được tư vấn về nhu cầu tiêm chủng, tiền sử tiêm, lịch tiêm và những lưu ý trước, trong và sau tiêm. Quy trình được thực hiện theo quy định chuyên môn hiện hành, người tiêm được theo dõi sau tiêm theo hướng dẫn của nhân viên y tế."
+    },
+    {
+      "id": "v11",
+      "style": "plain",
+      "kicker": "Đăng ký tiêm",
+      "headline": "Gọi ngay để được tư vấn",
+      "sub": "Chủ động tiêm chủng hôm nay là một phần trong kế hoạch bảo vệ sức khỏe lâu dài.",
+      "contact": true,
+      "hotline": "0348 539 336",
+      "address": "Đơn vị Tiêm chủng - Bệnh viện Việt Nam - Thụy Điển Uông Bí",
+      "voice": "Chủ động tiêm chủng hôm nay là một phần trong kế hoạch bảo vệ sức khỏe lâu dài. Để được tư vấn và đăng ký tiêm, xin liên hệ số không ba bốn tám, năm ba chín, ba ba sáu, Đơn vị Tiêm chủng, Bệnh viện Việt Nam Thụy Điển Uông Bí."
+    },
+    {
+      "id": "v12",
+      "style": "logo",
+      "kicker": "Vsh.org.vn",
+      "headline": "Chủ động tiêm vắc xin cúm ngay hôm nay",
+      "sub": "Bệnh viện Việt Nam - Thụy Điển Uông Bí",
+      "voice": "Bệnh viện Việt Nam Thụy Điển Uông Bí. Tất cả vì sự hài lòng của người bệnh."
+    }
+  ]
+}

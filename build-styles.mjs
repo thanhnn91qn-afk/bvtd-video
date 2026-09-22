@@ -70,6 +70,7 @@ window.__frame = function(tMs){
   reveal(document.getElementById("headline"), 260, 720, tMs, 34);
   reveal(document.getElementById("sub"), 460, 880, tMs, 22);
   reveal(document.getElementById("logo"), 200, 700, tMs, 16);
+  reveal(document.getElementById("frame"), 120, 760, tMs, 26);
 
   // clip-path wipe reveal
   const wipe = document.getElementById("wipe");
@@ -548,8 +549,37 @@ function styleLines(s) {
   );
 }
 
+/** 11. Poster or screenshot shown WHOLE (contain, never cropped), text below. */
+function styleShot(s) {
+  return shell(
+    `
+ .bg{position:absolute;inset:0;background:linear-gradient(165deg,#071e33 0%,#0e3557 58%,#071e33 100%)}
+ .fwrap{position:absolute;left:60px;right:60px;top:210px;height:680px;display:flex;align-items:center}
+ #frame{width:100%;background:#fff;border-radius:20px;padding:14px;box-sizing:border-box;
+   box-shadow:0 30px 80px rgba(0,0,0,.5);opacity:0}
+ #frame img{display:block;width:100%;height:auto;max-height:652px;object-fit:contain;
+   border-radius:12px;background:#f4f8fb}
+ #kicker{position:absolute;top:84px;left:60px;font-size:28px;letter-spacing:5px;
+   text-transform:uppercase;color:#071e33;background:#7ff0c8;padding:14px 30px;
+   border-radius:12px;font-weight:800;opacity:0}
+ .wrap{position:absolute;left:64px;right:64px;top:980px}
+ #headline{font-size:78px;line-height:1.08;color:#fff;margin:0 0 26px;font-weight:800;
+   letter-spacing:-1.5px;opacity:0}
+ #sub{font-size:38px;line-height:1.38;color:#bcd6e8;margin:0;opacity:0}
+ .brandbar img{background:rgba(255,255,255,.94);border-radius:999px;padding:8px 22px}
+`,
+    `<div class="bg"></div>
+     <div id="kicker">${esc(s.kicker)}</div>
+     <div class="fwrap"><div id="frame"><img src="${photoUrl(s.photo)}"></div></div>
+     <div class="wrap"><h1 id="headline">${esc(s.headline)}</h1><p id="sub">${esc(s.sub)}</p></div>
+     <div class="brandbar" id="logo"><img src="${logoUrl()}"></div>`,
+    s.__cfg,
+  );
+}
+
 const STYLES = {
   cinematic: styleCinematic,
+  shot: styleShot,
   kinetic: styleKinetic,
   lines: styleLines,
   glass: styleGlass,

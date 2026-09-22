@@ -137,6 +137,48 @@ export const ART = {
     <path ${S4} data-seq="5" data-art="draw" data-loop="pulse"
       d="M246 96 C268 72, 246 54, 264 32"/>`),
 
+  /** Syringe with a dose arc - vaccination, injection, immunisation. */
+  syringe: svg(`
+    <path ${S} data-seq="0" data-art="draw" d="M96 304 L212 188"/>
+    <path ${S} data-seq="1" data-art="draw"
+      d="M196 172 L228 140 L316 228 L284 260 Z"/>
+    <path ${S} data-seq="2" data-art="draw" d="M268 100 L356 188"/>
+    <path ${S4} data-seq="3" data-art="draw" d="M300 132 L332 100 M252 180 L284 148"/>
+    <path ${S4} data-seq="4" data-art="draw" d="M96 304 L64 336 M78 286 L110 318"/>
+    <path ${S4} data-seq="5" data-art="draw" data-loop="pulse"
+      d="M118 168 C86 136, 86 96, 118 62"/>
+    <path ${S4} data-seq="6" data-art="draw" data-loop="pulse"
+      d="M166 152 C146 130, 146 104, 166 82"/>`),
+
+  /** Lungs with a windpipe - respiratory illness, pneumonia, COPD, asthma. */
+  lungs: svg(`
+    <path ${S} data-seq="0" data-art="draw" d="M200 52 V158"/>
+    <path ${S4} data-seq="1" data-art="draw" d="M200 106 L152 140 M200 106 L248 140"/>
+    <path ${S} data-seq="2" data-art="draw" data-loop="pulse"
+      d="M180 150 C120 162, 78 214, 74 282 C72 322, 96 348, 130 344
+         C162 340, 180 310, 180 268 Z"/>
+    <path ${S} data-seq="3" data-art="draw" data-loop="pulse"
+      d="M220 150 C280 162, 322 214, 326 282 C328 322, 304 348, 270 344
+         C238 340, 220 310, 220 268 Z"/>`),
+
+  /** Virus particle with spikes - influenza, infection, contagion. */
+  virus: svg(`
+    <circle ${S} data-seq="0" data-art="draw" cx="200" cy="200" r="92"/>
+    <path ${S4} data-seq="1" data-art="draw" d="M200 108 V52 M200 292 V348"/>
+    <path ${S4} data-seq="2" data-art="draw" d="M108 200 H52 M292 200 H348"/>
+    <path ${S4} data-seq="3" data-art="draw" d="M135 135 L96 96 M265 265 L304 304"/>
+    <path ${S4} data-seq="4" data-art="draw" d="M265 135 L304 96 M135 265 L96 304"/>
+    <circle ${S4} data-seq="5" data-art="pop" data-loop="pulse" cx="200" cy="44" r="14"/>
+    <circle ${S4} data-seq="6" data-art="pop" data-loop="pulse" cx="200" cy="356" r="14"/>
+    <circle ${S4} data-seq="7" data-art="pop" data-loop="pulse" cx="44" cy="200" r="14"/>
+    <circle ${S4} data-seq="8" data-art="pop" data-loop="pulse" cx="356" cy="200" r="14"/>
+    <circle ${S4} data-seq="9" data-art="pop" cx="88" cy="88" r="12"/>
+    <circle ${S4} data-seq="10" data-art="pop" cx="312" cy="312" r="12"/>
+    <circle ${S4} data-seq="11" data-art="pop" cx="312" cy="88" r="12"/>
+    <circle ${S4} data-seq="12" data-art="pop" cx="88" cy="312" r="12"/>
+    <circle ${S4} data-seq="13" data-art="draw" cx="174" cy="182" r="20"/>
+    <circle ${S4} data-seq="14" data-art="draw" cx="228" cy="224" r="16"/>`),
+
   /** Nodes wired to a hub - system, integration, internal network. */
   network: svg(`
     <circle ${S} data-seq="0" data-art="pop" cx="200" cy="200" r="46"/>
@@ -157,6 +199,9 @@ export const ART = {
  * have to come before the vague ones.
  */
 const AUTO = [
+  [/tiêm chủng|vắc ?xin|vaccine|mũi tiêm|chủng ngừa/i, "syringe"],
+  [/cúm|vi ?rút|virus|lây lan|lây nhiễm|truyền nhiễm|dịch bệnh/i, "virus"],
+  [/viêm phổi|hô hấp|phổi|hen|copd|đường thở|khó thở/i, "lungs"],
   [/châm cứu|điện châm|huyệt|kim châm/i, "needle"],
   [/thảo dược|bài thuốc|dược liệu|sắc thuốc|cổ truyền/i, "herb"],
   [/thần kinh|zona|đau rát|bỏng buốt|châm chích|điện giật|kinh lạc/i, "nerve"],
