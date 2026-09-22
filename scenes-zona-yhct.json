@@ -1,0 +1,152 @@
+{
+  "brand": {
+    "name": "Bệnh viện Việt Nam - Thụy Điển Uông Bí",
+    "web": "vsh.org.vn"
+  },
+  "scenes": [
+    {
+      "id": "z01",
+      "style": "cinematic",
+      "kicker": "Khoa Y học cổ truyền",
+      "headline": "Điều trị đau thần kinh sau zona bằng Y học cổ truyền",
+      "sub": "Bệnh viện Việt Nam - Thụy Điển Uông Bí",
+      "photo": "aerial-campus.jpg",
+      "zoom": "in",
+      "voice": "Điều trị đau thần kinh sau zona bằng phương pháp y học cổ truyền tại Khoa Y học cổ truyền, Bệnh viện Việt Nam Thụy Điển Uông Bí."
+    },
+    {
+      "id": "z02",
+      "style": "plain",
+      "kicker": "Đau thần kinh sau zona",
+      "headline": "Biến chứng xuất hiện khi tổn thương da đã lành",
+      "sub": "Thường gặp ở người cao tuổi hoặc người có hệ miễn dịch suy giảm.",
+      "voice": "Đau thần kinh sau zona là biến chứng thường gặp sau khi các tổn thương da do bệnh zona đã lành, đặc biệt ở người cao tuổi hoặc những bệnh nhân có hệ miễn dịch suy giảm.",
+      "art": "shield"
+    },
+    {
+      "id": "z03",
+      "style": "lines",
+      "kicker": "Biểu hiện",
+      "headline": "Cơn đau có thể kéo dài nhiều tuần, nhiều tháng, thậm chí nhiều năm",
+      "lines": [
+        "Đau rát",
+        "Bỏng buốt",
+        "Châm chích",
+        "Đau như điện giật"
+      ],
+      "voice": "Cơn đau thường kéo dài nhiều tuần, nhiều tháng, thậm chí nhiều năm, với các biểu hiện như đau rát, bỏng buốt, châm chích hoặc đau như điện giật.",
+      "art": "nerve"
+    },
+    {
+      "id": "z04",
+      "style": "kinetic",
+      "kicker": "Hệ quả",
+      "headline": "Ảnh hưởng nghiêm trọng đến giấc ngủ và sinh hoạt",
+      "sub": "Làm giảm rõ rệt chất lượng cuộc sống của người bệnh.",
+      "wordMs": 280,
+      "voice": "Tình trạng này gây ảnh hưởng nghiêm trọng đến giấc ngủ, sinh hoạt và chất lượng cuộc sống của người bệnh.",
+      "art": "clock"
+    },
+    {
+      "id": "z05",
+      "style": "wipe",
+      "kicker": "Tại Khoa Y học cổ truyền",
+      "headline": "Y học cổ truyền kết hợp y học hiện đại",
+      "sub": "Nhằm giảm đau, phục hồi chức năng và nâng cao chất lượng cuộc sống cho người bệnh.",
+      "meta": "KHOA Y HOC CO TRUYEN // VSH.ORG.VN",
+      "photo": "yhct-kythuat.jpg",
+      "zoom": "out",
+      "voice": "Tại Khoa Y học cổ truyền, Bệnh viện Việt Nam Thụy Điển Uông Bí, phương pháp điều trị đau thần kinh sau zona bằng y học cổ truyền được áp dụng rộng rãi, kết hợp với y học hiện đại, nhằm mang lại hiệu quả giảm đau, phục hồi chức năng và nâng cao chất lượng cuộc sống cho người bệnh."
+    },
+    {
+      "id": "z06",
+      "style": "lines",
+      "kicker": "Theo y học cổ truyền",
+      "headline": "Đau sau zona thuộc phạm vi chứng thống",
+      "lines": [
+        "Phong, hàn, thấp hoặc nhiệt tà xâm nhập",
+        "Kết hợp khí huyết ứ trệ",
+        "Làm bế tắc kinh lạc",
+        "Khí huyết không lưu thông, gây đau kéo dài"
+      ],
+      "voice": "Theo quan điểm của y học cổ truyền, đau thần kinh sau zona thuộc phạm vi chứng thống. Nguyên nhân chủ yếu do phong, hàn, thấp hoặc nhiệt tà xâm nhập, kết hợp với khí huyết ứ trệ làm bế tắc kinh lạc, khiến khí huyết không lưu thông, từ đó gây đau kéo dài.",
+      "art": "network"
+    },
+    {
+      "id": "z07",
+      "style": "kinetic",
+      "kicker": "Nguyên tắc điều trị",
+      "headline": "Hoạt huyết hóa ứ, thông kinh lạc",
+      "sub": "Điều hòa khí huyết, bổ chính khu tà và phục hồi chức năng của cơ thể.",
+      "wordMs": 300,
+      "voice": "Vì vậy, nguyên tắc điều trị là hoạt huyết hóa ứ, thông kinh lạc, điều hòa khí huyết, bổ chính khu tà và phục hồi chức năng của cơ thể.",
+      "art": "check"
+    },
+    {
+      "id": "z08",
+      "style": "split",
+      "kicker": "Thăm khám",
+      "headline": "Phác đồ riêng cho từng thể bệnh",
+      "sub": "Người bệnh được thăm khám toàn diện để lựa chọn phương pháp điều trị phù hợp.",
+      "photo": "yhct-thuthuat.jpg",
+      "zoom": "in",
+      "voice": "Tại khoa, người bệnh được thăm khám toàn diện để lựa chọn phác đồ điều trị phù hợp với từng thể bệnh."
+    },
+    {
+      "id": "z09",
+      "style": "card",
+      "kicker": "Điện châm",
+      "headline": "Kỹ thuật được sử dụng phổ biến",
+      "sub": "Kích thích các huyệt đạo, tăng giải phóng chất giảm đau nội sinh, cải thiện tuần hoàn máu tại vùng tổn thương và thúc đẩy phục hồi dây thần kinh.",
+      "photo": "yhct-diencham.jpg",
+      "zoom": "in",
+      "voice": "Trong đó, điện châm là kỹ thuật được sử dụng phổ biến, nhờ khả năng kích thích các huyệt đạo, tăng giải phóng các chất giảm đau nội sinh, cải thiện tuần hoàn máu tại vùng tổn thương và thúc đẩy quá trình phục hồi của dây thần kinh."
+    },
+    {
+      "id": "z10",
+      "style": "glass",
+      "kicker": "Xoa bóp bấm huyệt",
+      "headline": "Thư giãn cơ, tăng lưu thông khí huyết",
+      "sub": "Giảm co cứng và cải thiện khả năng vận động của vùng bị đau.",
+      "photo": "yhct-xoabop.jpg",
+      "zoom": "out",
+      "voice": "Xoa bóp bấm huyệt giúp thư giãn cơ, tăng lưu thông khí huyết, giảm co cứng và cải thiện khả năng vận động của vùng bị đau."
+    },
+    {
+      "id": "z11",
+      "style": "lines",
+      "kicker": "Phối hợp linh hoạt",
+      "headline": "Các phương pháp không dùng thuốc",
+      "lines": [
+        "Châm cứu",
+        "Điện châm",
+        "Cứu ngải",
+        "Xoa bóp bấm huyệt",
+        "Chiếu đèn hồng ngoại"
+      ],
+      "photo": "yhct-khoa.jpg",
+      "voice": "Các phương pháp không dùng thuốc như châm cứu, điện châm, cứu ngải, xoa bóp bấm huyệt và chiếu đèn hồng ngoại được phối hợp linh hoạt nhằm tăng hiệu quả giảm đau."
+    },
+    {
+      "id": "z12",
+      "style": "plain",
+      "kicker": "Bài thuốc y học cổ truyền",
+      "headline": "Chỉ định theo từng thể bệnh",
+      "sub": "Hoạt huyết, dưỡng huyết, bổ khí, thanh nhiệt hoặc khu phong, góp phần nâng cao hiệu quả điều trị.",
+      "voice": "Đồng thời, các bài thuốc y học cổ truyền được chỉ định tùy theo từng thể bệnh nhằm hoạt huyết, dưỡng huyết, bổ khí, thanh nhiệt hoặc khu phong, góp phần nâng cao hiệu quả điều trị.",
+      "art": "herb"
+    },
+    {
+      "id": "z13",
+      "style": "logo",
+      "kicker": "Khoa Y học cổ truyền",
+      "headline": "Giảm đau, phục hồi chức năng, nâng cao chất lượng cuộc sống",
+      "sub": "Bệnh viện Việt Nam - Thụy Điển Uông Bí",
+      "lines": [
+        "Đường Tuệ Tĩnh, Phường Uông Bí, TP. Quảng Ninh",
+        "Điện thoại: 02033.854038  ·  vsh.org.vn"
+      ],
+      "voice": "Khoa Y học cổ truyền, Bệnh viện Việt Nam Thụy Điển Uông Bí. Giảm đau, phục hồi chức năng và nâng cao chất lượng cuộc sống cho người bệnh."
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "bvtd-video",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Dựng video tuyên truyền cho Bệnh viện Việt Nam - Thụy Điển Uông Bí từ kịch bản JSON",
+  "scripts": {
+    "stills:16x9": "node build-16x9.mjs --stills",
+    "stills:9x16": "node build-styles.mjs --stills"
+  },
+  "dependencies": {
+    "puppeteer-core": "^25.11.0"
+  }
+}

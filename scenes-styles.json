@@ -1,0 +1,77 @@
+{
+  "brand": {
+    "name": "Bệnh viện Việt Nam - Thụy Điển Uông Bí",
+    "hotline": "0988 270 115",
+    "web": "vsh.org.vn"
+  },
+  "scenes": [
+    {
+      "id": "st1",
+      "style": "cinematic",
+      "kicker": "Phong cách 1 · Cinematic",
+      "headline": "Nơi bắt đầu hành trình chăm sóc",
+      "sub": "Khoa Khám bệnh tiếp nhận và khám ban đầu cho mọi người bệnh.",
+      "photo": "facade.jpg",
+      "zoom": "in",
+      "voice": "Phong cách một, điện ảnh. Ảnh tràn viền, lớp tối chuyển dần, tiêu đề chữ serif cỡ lớn nổi bật phía dưới."
+    },
+    {
+      "id": "st2",
+      "style": "glass",
+      "kicker": "Phong cách 2 · Kính mờ",
+      "headline": "Đội ngũ bác sĩ chuyên khoa",
+      "sub": "Quy trình khám khoa học, kết quả nhanh chóng và chính xác.",
+      "stat": "250",
+      "statLabel": "Bác sĩ toàn bệnh viện",
+      "photo": "pediatric.jpg",
+      "zoom": "out",
+      "voice": "Phong cách hai, kính mờ. Bảng kính trong suốt đặt trên nền ảnh, chữ trắng in đậm để bảo đảm dễ đọc."
+    },
+    {
+      "id": "st3",
+      "style": "caption",
+      "kicker": "Phong cách 3 · Chữ chạy",
+      "headline": "Khám cả thứ Bảy và Chủ nhật",
+      "sub": "Khám theo yêu cầu tất cả các ngày trong tuần, buổi sáng 7h - 12h.",
+      "photo": "staff-corridor.jpg",
+      "zoom": "in",
+      "wordMs": 260,
+      "voice": "Phong cách ba, chữ chạy từng từ. Mỗi từ bật lên đúng nhịp lời đọc, từ đang đọc được tô nổi bật."
+    },
+    {
+      "id": "st4",
+      "style": "split",
+      "kicker": "Phong cách 4 · Khối màu",
+      "headline": "Đầy đủ các chuyên khoa",
+      "sub": "Nội tiêu hóa, Nội tiết, Nhi, Mắt, Tai Mũi Họng, Răng Hàm Mặt...",
+      "stat": "43",
+      "statLabel": "Khoa, phòng, trung tâm",
+      "photo": "teaching.jpg",
+      "zoom": "in",
+      "voice": "Phong cách bốn, khối màu cắt chéo. Ảnh phía trên, khối màu thương hiệu trượt lên mang theo phần chữ."
+    },
+    {
+      "id": "st5",
+      "style": "wipe",
+      "kicker": "Phong cách 5 · Lộ chữ",
+      "headline": "Xét nghiệm và chẩn đoán tại chỗ",
+      "sub": "Người bệnh không phải đi lại nhiều nơi, sớm có kết quả.",
+      "meta": "KHOA KHAM BENH // 06:30 - 16:00",
+      "photo": "ct-scan.jpg",
+      "zoom": "out",
+      "voice": "Phong cách năm, lộ chữ. Tiêu đề được quét lộ dần từ trái sang phải, kèm một dòng chữ kiểu máy đánh chữ."
+    },
+    {
+      "id": "st6",
+      "style": "card",
+      "kicker": "Phong cách 6 · Thẻ sáng",
+      "headline": "Hướng dẫn tận tình từ khi bước vào",
+      "sub": "Nhân viên y tế hướng dẫn thủ tục và phân luồng người bệnh.",
+      "stat": "7",
+      "statLabel": "Ngày trong tuần đều tiếp nhận",
+      "photo": "staff-group.jpg",
+      "zoom": "in",
+      "voice": "Phong cách sáu, thẻ sáng. Đây là phong cách đang dùng cho hai video trước, để bạn tiện so sánh."
+    }
+  ]
+}

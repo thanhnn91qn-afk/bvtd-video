@@ -1,0 +1,154 @@
+{
+  "brand": {
+    "name": "Bệnh viện Việt Nam - Thụy Điển Uông Bí",
+    "hotline": "0988 270 115",
+    "address": "Khu Khám bệnh (nhà Y) - bên phải cổng chính",
+    "web": "vsh.org.vn"
+  },
+  "scenes": [
+    {
+      "id": "k01",
+      "style": "logo",
+      "kicker": "Khoa Khám bệnh",
+      "headline": "Nơi bắt đầu hành trình chăm sóc sức khỏe",
+      "sub": "Tiếp nhận và khám ban đầu cho mọi người bệnh đến với bệnh viện.",
+      "photo": "facade.jpg",
+      "zoom": "in",
+      "voice": "Khoa Khám bệnh, Bệnh viện Việt Nam Thụy Điển Uông Bí. Đây là nơi tiếp nhận và khám ban đầu cho tất cả người bệnh, điểm bắt đầu cho hành trình chăm sóc sức khỏe của bạn."
+    },
+    {
+      "id": "k02",
+      "style": "cinematic",
+      "kicker": "Vị trí",
+      "headline": "Khu Khám bệnh - nhà Y",
+      "sub": "Nằm ngay bên phải cổng chính, thuận tiện cho người bệnh và người nhà.",
+      "photo": "aerial-campus.jpg",
+      "zoom": "in",
+      "voice": "Khoa Khám bệnh đặt tại khu Khám bệnh, nhà Y, ngay bên phải cổng chính của bệnh viện, rất thuận tiện để người bệnh và người nhà tìm đến."
+    },
+    {
+      "id": "k03",
+      "style": "plain",
+      "kicker": "Tiếp đón",
+      "headline": "Hướng dẫn tận tình từ khi bước vào",
+      "sub": "Nhân viên y tế hướng dẫn thủ tục và phân luồng theo từng chuyên khoa.",
+      "photo": "staff-corridor.jpg",
+      "zoom": "out",
+      "wordMs": 230,
+      "voice": "Ngay từ khi bước vào, người bệnh được nhân viên y tế hướng dẫn thủ tục và phân luồng tới đúng chuyên khoa cần khám, giúp rút ngắn thời gian chờ đợi."
+    },
+    {
+      "id": "k04",
+      "style": "glass",
+      "kicker": "Đội ngũ",
+      "headline": "Bác sĩ chuyên khoa nhiều kinh nghiệm",
+      "sub": "Quy trình khám khoa học, kết quả nhanh chóng và chính xác.",
+      "stat": "250",
+      "statLabel": "Bác sĩ toàn bệnh viện",
+      "photo": "pediatric.jpg",
+      "zoom": "in",
+      "voice": "Người bệnh được thăm khám bởi đội ngũ bác sĩ chuyên khoa nhiều kinh nghiệm, với quy trình khám khoa học, cho kết quả nhanh chóng và chính xác."
+    },
+    {
+      "id": "k05",
+      "style": "split",
+      "kicker": "Khám theo yêu cầu",
+      "headline": "Thứ Hai đến thứ Sáu",
+      "sub": "Buổi sáng 6h30 - 12h, buổi chiều 13h30 - 16h.",
+      "photo": "khambenh-ongnghe.jpg",
+      "zoom": "in",
+      "voice": "Hoạt động khám theo yêu cầu làm việc từ thứ Hai đến thứ Sáu, buổi sáng từ sáu giờ ba mươi đến mười hai giờ, buổi chiều từ mười ba giờ ba mươi đến mười sáu giờ."
+    },
+    {
+      "id": "k06",
+      "style": "card",
+      "kicker": "Cuối tuần",
+      "headline": "Khám cả thứ Bảy và Chủ nhật",
+      "sub": "Khám theo yêu cầu tất cả các ngày trong tuần, buổi sáng 7h - 12h.",
+      "stat": "7",
+      "statLabel": "Ngày trong tuần đều tiếp nhận",
+      "photo": "khambenh-ongnghe2.jpg",
+      "zoom": "out",
+      "voice": "Bệnh viện tổ chức khám chữa bệnh theo yêu cầu tất cả các ngày trong tuần. Riêng thứ Bảy và Chủ nhật, khoa tiếp nhận người bệnh vào buổi sáng, từ bảy giờ đến mười hai giờ."
+    },
+    {
+      "id": "k07",
+      "style": "wipe",
+      "kicker": "Cận lâm sàng",
+      "headline": "Xét nghiệm, chẩn đoán hình ảnh tại chỗ",
+      "sub": "Người bệnh không phải đi lại nhiều nơi, sớm có kết quả.",
+      "meta": "KHOA KHAM BENH // 06:30 - 16:00",
+      "photo": "ct-scan.jpg",
+      "zoom": "in",
+      "voice": "Hệ thống xét nghiệm và chẩn đoán hình ảnh được bố trí ngay tại chỗ, người bệnh không phải đi lại nhiều nơi và sớm có kết quả để bác sĩ kết luận."
+    },
+    {
+      "id": "k08",
+      "style": "caption",
+      "kicker": "Bảo hiểm y tế",
+      "headline": "Nhớ mang thẻ bảo hiểm y tế",
+      "sub": "Cùng giấy tờ tùy thân để thủ tục được nhanh chóng.",
+      "photo": "xetnghiem-laymau.jpg",
+      "zoom": "in",
+      "wordMs": 250,
+      "voice": "Khoa Khám bệnh áp dụng thanh toán bảo hiểm y tế. Khi đi khám, người bệnh vui lòng mang theo thẻ bảo hiểm y tế cùng giấy tờ tùy thân để thủ tục được nhanh chóng."
+    },
+    {
+      "id": "k09",
+      "style": "split",
+      "kicker": "Chuyên khoa",
+      "headline": "Đầy đủ các chuyên khoa",
+      "sub": "Nội tiêu hóa, Nội tiết, Nhi, Mắt, Tai Mũi Họng, Răng Hàm Mặt...",
+      "stat": "43",
+      "statLabel": "Khoa, phòng, trung tâm",
+      "photo": "kham-tmh.jpg",
+      "zoom": "out",
+      "voice": "Bệnh viện có đầy đủ các chuyên khoa như nội tiêu hóa, nội tiết, nhi, mắt, tai mũi họng, răng hàm mặt, cơ xương khớp, đáp ứng hầu hết nhu cầu khám chữa bệnh của người dân."
+    },
+    {
+      "id": "k10",
+      "style": "cinematic",
+      "kicker": "Dịch vụ",
+      "headline": "Khám sức khỏe định kỳ cho cơ quan, doanh nghiệp",
+      "sub": "Tổ chức linh hoạt, có gói khám chuyên sâu theo nhu cầu từng đơn vị.",
+      "photo": "xetnghiem-laymau2.jpg",
+      "zoom": "in",
+      "voice": "Bệnh viện nhận khám sức khỏe định kỳ cho cơ quan, doanh nghiệp, tổ chức linh hoạt tại bệnh viện hoặc tại đơn vị, kèm các gói khám chuyên sâu theo nhu cầu."
+    },
+    {
+      "id": "k11",
+      "style": "wipe",
+      "kicker": "Dịch vụ",
+      "headline": "Tầm soát ung thư và tiêm chủng",
+      "sub": "Cùng phòng, giường theo yêu cầu và xe vận chuyển người bệnh chuyên dụng.",
+      "meta": "DICH VU // VSH.ORG.VN",
+      "photo": "ct-scan2.jpg",
+      "zoom": "out",
+      "voice": "Ngoài khám chữa bệnh thông thường, bệnh viện còn cung cấp dịch vụ tầm soát ung thư, tiêm chủng, phòng và giường bệnh theo yêu cầu, cùng xe chuyên dụng vận chuyển người bệnh."
+    },
+    {
+      "id": "k12",
+      "style": "caption",
+      "kicker": "Đặt lịch",
+      "headline": "Gọi 0988 270 115 để đặt lịch khám",
+      "sub": "Được tư vấn và hẹn giờ khám phù hợp, chủ động thời gian.",
+      "photo": "kham-tmh2.jpg",
+      "zoom": "in",
+      "wordMs": 240,
+      "voice": "Để chủ động thời gian, người bệnh nên đặt lịch khám trước qua số điện thoại không chín tám tám, hai bảy không, một một năm, sẽ được tư vấn và sắp xếp giờ khám phù hợp."
+    },
+    {
+      "id": "k13",
+      "style": "plain",
+      "kicker": "Khoa Khám bệnh",
+      "headline": "Chúng tôi luôn sẵn sàng đón tiếp",
+      "sub": "Tất cả vì sự hài lòng của người bệnh.",
+      "contact": true,
+      "hotline": "0988 270 115",
+      "address": "Khu Khám bệnh (nhà Y) - bên phải cổng chính",
+      "photo": "facade.jpg",
+      "zoom": "out",
+      "voice": "Khoa Khám bệnh, Bệnh viện Việt Nam Thụy Điển Uông Bí luôn sẵn sàng đón tiếp và phục vụ. Tất cả vì sự hài lòng của người bệnh. Để đăng ký khám, xin liên hệ số điện thoại không chín tám tám, hai bảy không, một một năm."
+    }
+  ]
+}

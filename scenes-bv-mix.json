@@ -1,0 +1,229 @@
+{
+  "brand": {
+    "name": "Bệnh viện Việt Nam - Thụy Điển Uông Bí",
+    "hotline": "0988 270 115",
+    "address": "Đường Tuệ Tĩnh, Phường Uông Bí, Quảng Ninh",
+    "web": "vsh.org.vn"
+  },
+  "scenes": [
+    {
+      "id": "b01",
+      "style": "logo",
+      "kicker": "45 năm",
+      "headline": "45 năm tận tâm vì người bệnh",
+      "sub": "Biểu tượng tình hữu nghị Việt Nam – Thụy Điển, trung tâm y học vùng Đông Bắc.",
+      "photo": "facade.jpg",
+      "zoom": "in",
+      "voice": "Bệnh viện Việt Nam Thụy Điển Uông Bí. Bốn mươi lăm năm đồng hành cùng sức khỏe nhân dân vùng Đông Bắc Tổ quốc, và là biểu tượng cho tình hữu nghị giữa hai quốc gia Việt Nam và Thụy Điển."
+    },
+    {
+      "id": "b02",
+      "style": "cinematic",
+      "kicker": "Lịch sử",
+      "headline": "Khởi đầu từ năm 1981",
+      "sub": "Ra đời từ sự hợp tác đặc biệt giữa Chính phủ Việt Nam và Vương quốc Thụy Điển.",
+      "stat": "320",
+      "statLabel": "Giường bệnh những ngày đầu",
+      "photo": "history-1981.jpg",
+      "zoom": "in",
+      "voice": "Bệnh viện chính thức đi vào hoạt động ngày mười bảy tháng Ba năm một nghìn chín trăm tám mươi mốt, với quy mô ban đầu ba trăm hai mươi giường bệnh, dưới sự giúp đỡ đặc biệt của Vương quốc Thụy Điển."
+    },
+    {
+      "id": "b03",
+      "style": "split",
+      "kicker": "Quy mô",
+      "headline": "1.550 giường bệnh thực kê",
+      "sub": "Bốn mươi ba khoa, phòng và trung tâm chuyên môn hoạt động đồng bộ.",
+      "stat": "43",
+      "statLabel": "Khoa, phòng, trung tâm",
+      "photo": "aerial-wide.jpg",
+      "zoom": "out",
+      "voice": "Đến nay, bệnh viện có một nghìn ba trăm giường kế hoạch và một nghìn năm trăm năm mươi giường thực kê, với bốn mươi ba khoa, phòng, trung tâm chuyên môn."
+    },
+    {
+      "id": "b04",
+      "style": "glass",
+      "kicker": "Đội ngũ",
+      "headline": "Hơn 1.000 thầy thuốc tận tâm",
+      "sub": "Trong đó gần 250 bác sĩ, nhiều người có trình độ sau đại học.",
+      "stat": "250",
+      "statLabel": "Bác sĩ",
+      "photo": "staff-group.jpg",
+      "zoom": "in",
+      "voice": "Đội ngũ hơn một nghìn cán bộ, viên chức, trong đó có gần hai trăm năm mươi bác sĩ, luôn tận tâm chăm sóc sức khỏe người bệnh mỗi ngày."
+    },
+    {
+      "id": "b05",
+      "style": "wipe",
+      "kicker": "Vị thế",
+      "headline": "Bệnh viện vùng Đông Bắc",
+      "sub": "Phục vụ người bệnh của 13 tỉnh, thành phố khu vực Đông Bắc.",
+      "stat": "11 triệu",
+      "statLabel": "Người dân trong vùng phục vụ",
+      "meta": "VUNG DONG BAC // 13 TINH THANH",
+      "photo": "aerial-campus.jpg",
+      "zoom": "in",
+      "voice": "Với vai trò bệnh viện vùng của khu vực Đông Bắc, nơi đây là điểm tựa y tế cho mười ba tỉnh, thành phố với khoảng mười một triệu người dân."
+    },
+    {
+      "id": "b06",
+      "style": "caption",
+      "kicker": "Tiên phong",
+      "headline": "Nội soi ống mềm đầu tiên tại Việt Nam",
+      "sub": "Nhiều kỹ thuật lần đầu triển khai trong nước nhờ hợp tác với chuyên gia Thụy Điển.",
+      "photo": "p4-ghepgiacmac.jpg",
+      "zoom": "in",
+      "wordMs": 230,
+      "voice": "Nhờ hợp tác chuyên môn với các chuyên gia Thụy Điển, bệnh viện là nơi đầu tiên tại Việt Nam triển khai nội soi thực quản, dạ dày, tá tràng bằng ống soi mềm."
+    },
+    {
+      "id": "b07",
+      "style": "card",
+      "kicker": "Dấu ấn y học",
+      "headline": "Phát hiện vi khuẩn HP năm 1990",
+      "sub": "Làm thay đổi căn bản phương pháp điều trị viêm loét dạ dày, tá tràng tại Việt Nam.",
+      "stat": "1990",
+      "statLabel": "Lần đầu phát hiện tại Việt Nam",
+      "photo": "ct-scan.jpg",
+      "zoom": "out",
+      "voice": "Năm một nghìn chín trăm chín mươi, đây là nơi đầu tiên ở Việt Nam phát hiện vi khuẩn Helicobacter Pylori trong niêm mạc dạ dày, tá tràng là nguyên nhân gây viêm loét, làm thay đổi căn bản phương pháp điều trị."
+    },
+    {
+      "id": "b08",
+      "style": "cinematic",
+      "kicker": "Ghép tạng",
+      "headline": "Tuyến tỉnh đầu tiên lấy đa mô tạng",
+      "sub": "Thực hiện thành công ca lấy đa mô tạng từ người cho chết não năm 2024.",
+      "photo": "p6-ghepthan.jpg",
+      "zoom": "in",
+      "voice": "Năm hai nghìn không trăm hai mươi tư, bệnh viện trở thành đơn vị tuyến tỉnh đầu tiên trong cả nước thực hiện thành công ca lấy đa mô tạng từ người cho chết não."
+    },
+    {
+      "id": "b09",
+      "style": "glass",
+      "kicker": "Ghép tạng",
+      "headline": "Ghép thận trở thành thường quy",
+      "sub": "Người bệnh suy thận được điều trị chuyên sâu ngay tại Quảng Ninh.",
+      "stat": "2025",
+      "statLabel": "Ghép thận thường quy",
+      "photo": "p7-so3d.jpg",
+      "zoom": "out",
+      "voice": "Từ năm hai nghìn không trăm hai mươi lăm, kỹ thuật ghép thận đã trở thành hoạt động thường quy, giúp người bệnh không phải chuyển tuyến xa."
+    },
+    {
+      "id": "b10",
+      "style": "caption",
+      "kicker": "Mũi nhọn",
+      "headline": "Trung tâm sản khoa và hỗ trợ sinh sản",
+      "sub": "Hệ thống IVF chuyên biệt hiện đại, mang lại hạnh phúc cho nhiều gia đình.",
+      "photo": "newborn.jpg",
+      "zoom": "in",
+      "wordMs": 240,
+      "voice": "Bệnh viện đưa vào vận hành trung tâm sản khoa với hệ thống hỗ trợ sinh sản chuyên biệt hiện đại, mang lại niềm hạnh phúc được làm cha mẹ cho nhiều gia đình."
+    },
+    {
+      "id": "b11",
+      "style": "split",
+      "kicker": "Mũi nhọn",
+      "headline": "Tim mạch · Hồi sức · Chấn thương chỉnh hình",
+      "sub": "Các trung tâm chuyên sâu được đầu tư đồng bộ, kỹ thuật cao.",
+      "photo": "surgical-team.jpg",
+      "zoom": "out",
+      "voice": "Cùng với đó là các trung tâm chuyên sâu về tim mạch, hồi sức chống độc và chấn thương chỉnh hình, được đầu tư đồng bộ với nhiều kỹ thuật cao."
+    },
+    {
+      "id": "b12",
+      "style": "wipe",
+      "kicker": "Chuyên môn 2025",
+      "headline": "15.741 kỹ thuật được triển khai",
+      "sub": "Trên 95% kỹ thuật theo phân tuyến được thực hiện ngay tại bệnh viện.",
+      "stat": "37",
+      "statLabel": "Kỹ thuật mới trong năm",
+      "meta": "CHUYEN MON 2025 // 15.741 KY THUAT",
+      "photo": "ct-scan2.jpg",
+      "zoom": "in",
+      "voice": "Riêng năm hai nghìn không trăm hai mươi lăm, bệnh viện triển khai mười lăm nghìn bảy trăm bốn mươi mốt kỹ thuật, trong đó có ba mươi bảy kỹ thuật mới lần đầu áp dụng."
+    },
+    {
+      "id": "b13",
+      "style": "card",
+      "kicker": "Phục vụ người bệnh",
+      "headline": "Gần 350.000 lượt khám mỗi năm",
+      "sub": "Cùng gần 40.000 lượt cấp cứu được tiếp nhận kịp thời.",
+      "stat": "350.000",
+      "statLabel": "Lượt khám bệnh năm 2025",
+      "photo": "pediatric.jpg",
+      "zoom": "out",
+      "voice": "Mỗi năm, bệnh viện tiếp nhận gần ba trăm năm mươi nghìn lượt khám bệnh và gần bốn mươi nghìn lượt cấp cứu."
+    },
+    {
+      "id": "b14",
+      "style": "cinematic",
+      "kicker": "Điều trị nội trú",
+      "headline": "63.000 lượt điều trị nội trú",
+      "sub": "Công suất sử dụng giường bệnh đạt 127,1%, luôn trong trạng thái sẵn sàng.",
+      "photo": "stretcher.jpg",
+      "zoom": "in",
+      "voice": "Trong năm, hơn sáu mươi ba nghìn lượt người bệnh được điều trị nội trú, công suất sử dụng giường bệnh đạt một trăm hai mươi bảy phẩy một phần trăm."
+    },
+    {
+      "id": "b15",
+      "style": "split",
+      "kicker": "Đầu tư",
+      "headline": "Gần 1.300 tỷ đồng mở rộng bệnh viện",
+      "sub": "Khối nhà khám chữa bệnh 8 tầng, hơn 60.000m² sàn, giai đoạn 2025 - 2029.",
+      "stat": "680",
+      "statLabel": "Giường bệnh được bổ sung",
+      "photo": "newbuilding.jpg",
+      "zoom": "in",
+      "voice": "Tỉnh Quảng Ninh đã khởi công dự án mở rộng bệnh viện với tổng mức đầu tư gần một nghìn ba trăm tỷ đồng, xây dựng khối nhà khám chữa bệnh tám tầng, bổ sung khoảng sáu trăm tám mươi giường bệnh."
+    },
+    {
+      "id": "b16",
+      "style": "glass",
+      "kicker": "Chất lượng",
+      "headline": "Hài lòng người bệnh trên 98%",
+      "sub": "Văn hóa Đoàn kết - Đổi mới - Chất lượng - Hiệu quả - Hạnh phúc.",
+      "stat": "98%",
+      "statLabel": "Người bệnh hài lòng",
+      "photo": "staff-corridor.jpg",
+      "zoom": "out",
+      "voice": "Sự hài lòng của người dân đối với bệnh viện đạt mức trên chín mươi tám phần trăm, kết quả của văn hóa đoàn kết, đổi mới, chất lượng, hiệu quả và hạnh phúc."
+    },
+    {
+      "id": "b17",
+      "style": "caption",
+      "kicker": "Vinh dự",
+      "headline": "3 lần Anh hùng Lao động",
+      "sub": "Cùng 2 Huân chương Độc lập và nhiều phần thưởng cao quý khác.",
+      "photo": "awards.jpg",
+      "zoom": "in",
+      "wordMs": 280,
+      "voice": "Những thành tựu trong suốt bốn mươi lăm năm đã được Đảng và Nhà nước ghi nhận bằng ba danh hiệu Anh hùng Lao động, hai Huân chương Độc lập cùng nhiều phần thưởng cao quý khác."
+    },
+    {
+      "id": "b18",
+      "style": "wipe",
+      "kicker": "Đào tạo",
+      "headline": "Cái nôi đào tạo thầy thuốc",
+      "sub": "Cơ sở thực hành của nhiều trường đại học y dược, đón sinh viên quốc tế.",
+      "meta": "DAO TAO // Y HA NOI - HAI PHONG - THAI BINH",
+      "photo": "teaching.jpg",
+      "zoom": "out",
+      "voice": "Bệnh viện là cơ sở thực hành của nhiều trường đại học y dược trong khu vực, đồng thời hướng dẫn sinh viên y khoa từ Thụy Điển, Anh, Đan Mạch và đào tạo cán bộ y tế cho Lào, Campuchia."
+    },
+    {
+      "id": "b19",
+      "style": "glass",
+      "kicker": "Tầm nhìn 2030",
+      "headline": "Hướng tới bệnh viện hạng đặc biệt",
+      "sub": "Tất cả vì sự hài lòng của người bệnh.",
+      "contact": true,
+      "hotline": "0988 270 115",
+      "address": "Đường Tuệ Tĩnh, Phường Uông Bí, Quảng Ninh",
+      "photo": "facade.jpg",
+      "zoom": "in",
+      "voice": "Bệnh viện Việt Nam Thụy Điển Uông Bí hướng tới mục tiêu trở thành bệnh viện hạng đặc biệt vào năm hai nghìn không trăm ba mươi. Tất cả vì sự hài lòng của người bệnh. Để đăng ký khám, xin liên hệ số điện thoại không chín tám tám, hai bảy không, một một năm."
+    }
+  ]
+}

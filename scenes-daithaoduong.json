@@ -1,0 +1,138 @@
+{
+  "brand": {
+    "name": "Bệnh viện Việt Nam - Thụy Điển Uông Bí",
+    "hotline": "0988 270 115",
+    "web": "vsh.org.vn"
+  },
+  "scenes": [
+    {
+      "id": "d01",
+      "style": "caption",
+      "kicker": "Y học thường thức",
+      "headline": "Đái tháo đường có thể không có triệu chứng",
+      "sub": "Hãy chủ động kiểm tra đường huyết của bạn.",
+      "photo": "dtd-duonghuyet.jpg",
+      "zoom": "in",
+      "wordMs": 260,
+      "voice": "Đái tháo đường có thể không có triệu chứng. Đừng chờ có bệnh mới đi khám."
+    },
+    {
+      "id": "d02",
+      "style": "plain",
+      "kicker": "Thực tế",
+      "headline": "Phát hiện qua xét nghiệm, dù không thấy bất thường",
+      "sub": "Nhiều trường hợp đái tháo đường được phát hiện qua làm test xét nghiệm, trong khi người bệnh hoàn toàn không có biểu hiện bất thường rõ ràng.",
+      "voice": "Nhiều trường hợp đái tháo đường đã được phát hiện qua làm test xét nghiệm, trong khi người bệnh hoàn toàn không có biểu hiện bất thường rõ ràng.",
+      "art": "doc"
+    },
+    {
+      "id": "d03",
+      "style": "kinetic",
+      "kicker": "Điều đáng lưu ý",
+      "headline": "Bệnh tiến triển âm thầm trong nhiều năm",
+      "sub": "Người bệnh không hề nhận biết.",
+      "wordMs": 300,
+      "voice": "Đây cũng là một thực tế đáng lưu ý: đái tháo đường có thể tiến triển âm thầm trong nhiều năm mà người bệnh không nhận biết.",
+      "art": "clock"
+    },
+    {
+      "id": "d04",
+      "style": "kinetic",
+      "kicker": "Hiểu đúng",
+      "headline": "Không phải cứ khát nhiều, tiểu nhiều, sụt cân mới là đái tháo đường",
+      "sub": "Ở giai đoạn sớm, nhiều người gần như không có triệu chứng rõ ràng, nhưng đường huyết đã tăng.",
+      "wordMs": 240,
+      "voice": "Không phải cứ khát nhiều, tiểu nhiều, sụt cân mới là đái tháo đường. Ở giai đoạn sớm, nhiều người gần như không có triệu chứng rõ ràng, nhưng đường huyết đã tăng.",
+      "art": "drop"
+    },
+    {
+      "id": "d05",
+      "style": "lines",
+      "kicker": "Nếu không kiểm soát",
+      "headline": "Tổn thương lâu dài có thể xảy ra ở",
+      "lines": [
+        "Tim mạch",
+        "Thận",
+        "Mắt",
+        "Thần kinh và mạch máu"
+      ],
+      "voice": "Nếu không được phát hiện và kiểm soát kịp thời, bệnh có thể gây tổn thương lâu dài đến tim mạch, thận, mắt, thần kinh và mạch máu."
+    },
+    {
+      "id": "d06",
+      "style": "lines",
+      "kicker": "Ai nên tầm soát",
+      "headline": "Bạn nên chủ động kiểm tra nếu",
+      "lines": [
+        "Thừa cân, béo phì hoặc ít vận động",
+        "Có người thân mắc đái tháo đường",
+        "Từng bị tăng huyết áp hoặc rối loạn mỡ máu",
+        "Từng mắc đái tháo đường thai kỳ",
+        "Có kết quả đường huyết bất thường trước đó",
+        "Đã lâu chưa kiểm tra đường huyết"
+      ],
+      "voice": "Vậy ai nên chủ động tầm soát? Người thừa cân, béo phì hoặc ít vận động. Người có người thân mắc đái tháo đường. Người từng được chẩn đoán tăng huyết áp hoặc rối loạn mỡ máu. Người từng mắc đái tháo đường thai kỳ. Người có kết quả đường huyết bất thường trước đó. Hoặc đơn giản là đã lâu chưa kiểm tra đường huyết."
+    },
+    {
+      "id": "d07",
+      "style": "kinetic",
+      "kicker": "Lời khuyên",
+      "headline": "Đừng đợi đến khi xuất hiện triệu chứng mới đi khám",
+      "sub": "Tầm soát đái tháo đường - một xét nghiệm, một bước chủ động bảo vệ sức khỏe.",
+      "wordMs": 270,
+      "voice": "Đừng đợi đến khi xuất hiện triệu chứng mới đi khám. Tầm soát đái tháo đường, một xét nghiệm, một bước chủ động bảo vệ sức khỏe.",
+      "art": "check"
+    },
+    {
+      "id": "d08",
+      "style": "plain",
+      "kicker": "Lợi ích",
+      "headline": "Kiểm tra định kỳ giúp phát hiện sớm",
+      "sub": "Phát hiện sớm đái tháo đường hoặc tiền đái tháo đường, từ đó điều chỉnh lối sống và điều trị phù hợp.",
+      "voice": "Kiểm tra đường huyết định kỳ giúp phát hiện sớm đái tháo đường hoặc tiền đái tháo đường, từ đó có biện pháp điều chỉnh lối sống và điều trị phù hợp.",
+      "art": "chart"
+    },
+    {
+      "id": "d09",
+      "style": "lines",
+      "kicker": "Bốn bước",
+      "headline": "Chủ động là cách tốt nhất",
+      "lines": [
+        "Phát hiện sớm",
+        "Điều trị sớm",
+        "Kiểm soát tốt",
+        "Giảm nguy cơ biến chứng"
+      ],
+      "voice": "Phát hiện sớm, điều trị sớm, kiểm soát tốt, giảm nguy cơ biến chứng."
+    },
+    {
+      "id": "d10",
+      "style": "kinetic",
+      "kicker": "Đừng chủ quan",
+      "headline": "Đừng chủ quan chỉ vì tôi vẫn thấy khỏe",
+      "sub": "Sức khỏe không phải chờ đến khi có dấu hiệu mới quan tâm.",
+      "wordMs": 290,
+      "voice": "Đừng chủ quan chỉ vì tôi vẫn thấy khỏe. Nếu bạn thuộc nhóm nguy cơ, đừng bỏ qua một lần kiểm tra sức khỏe chỉ vì không có triệu chứng. Sức khỏe không phải chờ đến khi có dấu hiệu mới quan tâm.",
+      "art": "pulse"
+    },
+    {
+      "id": "d11",
+      "style": "plain",
+      "kicker": "Đăng ký tầm soát",
+      "headline": "Liên hệ Khoa Khám bệnh",
+      "sub": "Chủ động tầm soát hôm nay là bảo vệ sức khỏe cho chính bạn và gia đình ngày mai.",
+      "contact": true,
+      "hotline": "0988 270 115",
+      "address": "Khoa Khám bệnh - Bệnh viện Việt Nam - Thụy Điển Uông Bí",
+      "voice": "Chủ động tầm soát hôm nay là bảo vệ sức khỏe cho chính bạn và gia đình ngày mai. Để đăng ký tầm soát đái tháo đường, hãy liên hệ với chúng tôi qua số không chín tám tám, hai bảy không, một một năm, Khoa Khám bệnh, Bệnh viện Việt Nam Thụy Điển Uông Bí."
+    },
+    {
+      "id": "d12",
+      "style": "logo",
+      "kicker": "Vsh.org.vn",
+      "headline": "Hãy chủ động kiểm tra đường huyết",
+      "sub": "Bệnh viện Việt Nam - Thụy Điển Uông Bí",
+      "voice": "Bệnh viện Việt Nam Thụy Điển Uông Bí. Tất cả vì sự hài lòng của người bệnh."
+    }
+  ]
+}

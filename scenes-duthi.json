@@ -1,0 +1,100 @@
+{
+  "brand": {
+    "name": "Bệnh viện Việt Nam - Thụy Điển Uông Bí",
+    "web": "vsh.org.vn"
+  },
+  "scenes": [
+    {
+      "id": "c1",
+      "style": "cinematic",
+      "kicker": "Mở đầu",
+      "headline": "Mỗi ngày hàng trăm bệnh nhân ra viện",
+      "sub": "150 – 200 bệnh nhân ra viện mỗi ngày. Nhưng hồ sơ của họ đã được kiểm tra kỹ chưa?",
+      "stat": "200",
+      "statLabel": "Bệnh nhân ra viện mỗi ngày",
+      "photo": "aerial-campus.jpg",
+      "zoom": "in",
+      "voice": "Mỗi ngày, hàng trăm bệnh nhân ra viện tại Bệnh viện Việt Nam Thụy Điển Uông Bí. Nhưng có một câu hỏi ít ai để ý: liệu tất cả hồ sơ bệnh án của họ đã được kiểm tra kỹ càng?"
+    },
+    {
+      "id": "c2",
+      "style": "plain",
+      "kicker": "Vấn đề thực tiễn",
+      "headline": "Chỉ rà soát thủ công được 10 - 20% hồ sơ",
+      "sub": "Mỗi cán bộ mất 15 đến 20 phút để đọc một hồ sơ. Sự cố y khoa có thể bị bỏ sót bất cứ lúc nào.",
+      "stat": "20%",
+      "statLabel": "Tỉ lệ hồ sơ được rà soát trước đây",
+      "voice": "Thực tế, đội ngũ kiểm soát chất lượng chỉ đủ nhân lực rà soát thủ công được mười đến hai mươi phần trăm số hồ sơ. Mỗi cán bộ mất mười lăm đến hai mươi phút để đọc một hồ sơ, trong khi sự cố y khoa có thể bị bỏ sót bất cứ lúc nào."
+    },
+    {
+      "id": "c3",
+      "style": "wipe",
+      "kicker": "Ý tưởng cải tiến",
+      "headline": "AI đọc hồ sơ - dữ liệu không rời khỏi bệnh viện",
+      "sub": "Tổ Công nghệ thông tin đặt câu hỏi: nếu có một trợ lý AI đọc giúp toàn bộ hồ sơ, mà vẫn giữ tuyệt đối an toàn dữ liệu người bệnh?",
+      "meta": "Y TUONG // AI NOI BO - DU LIEU O LAI BENH VIEN",
+      "photo": "phongmaychu.jpg",
+      "zoom": "in",
+      "voice": "Từ thực tế đó, Tổ Công nghệ thông tin đặt ra câu hỏi: nếu có một trợ lý AI đọc giúp toàn bộ hồ sơ, mà vẫn giữ tuyệt đối an toàn dữ liệu người bệnh, thì sao?"
+    },
+    {
+      "id": "c4",
+      "style": "shot",
+      "kicker": "Giải pháp & công nghệ",
+      "headline": "AI nội bộ chạy ngay trên máy chủ bệnh viện",
+      "sub": "Mô hình ngôn ngữ lớn Gemma qua LM Studio. Dữ liệu được ẩn danh hóa trước khi phân tích, không kết nối internet công cộng. Hệ thống tự kiểm tra ba nhóm sự cố: mâu thuẫn chẩn đoán, sai sót kê đơn, bỏ sót xét nghiệm.",
+      "photo": "screenshot-danhsach.jpg",
+      "voice": "Sáng kiến ra đời: hệ thống trí tuệ nhân tạo sử dụng mô hình ngôn ngữ lớn Gemma, chạy hoàn toàn trên máy chủ đặt ngay tại bệnh viện qua phần mềm LM Studio. Dữ liệu được ẩn danh hóa trước khi phân tích, không kết nối ra internet công cộng. Hệ thống tự động kiểm tra ba nhóm sự cố: mâu thuẫn chẩn đoán, sai sót kê đơn thuốc, và bỏ sót xét nghiệm theo phác đồ."
+    },
+    {
+      "id": "c5",
+      "style": "card",
+      "kicker": "Quá trình triển khai",
+      "headline": "Tự nghiên cứu bằng nguồn lực nội bộ",
+      "sub": "Xây dựng và đưa vào vận hành trong năm 2026, tích hợp thẳng vào phần mềm quản lý bệnh viện đang dùng hằng ngày.",
+      "stat": "2026",
+      "statLabel": "Năm xây dựng và triển khai",
+      "photo": "doingu-cntt.jpg",
+      "zoom": "in",
+      "voice": "Trong năm hai nghìn không trăm hai mươi sáu, đội ngũ kỹ sư công nghệ thông tin của bệnh viện đã tự nghiên cứu, xây dựng và thử nghiệm hệ thống bằng chính nguồn lực nội bộ, tích hợp trực tiếp vào phần mềm quản lý bệnh viện đang sử dụng hằng ngày."
+    },
+    {
+      "id": "c6",
+      "style": "lines",
+      "kicker": "Kết quả & hiệu quả",
+      "headline": "Sau 5 tháng vận hành chính thức",
+      "sub": "",
+      "lines": [
+        "100% hồ sơ ra viện được rà soát",
+        "5.894 hồ sơ · 33 khoa, phòng",
+        "103 hồ sơ có dấu hiệu sự cố được phát hiện sớm",
+        "Tiết kiệm 60 – 80% thời gian cán bộ",
+        "0 đồng chi phí AI mỗi lượt"
+      ],
+      "photo": "screenshot-ketqua.jpg",
+      "voice": "Sau năm tháng vận hành chính thức, hệ thống đã tự động rà soát một trăm phần trăm trong số gần sáu nghìn hồ sơ bệnh án tại ba mươi ba khoa, phòng, thay vì chỉ mười đến hai mươi phần trăm như trước đây. Thời gian xử lý mỗi hồ sơ giảm từ mười lăm đến hai mươi phút xuống chỉ còn vài chục giây. Hệ thống đã phát hiện một trăm linh ba hồ sơ có dấu hiệu sự cố, giúp cán bộ y tế xác minh và xử lý kịp thời. Mỗi cán bộ kiểm soát chất lượng tiết kiệm tới sáu mươi đến tám mươi phần trăm thời gian đọc hồ sơ thủ công, trong khi chi phí vận hành AI mỗi lượt bằng không đồng."
+    },
+    {
+      "id": "c7",
+      "style": "glass",
+      "kicker": "Ý nghĩa & nhân rộng",
+      "headline": "Bảo vệ người bệnh tốt hơn",
+      "sub": "Xây dựng văn hóa an toàn trong đội ngũ y bác sĩ, tiên phong đưa AI vào y tế công một cách an toàn, đúng quy định pháp luật về bảo vệ dữ liệu cá nhân.",
+      "photo": "khambenh-ongnghe.jpg",
+      "zoom": "out",
+      "voice": "Đây không chỉ là một công cụ kỹ thuật. Đó là cách bệnh viện bảo vệ người bệnh tốt hơn, xây dựng văn hóa an toàn trong đội ngũ y bác sĩ, và tiên phong đưa trí tuệ nhân tạo vào y tế công một cách an toàn, đúng quy định pháp luật về bảo vệ dữ liệu cá nhân."
+    },
+    {
+      "id": "c8",
+      "style": "logo",
+      "kicker": "Kết thúc",
+      "headline": "AI nội bộ - Vì sự an toàn của mỗi người bệnh",
+      "sub": "Đổi mới sáng tạo bắt đầu từ những điều rất thật.",
+      "lines": [
+        "Bệnh viện Việt Nam - Thụy Điển Uông Bí",
+        "Cuộc thi Nghìn việc tốt về Đổi mới sáng tạo và Chuyển đổi số 2026"
+      ],
+      "voice": "Từ một bài toán tưởng chừng chỉ của riêng ngành y tế, Bệnh viện Việt Nam Thụy Điển Uông Bí đã chứng minh: đổi mới sáng tạo và chuyển đổi số có thể bắt đầu từ những điều rất thật. An toàn cho từng hồ sơ bệnh án, an toàn cho từng người bệnh."
+    }
+  ]
+}

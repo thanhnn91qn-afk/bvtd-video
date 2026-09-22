@@ -1,0 +1,13 @@
+# Tải lại bằng `npm install`
+node_modules/
+
+# Sản phẩm dựng ra - tái tạo được từ kịch bản, đừng đẩy lên
+build/
+out/
+*.log
+
+# Ảnh thô tải về khi đi thu thập tư liệu, chưa chọn lọc
+assets/harvest/
+assets/kt/
+assets/kt4/
+assets/press/

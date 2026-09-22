@@ -1,0 +1,165 @@
+{
+  "brand": {
+    "name": "Bệnh viện Việt Nam - Thụy Điển Uông Bí",
+    "hotline": "0988 270 115",
+    "address": "Đường Tuệ Tĩnh, Phường Uông Bí, Quảng Ninh",
+    "web": "vsh.org.vn"
+  },
+  "scenes": [
+    {
+      "id": "t01",
+      "style": "logo",
+      "kicker": "Kỹ thuật trọng điểm",
+      "headline": "Làm chủ kỹ thuật cao ngay tại Quảng Ninh",
+      "sub": "Người bệnh được điều trị chuyên sâu mà không phải chuyển tuyến xa.",
+      "photo": "facade.jpg",
+      "zoom": "in",
+      "voice": "Bệnh viện Việt Nam Thụy Điển Uông Bí đã làm chủ nhiều kỹ thuật cao, giúp người bệnh được điều trị chuyên sâu ngay tại Quảng Ninh mà không phải chuyển tuyến xa."
+    },
+    {
+      "id": "t02",
+      "style": "cinematic",
+      "kicker": "Chuyên môn 2025",
+      "headline": "15.741 kỹ thuật được triển khai",
+      "sub": "Trong đó có 37 kỹ thuật mới lần đầu áp dụng tại bệnh viện.",
+      "stat": "15.741",
+      "statLabel": "Kỹ thuật triển khai trong năm",
+      "photo": "aerial-wide.jpg",
+      "zoom": "in",
+      "voice": "Riêng năm hai nghìn không trăm hai mươi lăm, bệnh viện triển khai mười lăm nghìn bảy trăm bốn mươi mốt kỹ thuật, trong đó có ba mươi bảy kỹ thuật mới lần đầu được áp dụng."
+    },
+    {
+      "id": "t03",
+      "style": "split",
+      "kicker": "Năng lực",
+      "headline": "Tương đương 90% danh mục tuyến trung ương",
+      "sub": "Bệnh viện đã làm chủ trên 14.700 kỹ thuật theo phân tuyến.",
+      "stat": "90%",
+      "statLabel": "Danh mục kỹ thuật tuyến trung ương",
+      "photo": "staff-group.jpg",
+      "zoom": "out",
+      "voice": "Đến nay, bệnh viện đã làm chủ trên mười bốn nghìn bảy trăm kỹ thuật theo phân tuyến, tương đương khoảng chín mươi phần trăm danh mục kỹ thuật của tuyến trung ương."
+    },
+    {
+      "id": "t04",
+      "style": "glass",
+      "kicker": "Ghép tạng",
+      "headline": "Ghép thận ngay tại bệnh viện",
+      "sub": "Bộ Y tế công nhận đủ điều kiện lấy và ghép thận từ tháng 3 năm 2025.",
+      "stat": "7",
+      "statLabel": "Ca ghép thận đã thực hiện",
+      "photo": "ghepthan-mo3.jpg",
+      "zoom": "in",
+      "voice": "Ngày ba mươi mốt tháng Ba năm hai nghìn không trăm hai mươi lăm, Bộ Y tế công nhận bệnh viện đủ điều kiện thực hiện kỹ thuật lấy và ghép thận. Đến nay đã có bảy ca ghép thận được thực hiện thành công."
+    },
+    {
+      "id": "t05",
+      "style": "caption",
+      "kicker": "Ghép tạng",
+      "headline": "Tuyến tỉnh đầu tiên lấy đa mô tạng",
+      "sub": "Một người hiến chết não đã trao cơ hội sống cho 7 người bệnh.",
+      "photo": "ghepthan-mo.jpg",
+      "zoom": "out",
+      "wordMs": 240,
+      "voice": "Bệnh viện là đơn vị tuyến tỉnh đầu tiên trong cả nước thực hiện thành công ca lấy đa mô tạng từ người hiến chết não, trao cơ hội sống cho bảy người bệnh."
+    },
+    {
+      "id": "t06",
+      "style": "wipe",
+      "kicker": "Nhãn khoa",
+      "headline": "Ghép giác mạc tại bệnh viện",
+      "sub": "Thực hiện với sự hỗ trợ chuyên môn của Bệnh viện Mắt Trung ương.",
+      "stat": "2",
+      "statLabel": "Ca ghép giác mạc thành công",
+      "meta": "GHEP GIAC MAC // HO TRO: BV MAT TRUNG UONG",
+      "photo": "p4-ghepgiacmac.jpg",
+      "zoom": "in",
+      "voice": "Bệnh viện cũng đã thực hiện thành công hai ca ghép giác mạc ngay tại đơn vị, với sự hỗ trợ chuyên môn của Bệnh viện Mắt Trung ương."
+    },
+    {
+      "id": "t07",
+      "style": "card",
+      "kicker": "Thần kinh - Sọ não",
+      "headline": "Tạo hình sọ não bằng Titanium 3D",
+      "sub": "Mảnh ghép in 3D theo đúng khuyết hổng của từng người bệnh.",
+      "photo": "p7-so3d.jpg",
+      "zoom": "in",
+      "voice": "Trong lĩnh vực phẫu thuật thần kinh, bệnh viện triển khai kỹ thuật tạo hình sọ não bằng ti tan in ba D, với mảnh ghép được chế tạo theo đúng khuyết hổng của từng người bệnh."
+    },
+    {
+      "id": "t08",
+      "style": "cinematic",
+      "kicker": "Can thiệp mạch",
+      "headline": "Lấy huyết khối cứu người đột quỵ",
+      "sub": "Can thiệp trên hệ thống chụp mạch số hóa xóa nền, kể cả đặt stent động mạch cảnh.",
+      "photo": "canthiep-dsa2.jpg",
+      "zoom": "out",
+      "voice": "Kỹ thuật can thiệp lấy huyết khối trong điều trị nhồi máu não cấp được thực hiện trên hệ thống chụp mạch số hóa xóa nền, cùng với đặt stent động mạch cảnh và động mạch đốt sống."
+    },
+    {
+      "id": "t09",
+      "style": "glass",
+      "kicker": "Hồi sức tích cực",
+      "headline": "Tim phổi nhân tạo ECMO",
+      "sub": "Cùng tuần hoàn ngoài cơ thể trong phẫu thuật tim và lọc máu hấp phụ.",
+      "photo": "hoisuc-monitor.jpg",
+      "zoom": "in",
+      "voice": "Trong hồi sức tích cực, bệnh viện làm chủ kỹ thuật tim phổi nhân tạo, ứng dụng tuần hoàn ngoài cơ thể trong phẫu thuật tim và lọc máu hấp phụ cho người bệnh nặng."
+    },
+    {
+      "id": "t10",
+      "style": "split",
+      "kicker": "Tiêu hóa - Gan mật",
+      "headline": "Nội soi mật tụy ngược dòng",
+      "sub": "Cùng đốt u gan bằng sóng cao tần và cắt tách dưới niêm mạc đường tiêu hóa.",
+      "photo": "ercp.jpg",
+      "zoom": "out",
+      "voice": "Về tiêu hóa và gan mật, bệnh viện thực hiện nội soi mật tụy ngược dòng lấy sỏi đường mật, đốt u gan bằng sóng cao tần và cắt tách dưới niêm mạc đường tiêu hóa."
+    },
+    {
+      "id": "t11",
+      "style": "caption",
+      "kicker": "Oxy cao áp",
+      "headline": "Buồng oxy cao áp 2 ngăn 10 chỗ",
+      "sub": "Công nghệ vận hành tự động hiện đại, hỗ trợ điều trị nhiều bệnh lý.",
+      "photo": "p5-oxycao.jpg",
+      "zoom": "in",
+      "wordMs": 250,
+      "voice": "Bệnh viện đưa vào sử dụng hệ thống buồng oxy cao áp hai ngăn, mười chỗ, với công nghệ vận hành tự động hiện đại, hỗ trợ điều trị nhiều bệnh lý."
+    },
+    {
+      "id": "t12",
+      "style": "wipe",
+      "kicker": "Ung bướu",
+      "headline": "Đốt u bằng sóng cao tần",
+      "sub": "Lần đầu triển khai điều trị u tuyến giáp bằng sóng cao tần, ít xâm lấn.",
+      "meta": "UNG BUOU // SONG CAO TAN - IT XAM LAN",
+      "photo": "songcaotan.jpg",
+      "zoom": "in",
+      "voice": "Bệnh viện lần đầu triển khai điều trị u tuyến giáp bằng sóng cao tần, một phương pháp ít xâm lấn. Cùng với đó là kỹ thuật sinh học phân tử giúp phát hiện sớm ung thư."
+    },
+    {
+      "id": "t13",
+      "style": "card",
+      "kicker": "Quyền lợi người bệnh",
+      "headline": "Nhiều kỹ thuật cao được bảo hiểm chi trả",
+      "sub": "Ví dụ tán sỏi thận nội soi ngược dòng được BHYT chi trả theo quy định.",
+      "photo": "staff-corridor.jpg",
+      "zoom": "out",
+      "voice": "Nhiều kỹ thuật cao tại bệnh viện được bảo hiểm y tế chi trả theo quy định, trong đó có tán sỏi thận bằng phương pháp nội soi ngược dòng."
+    },
+    {
+      "id": "t14",
+      "style": "glass",
+      "kicker": "Kỹ thuật trọng điểm",
+      "headline": "Điều trị chuyên sâu ngay gần nhà",
+      "sub": "Tất cả vì sự hài lòng của người bệnh.",
+      "contact": true,
+      "hotline": "0988 270 115",
+      "address": "Đường Tuệ Tĩnh, Phường Uông Bí, Quảng Ninh",
+      "photo": "facade.jpg",
+      "zoom": "in",
+      "voice": "Với những kỹ thuật trọng điểm đó, người dân vùng Đông Bắc được điều trị chuyên sâu ngay gần nhà. Để được tư vấn và đăng ký khám, xin liên hệ số điện thoại không chín tám tám, hai bảy không, một một năm."
+    }
+  ]
+}
