@@ -43,15 +43,16 @@ node build-styles.mjs --scenes=scenes-abc.json --name=abc     # 1080x1920
 
 ### Video xuất ra ở đâu
 
-Một chỗ duy nhất, xác định theo thứ tự:
+Mặc định là **`out/` ngay trong dự án** — cùng chỗ với mã nguồn, nên clone repo về máy
+nào cũng ra đúng một nơi, không phụ thuộc đường dẫn riêng của máy nào.
 
-1. `--out=<thư mục>` gõ trên dòng lệnh
-2. đường dẫn ghi trong `out-dir.txt` ở gốc dự án, nếu có file đó
-3. mặc định `<dự án>/out`
+Muốn đổi thì có hai cách, theo thứ tự ưu tiên:
 
-`out-dir.txt` là riêng của từng máy và **không đẩy lên git**, nên máy khác tải repo về
-vẫn chạy được, video rơi vào `out/`. Trên máy hiện tại file này đang trỏ tới
-`E:\DU AN\Video`.
+1. `--out=<thư mục>` gõ trên dòng lệnh, dùng cho một lần chạy
+2. ghi đường dẫn vào `out-dir.txt` ở gốc dự án, dùng lâu dài cho riêng máy đó
+
+`out-dir.txt` không đẩy lên git. **Chỉ tạo file này khi thật sự cần** — đặt nó tức là
+máy đó xuất video ra chỗ khác mọi máy còn lại, dễ thành mỗi nơi một kiểu.
 
 Tên file lấy từ `brand.outName` trong kịch bản, không phải từ `--name`:
 
@@ -59,12 +60,12 @@ Tên file lấy từ `brand.outName` trong kịch bản, không phải từ `--n
 "brand": { "outName": "clip-vac-xin-cum-16x9" }
 ```
 
-→ ra `clip-vac-xin-cum-16x9.mp4` và `clip-vac-xin-cum-16x9-silent.mp4`.
+→ ra `out/clip-vac-xin-cum-16x9.mp4` và `out/clip-vac-xin-cum-16x9-silent.mp4`.
 Không khai `outName` thì tên mặc định là `video-<name>.mp4`.
 
-`--name` chỉ dùng để đặt tên thư mục cache giọng đọc và cache cảnh, không liên quan
-tên file xuất ra. **Hai khổ hình phải dùng `--name` khác nhau** — cache cảnh lưu theo
-`--name`, dùng lại tên cũ thì bản 16:9 sẽ ăn phải các cảnh 1080×1920 đã dựng trước đó.
+`--name` chỉ đặt tên thư mục cache giọng đọc và cache cảnh, không liên quan tên file
+xuất ra. **Hai khổ hình phải dùng `--name` khác nhau** — cache cảnh lưu theo `--name`,
+dùng lại tên cũ thì bản 16:9 sẽ ăn phải các cảnh 1080×1920 đã dựng trước đó.
 
 ### Quy trình chuẩn — đừng bỏ bước
 
