@@ -6,7 +6,7 @@ import { promisify } from "node:util";
 import { dirname, join } from "node:path";
 import { pathToFileURL, fileURLToPath } from "node:url";
 import { tmpdir } from "node:os";
-import { ART_ENGINE, ART_CSS, artBox, pickArt } from "./art.mjs";
+import { ART_ENGINE, ART_CSS, IDLE_ENGINE, IDLE_WORD, IDLE_LINE, artBox, pickArt } from "./art.mjs";
 
 const exec = promisify(execFile);
 const ROOT = dirname(fileURLToPath(import.meta.url));
@@ -98,7 +98,7 @@ window.__frame = function(tMs){
       el.style.opacity = String(p);
       el.style.transform = "translateY(" + ((1 - p) * 18) + "px) scale(" + (0.88 + 0.12 * p) + ")";
       el.classList.toggle("hot", tMs >= s && tMs < s + per + 240 && p > 0.35);
-    }
+${IDLE_WORD}    }
   }
   // stacked result lines, revealed one after another to follow the voice-over
   const lines = document.querySelectorAll("#lines .ln");
@@ -109,7 +109,7 @@ window.__frame = function(tMs){
       const p = easeOutCubic(prog(tMs, s, s + 440));
       lines[i].style.opacity = String(p);
       lines[i].style.transform = "translateX(" + ((1 - p) * -30) + "px)";
-    }
+${IDLE_LINE}    }
   }
   const statEl = document.getElementById("stat");
   if (statEl) {
@@ -132,6 +132,7 @@ window.__frame = function(tMs){
   reveal(document.getElementById("vn"), 400, 800, tMs, 20);
   reveal(document.getElementById("en"), 540, 900, tMs, 16);
 ${ART_ENGINE}
+${IDLE_ENGINE}
 };
 `;
 
@@ -411,7 +412,7 @@ function styleKinetic(s) {
   const art = pickArt(s);
   return shell(
     `
- .bg{position:absolute;inset:0;background:linear-gradient(140deg,#0b6fb4 0%,#12a37a 100%)}
+ .bg{position:absolute;inset:0;background:linear-gradient(140deg,#0b6fb4 0%,#12a37a 55%,#0b6fb4 100%);background-size:220% 220%}
  .artbox{position:absolute;right:96px;top:50%;transform:translateY(-50%);
    width:560px;height:560px;color:#fff;opacity:.34}
  .deco{position:absolute;right:-200px;top:-240px;width:880px;height:880px;border-radius:50%;
@@ -431,7 +432,7 @@ function styleKinetic(s) {
    font-size:32px;line-height:1.45;color:#eaf6fb;margin:0;opacity:0}
  .logobar img{background:rgba(255,255,255,.94)}
 `,
-    `<div class="bg"></div><div class="deco"></div><div class="deco2"></div>
+    `<div class="bg" data-pan></div><div class="deco"></div><div class="deco2"></div>
      <div id="kicker">${esc(s.kicker)}</div>
      <div id="words">${words}</div>
      <p id="sub">${esc(s.sub)}</p>

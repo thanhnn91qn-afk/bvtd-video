@@ -6,7 +6,7 @@ import { promisify } from "node:util";
 import { dirname, join } from "node:path";
 import { pathToFileURL, fileURLToPath } from "node:url";
 import { tmpdir } from "node:os";
-import { ART_ENGINE, ART_CSS, artBox, pickArt } from "./art.mjs";
+import { ART_ENGINE, ART_CSS, IDLE_ENGINE, IDLE_WORD, IDLE_LINE, artBox, pickArt } from "./art.mjs";
 
 const exec = promisify(execFile);
 const ROOT = dirname(fileURLToPath(import.meta.url));
@@ -107,7 +107,7 @@ window.__frame = function(tMs){
       el.style.transform = "translateY(" + ((1 - p) * 22) + "px) scale(" + (0.86 + 0.14 * p) + ")";
       const active = tMs >= s && tMs < s + per + 240;
       el.classList.toggle("hot", active && p > 0.35);
-    }
+${IDLE_WORD}    }
   }
 
   // stacked lines, revealed one after another to follow the voice-over
@@ -119,7 +119,7 @@ window.__frame = function(tMs){
       const p = easeOutCubic(prog(tMs, s, s + 440));
       lines[i].style.opacity = String(p);
       lines[i].style.transform = "translateX(" + ((1 - p) * -34) + "px)";
-    }
+${IDLE_LINE}    }
   }
 
   // stat block + count-up
@@ -136,6 +136,7 @@ window.__frame = function(tMs){
     }
   }
 ${ART_ENGINE}
+${IDLE_ENGINE}
 };
 `;
 
@@ -488,7 +489,7 @@ function styleKinetic(s) {
   const art = pickArt(s);
   return shell(
     `
- .bg{position:absolute;inset:0;background:linear-gradient(160deg,#0b6fb4 0%,#12a37a 100%)}
+ .bg{position:absolute;inset:0;background:linear-gradient(160deg,#0b6fb4 0%,#12a37a 55%,#0b6fb4 100%);background-size:220% 220%}
  .artbox{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
    width:820px;height:820px;color:#fff;opacity:.17}
  .deco{position:absolute;right:-220px;top:-180px;width:840px;height:840px;border-radius:50%;
@@ -508,7 +509,7 @@ function styleKinetic(s) {
    color:#eaf6fb;margin:0;font-weight:500;opacity:0}
  .brandbar img{background:rgba(255,255,255,.94);border-radius:999px;padding:8px 20px}
 `,
-    `<div class="bg"></div><div class="deco"></div><div class="deco2"></div>
+    `<div class="bg" data-pan></div><div class="deco"></div><div class="deco2"></div>
      ${artBox(art)}
      <div id="kicker">${esc(s.kicker)}</div>
      <div id="words">${words}</div>

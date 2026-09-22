@@ -106,8 +106,10 @@ Kết quả: `out/video-<name>.mp4` (có tiếng) và `out/video-<name>-silent.m
 
 ### 9:16 (`build-styles.mjs`)
 
-`cinematic`, `glass`, `caption`, `split`, `wipe`, `card` (cần ảnh) ·
+`cinematic`, `glass`, `caption`, `split`, `wipe`, `card`, `shot` (cần ảnh) ·
 `kinetic`, `lines`, `plain`, `logo` (không cần ảnh).
+
+`shot` dùng cho poster hoặc ảnh chụp màn hình: hiện trọn tấm ảnh, không cắt.
 
 ---
 
@@ -124,21 +126,76 @@ Khai báo trong cảnh:
 "art": "none"      // không vẽ gì (hoặc bỏ hẳn trường này)
 ```
 
-### Kho hình có sẵn (`art.mjs`)
+### Kho hình có sẵn (`art.mjs`) — 38 loại
 
-| Tên | Hình | Hợp với nội dung |
+**Cơ thể, bệnh lý**
+
+| Tên | Hình | Hợp với |
 |---|---|---|
 | `pulse` | Trái tim + nhịp điện tim | Tim mạch, huyết áp, sức khỏe chung |
-| `shield` | Khiên + dấu tích | An toàn, bảo mật, miễn dịch, đúng quy định |
-| `nerve` | Tế bào thần kinh + tia đau | Đau thần kinh, zona, kinh lạc |
-| `needle` | Kim châm + vòng lan toả | Châm cứu, điện châm, huyệt đạo |
-| `drop` | Giọt máu + que thử + cột số | Xét nghiệm, đường huyết, lấy máu |
-| `clock` | Đồng hồ + kim quay | Thời gian, kéo dài, chờ đợi, tiết kiệm giờ |
-| `check` | Ba ô tích lần lượt | Danh sách, nguyên tắc, tiêu chí, khuyến cáo |
-| `chart` | Cột tăng dần + mũi tên | Kết quả, hiệu quả, tỉ lệ, tăng trưởng |
+| `lungs` | Hai lá phổi + khí quản | Hô hấp, viêm phổi, hen, COPD |
+| `brain` | Não + tia xung | Thần kinh sọ não, đột quỵ, tâm thần |
+| `nerve` | Nơ-ron + tia đau | Đau thần kinh, zona, kinh lạc |
+| `kidney` | Quả thận + niệu quản | Thận, tiết niệu, lọc máu |
+| `bone` | Khúc xương + vết nứt | Cơ xương khớp, chấn thương, chỉnh hình |
+| `eye` | Con mắt + mống mắt | Mắt, thị lực, giác mạc |
+| `tooth` | Chiếc răng | Răng hàm mặt |
+| `dna` | Chuỗi xoắn kép | Di truyền, gen, miễn dịch |
+| `virus` | Hạt virus có gai | Cúm, lây nhiễm, dịch bệnh |
+
+**Khám, chữa, kỹ thuật**
+
+| Tên | Hình | Hợp với |
+|---|---|---|
+| `stetho` | Ống nghe | Thăm khám, tư vấn, bác sĩ |
+| `syringe` | Bơm kim tiêm | Tiêm chủng, vắc xin |
+| `needle` | Kim châm cắm trên da + sóng lan | Châm cứu, điện châm, huyệt đạo |
+| `herb` | Lá thuốc + bát sắc + khói | Y học cổ truyền, dược liệu |
+| `pill` | Viên nang + viên nén | Thuốc, kê đơn, dược |
+| `drop` | Giọt máu + máy đo | Xét nghiệm, đường huyết, lấy máu |
+| `micro` | Kính hiển vi | Vi sinh, giải phẫu bệnh, nuôi cấy |
+| `xray` | Phim chụp lồng ngực | Chẩn đoán hình ảnh, X-quang, CT |
+| `monitor` | Máy theo dõi + đường nhịp | Hồi sức, theo dõi sau thủ thuật |
+| `baby` | Em bé trong vòng tay | Sản, nhi, sơ sinh, thai kỳ |
+| `care` | Trái tim trên đôi bàn tay | Chăm sóc, đồng hành, giảm nhẹ |
+
+**Phòng bệnh, lối sống**
+
+| Tên | Hình | Hợp với |
+|---|---|---|
+| `shield` | Khiên + dấu tích | An toàn, bảo vệ, miễn dịch, bảo mật |
+| `wash` | Chai sát khuẩn + giọt | Vệ sinh, khử khuẩn, kiểm soát nhiễm khuẩn |
+| `water` | Cốc nước + giọt | Bổ sung nước, dinh dưỡng |
+| `nosmoke` | Điếu thuốc gạch chéo | Thuốc lá, cai thuốc |
+
+**Số liệu, quy trình, tổ chức**
+
+| Tên | Hình | Hợp với |
+|---|---|---|
+| `chart` | Cột tăng dần + mũi tên | Kết quả, hiệu quả, tăng trưởng |
+| `trend` | Đường xu hướng qua các điểm | Diễn biến theo thời gian, thống kê |
+| `donut` | Vòng tròn khuyết một phần | Tỉ lệ, phần trăm, cơ cấu |
+| `check` | Ba ô tích lần lượt | Danh sách, nguyên tắc, tiêu chí |
 | `doc` | Hồ sơ + vạch quét + kính lúp | Hồ sơ bệnh án, rà soát, tầm soát |
-| `herb` | Lá thuốc + bát sắc + khói | Thuốc, dược liệu, y học cổ truyền |
-| `network` | Nút trung tâm + các nhánh | Hệ thống, tích hợp, mạng nội bộ, kinh lạc |
+| `clock` | Đồng hồ + kim quay | Thời gian, kéo dài, tiết kiệm giờ |
+| `calendar` | Lịch + ngày được đánh dấu | Đặt lịch, khám định kỳ, tiêm nhắc |
+| `network` | Nút trung tâm + các nhánh | Hệ thống, tích hợp, mạng nội bộ |
+| `team` | Ba người | Đội ngũ, cán bộ, cộng đồng |
+| `hospital` | Toà nhà + chữ thập | Bệnh viện, khoa phòng, nhập viện |
+| `place` | Ghim bản đồ | Địa chỉ, đường đi, vị trí |
+| `phone` | Ống nghe điện thoại + sóng | Hotline, đặt lịch, liên hệ |
+| `award` | Huy chương + dải ruy băng | Giải thưởng, thành tích, chất lượng |
+
+### Xem trước toàn bộ kho hình
+
+```bash
+node tools/art-sheet.mjs          # build/art-sheet.png - bảng 38 hình
+node tools/art-sheet.mjs 1200     # xem ở mốc 1,2 giây, lúc đang vẽ dở
+```
+
+Chạy lệnh này mỗi khi sửa `art.mjs`. **Một hình vẽ ra sai ý chỉ phát hiện được
+bằng mắt** — đã có lần motif "dây thần kinh" ra giống cái cây, "rửa tay" ra giống
+cục bột, "thận" ra giống khinh khí cầu.
 
 ### Quy tắc dùng
 
@@ -170,6 +227,31 @@ trước từ khoá chung, vì dòng nào khớp trước sẽ thắng).
 
 Chỉnh nhịp vẽ trong từng cảnh: `artStartMs` (mặc định 300), `artStepMs` (210),
 `artDrawMs` (620).
+
+---
+
+## 5b. Không để khung hình đứng yên
+
+Mọi hiệu ứng hiện chữ đều xong trong khoảng **2 giây**, nhưng một câu lời đọc thường
+dài **15–20 giây**. Nếu không xử lý, phần còn lại của cảnh là một tấm ảnh tĩnh.
+
+Cảnh có ảnh đã được Ken Burns phóng chậm suốt thời lượng. Cảnh chỉ có chữ thì bốn lớp
+sau chạy liên tục, đều tính từ mốc thời gian truyền vào:
+
+| Lớp | Chuyển động |
+|---|---|
+| Vệt màu nền (`.deco`) | Trôi chậm ngược chiều nhau |
+| Nền chuyển sắc (`data-pan`) | Dịch chuyển điểm gốc rất chậm |
+| Hình vẽ | Thở nhẹ, nhấp nhô; thêm các vòng lan, kim quay, nét đứt chạy |
+| Chữ chạy / danh sách | Sau khi hiện đủ, một đợt sóng rất nhỏ chạy dọc theo các từ, các dòng |
+
+Biên độ cố ý để nhỏ (2–3 px, 1–2% tỉ lệ). Mục đích là khung hình còn thở, không phải
+để người xem nhận ra có gì đang động.
+
+**Cạm bẫy khi thêm chuyển động nền:** không bao giờ ghi `transform` lên phần tử mà hàm
+hiện chữ cũng ghi — hai bên sẽ ghi đè nhau. Đây đúng là lỗi từng làm khung ảnh tụt
+xuống nửa dưới màn hình. Nhắm vào phần tử bao ngoài hoặc phần tử trang trí mà không
+hiệu ứng nào đụng tới; nếu buộc phải dùng chung thì gộp vào cùng một vòng lặp.
 
 ---
 
@@ -242,6 +324,8 @@ Danh sách tự kiểm:
 | Khung ảnh tụt xuống nửa dưới, bị cắt | Hàm hiệu ứng ghi đè `transform`, xoá mất `translateY(-50%)` dùng căn giữa. Căn giữa bằng lớp bọc flex, chừa `transform` cho hiệu ứng. |
 | Ô số liệu hiện số `0` | `parseStat` từ chối năm (`2026`), nên không có đếm tăng — phải in thẳng giá trị gốc. |
 | Ảnh rung giật khi chuyển cảnh | `zoompan` của ffmpeg làm tròn về số nguyên. Đã thay bằng `transform: scale()` đặt theo từng khung hình. |
+| Kim đồng hồ quay tại chỗ, lệch khỏi trục | `transform-origin: center` tính theo hộp bao của riêng nét đó. Phải chỉ trục thật bằng `data-origin="x y"` kèm `transform-box: view-box`. |
+| Kiểu `shot` ra khung trắng, không thấy ảnh | Engine 9:16 thiếu dòng hiện `#frame` mà bản 16:9 đã có. Khi port kiểu cảnh giữa hai bộ dựng, nhớ port cả dòng trong engine. |
 | Chrome treo vô thời hạn | Hồ sơ Chrome mặc định đang bị trình duyệt của người dùng khoá. Phải dùng `--user-data-dir` riêng. |
 | ffmpeg báo thành công nhưng video sai | Chuyện thường. **Luôn trích khung hình ra xem**, đừng tin dòng "Done". |
 
