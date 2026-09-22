@@ -146,9 +146,8 @@
       "contact": true,
       "hotline": "0988 270 115",
       "address": "Khu Khám bệnh (nhà Y) - bên phải cổng chính",
-      "photo": "facade.jpg",
-      "zoom": "out",
-      "voice": "Khoa Khám bệnh, Bệnh viện Việt Nam Thụy Điển Uông Bí luôn sẵn sàng đón tiếp và phục vụ. Tất cả vì sự hài lòng của người bệnh. Để đăng ký khám, xin liên hệ số điện thoại không chín tám tám, hai bảy không, một một năm."
+      "voice": "Khoa Khám bệnh, Bệnh viện Việt Nam Thụy Điển Uông Bí luôn sẵn sàng đón tiếp và phục vụ. Tất cả vì sự hài lòng của người bệnh. Để đăng ký khám, xin liên hệ số điện thoại không chín tám tám, hai bảy không, một một năm.",
+      "art": "care"
     }
   ]
 }

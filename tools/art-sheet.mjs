@@ -11,13 +11,31 @@ import { writeFile, mkdir } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { pathToFileURL, fileURLToPath } from "node:url";
 import { tmpdir } from "node:os";
-import { ART, ART_ENGINE, ART_CSS, IDLE_ENGINE } from "../art.mjs";
+import { ART, ART_ENGINE, ART_CSS, IDLE_ENGINE, healthIcon } from "../art.mjs";
+import { createRequire } from "node:module";
 
 const ROOT = dirname(dirname(fileURLToPath(import.meta.url)));
 const CHROME = "C:/Program Files/Google/Chrome/Application/chrome.exe";
 const T = Number(process.argv[2] ?? 6000);
 
-const names = Object.keys(ART);
+// `node tools/art-sheet.mjs [tMs] [icons|icons:<loc>]` - the second family is
+// large, so it is filtered by a search word rather than dumped whole.
+const mode = process.argv[3] ?? "";
+let names, draw;
+if (mode.startsWith("icons")) {
+  const req = createRequire(import.meta.url);
+  const all = Object.keys(req("@iconify-json/healthicons/icons.json").icons);
+  const q = mode.includes(":") ? mode.split(":")[1] : "";
+  names = all
+    .filter((n) => n.endsWith("-outline") && !n.includes("24px") &&
+      n.replace(/-outline$/, "").includes(q))
+    .slice(0, 72);
+  draw = (n) => healthIcon(n);
+} else {
+  names = Object.keys(ART);
+  draw = (n) => ART[n];
+}
+
 const COLS = 6;
 const CELL = 300;
 const rows = Math.ceil(names.length / COLS);
@@ -25,8 +43,8 @@ const rows = Math.ceil(names.length / COLS);
 const cells = names
   .map(
     (n) => `<div class="cell">
-      <div class="artbox">${ART[n]}</div>
-      <div class="cap">${n}</div>
+      <div class="artbox">${draw(n)}</div>
+      <div class="cap">${n.replace(/-outline$/, "")}</div>
     </div>`,
   )
   .join("");
@@ -77,6 +95,7 @@ const browser = await puppeteer.launch({
 const page = await browser.newPage();
 await page.goto(pathToFileURL(page404).href, { waitUntil: "load" });
 await page.evaluate((t) => window.__frame(t), T);
-await page.screenshot({ path: join(ROOT, "build", "art-sheet.png") });
+const outName = mode.startsWith("icons") ? "art-sheet-icons.png" : "art-sheet.png";
+await page.screenshot({ path: join(ROOT, "build", outName) });
 await browser.close();
-console.log(`${names.length} hinh -> build/art-sheet.png (t=${T}ms)`);
+console.log(`${names.length} hinh -> build/${outName} (t=${T}ms)`);

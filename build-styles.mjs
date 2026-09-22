@@ -7,6 +7,7 @@ import { dirname, join } from "node:path";
 import { pathToFileURL, fileURLToPath } from "node:url";
 import { tmpdir } from "node:os";
 import { ART_ENGINE, ART_CSS, IDLE_ENGINE, IDLE_WORD, IDLE_LINE, artBox, pickArt } from "./art.mjs";
+import { assertScenes } from "./scene-check.mjs";
 
 const exec = promisify(execFile);
 const ROOT = dirname(fileURLToPath(import.meta.url));
@@ -492,6 +493,7 @@ function styleKinetic(s) {
  .bg{position:absolute;inset:0;background:linear-gradient(160deg,#0b6fb4 0%,#12a37a 55%,#0b6fb4 100%);background-size:220% 220%}
  .artbox{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
    width:820px;height:820px;color:#fff;opacity:.17}
+ .artbox.icon{top:330px;transform:translateX(-50%);width:360px;height:360px;opacity:.62}
  .deco{position:absolute;right:-220px;top:-180px;width:840px;height:840px;border-radius:50%;
    background:radial-gradient(circle,rgba(255,255,255,.22),rgba(255,255,255,0) 68%)}
  .deco2{position:absolute;left:-260px;bottom:260px;width:760px;height:760px;border-radius:50%;
@@ -623,6 +625,9 @@ async function main() {
   dirs.voice = join(ROOT, "build", `voice-${name}`);
   dirs.clips = join(ROOT, "build", `clips-${name}`);
   const cfg = JSON.parse(await readFile(join(ROOT, scenesFile), "utf8"));
+  // Before the first TTS call: a bad style name or a missing photo is not
+  // worth finding out about five minutes into a render.
+  assertScenes(cfg, { styles: Object.keys(STYLES), root: ROOT });
   for (const d of Object.values(dirs)) await mkdir(d, { recursive: true });
 
   const scenes = [];

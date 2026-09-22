@@ -22,8 +22,51 @@
  *                      clock hand is the middle of the hand, not the spindle.
  */
 
+import { createRequire } from "node:module";
+
+const require = createRequire(import.meta.url);
+
 const svg = (body, extra = "") =>
   `<svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" ${extra}>${body}</svg>`;
+
+/**
+ * Health Icons (resolvetosavelives/healthicons, CC0) as a second family, reached
+ * as `art: "icon:<name>"`. 748 outline icons cover far more of medicine than the
+ * hand-drawn set ever will.
+ *
+ * They are filled shapes, not strokes, so the stroke-dashoffset wipe that gives
+ * the hand-drawn motifs their "drawn on screen" feel cannot apply - and with one
+ * to three shapes each there is barely a sequence to stagger. The arc behind the
+ * icon supplies that missing beat: it draws itself first, then the icon pops in
+ * on top, so an imported icon enters the same way a hand-drawn one does.
+ */
+let HEALTH = null;
+const ICON_SHAPES = /<(path|circle|rect|ellipse|polygon|polyline|line)\b/g;
+
+export function healthIcon(name) {
+  if (!HEALTH) HEALTH = require("@iconify-json/healthicons/icons.json");
+  const ic = HEALTH.icons[name];
+  if (!ic) throw new Error(`khong co icon y te: ${name}`);
+  const w = ic.width ?? HEALTH.width ?? 48;
+  const h = ic.height ?? HEALTH.height ?? 48;
+  // Groups are left alone: transforming a <g> and its children both would
+  // compound the scale. Only the leaf shapes are staged.
+  let i = 1;
+  const body = ic.body.replace(ICON_SHAPES, (_, tag) => `<${tag} data-seq="${i++}" data-art="pop"`);
+  // The canvas is widened and the icon shrunk into the middle of it, so the arc
+  // clears the glyph instead of slicing through it.
+  const box = Math.min(w, h) * 1.42;
+  const c = box / 2;
+  const r = c * 0.92;
+  const k = 0.8;
+  return `<svg viewBox="0 0 ${box} ${box}" fill="none" xmlns="http://www.w3.org/2000/svg">` +
+    `<path data-seq="0" data-art="draw" fill="none" stroke="currentColor" stroke-linecap="round" ` +
+    `stroke-width="${(box * 0.017).toFixed(3)}" ` +
+    `d="M ${c} ${(c - r).toFixed(2)} A ${r.toFixed(2)} ${r.toFixed(2)} 0 1 1 ` +
+    `${(c - r).toFixed(2)} ${c}"/>` +
+    `<g transform="translate(${c} ${c}) scale(${k}) translate(${-w / 2} ${-h / 2})">` +
+    body + `</g></svg>`;
+}
 
 /** Shared stroke setup - colour comes from the scene through currentColor. */
 const S = `stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"`;
@@ -512,7 +555,13 @@ const AUTO = [
 export function pickArt(scene) {
   const want = scene.art;
   if (!want || want === "none") return null;
+  // `auto` only ever picks from the hand-drawn set: guessing among 748 imported
+  // icons on keywords alone lands on the wrong one far too often.
   if (want !== "auto") {
+    if (want.startsWith("icon:")) {
+      healthIcon(want.slice(5));   // resolve now so a typo fails before rendering
+      return want;
+    }
     if (!ART[want]) throw new Error(`unknown art: ${want} (scene ${scene.id})`);
     return want;
   }
@@ -650,5 +699,15 @@ export const ART_CSS = `
  .artbox [data-art="grow"]{transform-origin:bottom}
 `;
 
-export const artBox = (name, cls = "") =>
-  name ? `<div class="artbox ${cls}" id="art">${ART[name]}</div>` : "";
+/**
+ * The `icon` class marks an imported Health Icon so a style can place it
+ * differently. The hand-drawn motifs are sparse line work and sit happily as a
+ * faint wash behind text; a filled icon at the same opacity just turns into a
+ * smudge the words sit on top of.
+ */
+export const artBox = (name, cls = "") => {
+  if (!name) return "";
+  const imported = name.startsWith("icon:");
+  const body = imported ? healthIcon(name.slice(5)) : ART[name];
+  return `<div class="artbox ${imported ? "icon " : ""}${cls}" id="art">${body}</div>`;
+};

@@ -73,7 +73,7 @@
       "headline": "Nên được tư vấn tiêm chủng và phòng bệnh",
       "sub": "Thay đổi về miễn dịch, tim mạch và hô hấp trong thai kỳ có thể khiến bệnh cúm nghiêm trọng hơn và ảnh hưởng đến thai kỳ.",
       "wordMs": 250,
-      "art": "pulse",
+      "art": "icon:pregnant-outline",
       "voice": "Phụ nữ mang thai cũng thuộc nhóm được đặc biệt quan tâm. Những thay đổi về miễn dịch, tim mạch và hô hấp trong thai kỳ có thể khiến bệnh cúm trở nên nghiêm trọng hơn, đồng thời nhiễm cúm ở mẹ có thể gây ảnh hưởng đến thai kỳ. Vì vậy, thai phụ nên được tư vấn về tiêm chủng và các biện pháp phòng bệnh phù hợp."
     },
     {
@@ -92,7 +92,7 @@
       "headline": "Hãy trao đổi với nhân viên y tế trước khi tiêm",
       "sub": "Để được đánh giá tình trạng sức khỏe và tư vấn lịch tiêm phù hợp.",
       "wordMs": 260,
-      "art": "check",
+      "art": "icon:nurse-outline",
       "voice": "Đặc biệt, những người thuộc nhóm nguy cơ cao hoặc đang có bệnh lý nền nên trao đổi với nhân viên y tế trước khi tiêm, để được đánh giá tình trạng sức khỏe và tư vấn lịch tiêm phù hợp."
     },
     {

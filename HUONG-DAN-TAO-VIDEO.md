@@ -186,6 +186,41 @@ Khai báo trong cảnh:
 | `phone` | Ống nghe điện thoại + sóng | Hotline, đặt lịch, liên hệ |
 | `award` | Huy chương + dải ruy băng | Giải thưởng, thành tích, chất lượng |
 
+### Nhóm hình thứ hai: 748 icon y tế nhập sẵn
+
+Ngoài 38 hình vẽ tay ở trên còn có **[Health Icons](https://github.com/resolvetosavelives/healthicons)**
+— 748 icon y tế bản nét, giấy phép CC0 (dùng tự do, không cần ghi nguồn). Gọi bằng
+tiền tố `icon:`:
+
+```jsonc
+"art": "icon:pregnant-outline"
+"art": "icon:nurse-outline"
+"art": "icon:ambulance-outline"
+```
+
+Tìm tên icon:
+
+```bash
+node tools/art-sheet.mjs 6000 icons:vaccine   # lọc theo từ khoá
+node tools/art-sheet.mjs 6000 icons:tooth
+```
+
+Có sẵn tên cho hầu hết chuyên khoa: `doctor`, `nurse`, `hospital`, `ambulance`,
+`microscope`, `xray`, `tooth`, `eye`, `kidneys`, `lungs`, `virus`, `bacteria`,
+`syringe-vaccine`, `pregnant`, `elderly`, `old-man`, `old-woman`, `ppe-face-mask`,
+`blood-bag`, `blister-pills-round-x4`…
+
+**Ba điều cần biết:**
+
+1. **Không vẽ dần được.** Icon của họ là hình tô đặc, không phải nét kẻ, nên hiệu ứng
+   chạy theo nét không áp dụng được. Bù lại, hệ thống tự vẽ một **vòng cung phía sau**
+   rồi mới cho icon hiện ra — giữ đúng nhịp "vẽ ra rồi chuyển động" như hình vẽ tay.
+2. **`auto` không bao giờ chọn nhóm này.** Đoán trong 748 icon bằng từ khoá sai quá
+   nhiều, nên nhóm nhập phải chỉ định tên thẳng.
+3. **Kiểu chữ chạy đặt icon ở vị trí khác.** Hình vẽ tay thưa nét nên làm nền mờ sau
+   chữ được; icon tô đặc để mờ sau chữ thì thành vệt bẩn, nên nó được đưa lên khoảng
+   trống phía trên và tăng độ đậm.
+
 ### Xem trước toàn bộ kho hình
 
 ```bash
@@ -288,6 +323,34 @@ Thêm:
 - Ảnh chụp màn hình hệ thống thật: **che hết tên, số bệnh án, số thẻ BHYT** trước khi
   đưa vào. Cắt bằng `ffmpeg -vf crop=W:H:X:Y` rồi mở ra xem lại đã sạch chưa.
 - Ảnh phối cảnh 3D, ảnh AI: tránh dùng cho clip dự thi hoặc clip có đối chiếu, xác minh.
+
+---
+
+## 7b. Bộ kiểm tra kịch bản
+
+Cả hai bộ dựng **tự kiểm tra file kịch bản trước khi gọi TTS**. Một lỗi chính tả tên
+kiểu cảnh hay một tấm ảnh không có trên đĩa sẽ dừng ngay trong giây đầu, thay vì làm
+hỏng cả lượt dựng năm phút.
+
+**Dừng lại (lỗi):** thiếu `id` / `style` / `voice`, trùng `id`, tên kiểu cảnh không có,
+ảnh không tồn tại, **ảnh lặp trong cùng một clip**, kiểu cảnh bắt buộc có ảnh mà bỏ
+trống, kiểu `lines` mà thiếu mảng `lines`, tên hình vẽ hoặc tên icon sai.
+
+**Chỉ nhắc (cảnh báo):** `voice` còn sót chữ số, hình vẽ bị lặp, có `stat` mà thiếu
+`statLabel`, tiêu đề quá dài dễ tràn khung.
+
+Chạy riêng cho một file bất kỳ:
+
+```bash
+node -e "import('./scene-check.mjs').then(async m=>{const {readFileSync}=await import('fs');
+const r=m.checkScenes(JSON.parse(readFileSync('scenes-abc.json','utf8')),
+{styles:['cinematic','split','glass','caption','wipe','card','shot','lines','kinetic','plain','logo'],root:'.'});
+console.log(r)})"
+```
+
+> Hai file `scenes.json` và `scenes-khoakham.json` không có trường `style` — chúng
+> thuộc hai bộ dựng đời đầu (`build.mjs`, `build-animated.mjs`) không dùng kiểu cảnh.
+> Đừng "sửa" chúng theo báo lỗi của bộ kiểm tra này.
 
 ---
 
