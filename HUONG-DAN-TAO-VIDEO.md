@@ -41,7 +41,30 @@ node build-styles.mjs --scenes=scenes-abc.json --name=abc     # 1080x1920
 | `--stills` | Chỉ xuất ảnh tĩnh mỗi cảnh vào `build/stills16/` (16:9) hoặc `build/stills/` (9:16). **Khoảng 40 giây**, không gọi TTS. |
 | `--force` | Bỏ qua cache, dựng lại tất cả. |
 
-Kết quả: `out/video-<name>.mp4` (có tiếng) và `out/video-<name>-silent.mp4` (không tiếng).
+### Video xuất ra ở đâu
+
+Một chỗ duy nhất, xác định theo thứ tự:
+
+1. `--out=<thư mục>` gõ trên dòng lệnh
+2. đường dẫn ghi trong `out-dir.txt` ở gốc dự án, nếu có file đó
+3. mặc định `<dự án>/out`
+
+`out-dir.txt` là riêng của từng máy và **không đẩy lên git**, nên máy khác tải repo về
+vẫn chạy được, video rơi vào `out/`. Trên máy hiện tại file này đang trỏ tới
+`E:\DU AN\Video`.
+
+Tên file lấy từ `brand.outName` trong kịch bản, không phải từ `--name`:
+
+```jsonc
+"brand": { "outName": "clip-vac-xin-cum-16x9" }
+```
+
+→ ra `clip-vac-xin-cum-16x9.mp4` và `clip-vac-xin-cum-16x9-silent.mp4`.
+Không khai `outName` thì tên mặc định là `video-<name>.mp4`.
+
+`--name` chỉ dùng để đặt tên thư mục cache giọng đọc và cache cảnh, không liên quan
+tên file xuất ra. **Hai khổ hình phải dùng `--name` khác nhau** — cache cảnh lưu theo
+`--name`, dùng lại tên cũ thì bản 16:9 sẽ ăn phải các cảnh 1080×1920 đã dựng trước đó.
 
 ### Quy trình chuẩn — đừng bỏ bước
 

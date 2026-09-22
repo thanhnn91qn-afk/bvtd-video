@@ -3,7 +3,7 @@
     "name": "Bệnh viện Việt Nam - Thụy Điển Uông Bí",
     "hotline": "0348 539 336",
     "web": "vsh.org.vn",
-    "outName": "clip-vac-xin-cum-9x16"
+    "outName": "clip-vac-xin-cum-16x9"
   },
   "scenes": [
     {
@@ -56,7 +56,8 @@
         "Phụ nữ mang thai",
         "Người cao tuổi và trẻ nhỏ"
       ],
-      "voice": "Nguy cơ diễn biến nặng có thể cao hơn ở những người có bệnh lý nền. Người mắc hen phế quản, bệnh phổi tắc nghẽn mạn tính. Người đái tháo đường. Người suy giảm miễn dịch. Phụ nữ mang thai. Cùng với người cao tuổi và trẻ nhỏ."
+      "voice": "Nguy cơ diễn biến nặng có thể cao hơn ở những người có bệnh lý nền. Người mắc hen phế quản, bệnh phổi tắc nghẽn mạn tính. Người đái tháo đường. Người suy giảm miễn dịch. Phụ nữ mang thai. Cùng với người cao tuổi và trẻ nhỏ.",
+      "art": "team"
     },
     {
       "id": "v06",
@@ -107,7 +108,8 @@
         "Hướng dẫn lưu ý trước, trong và sau tiêm",
         "Theo dõi sau tiêm theo quy định chuyên môn"
       ],
-      "voice": "Đơn vị Tiêm chủng, Bệnh viện Việt Nam Thụy Điển Uông Bí cung cấp dịch vụ tiêm chủng với danh mục vắc xin đa dạng, trong đó có vắc xin cúm. Khách hàng được tư vấn về nhu cầu tiêm chủng, tiền sử tiêm, lịch tiêm và những lưu ý trước, trong và sau tiêm. Quy trình được thực hiện theo quy định chuyên môn hiện hành, người tiêm được theo dõi sau tiêm theo hướng dẫn của nhân viên y tế."
+      "voice": "Đơn vị Tiêm chủng, Bệnh viện Việt Nam Thụy Điển Uông Bí cung cấp dịch vụ tiêm chủng với danh mục vắc xin đa dạng, trong đó có vắc xin cúm. Khách hàng được tư vấn về nhu cầu tiêm chủng, tiền sử tiêm, lịch tiêm và những lưu ý trước, trong và sau tiêm. Quy trình được thực hiện theo quy định chuyên môn hiện hành, người tiêm được theo dõi sau tiêm theo hướng dẫn của nhân viên y tế.",
+      "art": "icon:hospital-outline"
     },
     {
       "id": "v11",

@@ -3,7 +3,8 @@
     "name": "Bệnh viện Việt Nam - Thụy Điển Uông Bí",
     "hotline": "0988 270 115",
     "address": "Khu Khám bệnh (nhà Y) - bên phải cổng chính",
-    "web": "vsh.org.vn"
+    "web": "vsh.org.vn",
+    "outName": "clip-khoa-kham-benh"
   },
   "scenes": [
     {

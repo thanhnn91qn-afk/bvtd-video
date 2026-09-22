@@ -8,6 +8,7 @@ import { pathToFileURL, fileURLToPath } from "node:url";
 import { tmpdir } from "node:os";
 import { ART_ENGINE, ART_CSS, IDLE_ENGINE, IDLE_WORD, IDLE_LINE, artBox, pickArt } from "./art.mjs";
 import { assertScenes } from "./scene-check.mjs";
+import { resolveOutDir, outBaseName } from "./out-dir.mjs";
 
 const exec = promisify(execFile);
 const ROOT = dirname(fileURLToPath(import.meta.url));
@@ -29,7 +30,7 @@ const dirs = {
   voice: join(ROOT, "build", "voice-16x9"),
   clips: join(ROOT, "build", "clips-16x9"),
   stills: join(ROOT, "build", "stills16"),
-  out: join(ROOT, "out"),
+  out: resolveOutDir(ROOT),
 };
 
 const esc = (s) =>
@@ -661,7 +662,7 @@ async function main() {
       `apad=pad_dur=${GAP_SEC},atrim=0:${s.clipDur.toFixed(3)},asetpts=N/SR/TB[a${i}]`);
     labels.push(`[a${i}]`);
   });
-  const voiceWav = join(dirs.out, `voice-${name}.wav`);
+  const voiceWav = join(ROOT, "build", `voice-${name}.wav`);
   aArgs.push("-filter_complex",
     `${parts.join(";")};${labels.join("")}concat=n=${scenes.length}:v=0:a=1[out]`,
     "-map", "[out]", "-ar", "44100", "-ac", "1", voiceWav);
@@ -670,10 +671,11 @@ async function main() {
   console.log("[video] concat + mux");
   const listFile = join(ROOT, "build", `clips-${name}.txt`);
   await writeFile(listFile, scenes.map((s) => `file '${s.clip.replace(/\\/g, "/")}'`).join("\n"), "utf8");
-  const silent = join(dirs.out, `video-${name}-silent.mp4`);
+  const base = outBaseName(cfg, name);
+  const silent = join(dirs.out, `${base}-silent.mp4`);
   await exec("ffmpeg", ["-y", "-hide_banner", "-loglevel", "error",
     "-f", "concat", "-safe", "0", "-i", listFile, "-c", "copy", silent], { maxBuffer: 1 << 24 });
-  const withAudio = join(dirs.out, `video-${name}.mp4`);
+  const withAudio = join(dirs.out, `${base}.mp4`);
   await exec("ffmpeg", ["-y", "-hide_banner", "-loglevel", "error",
     "-i", silent, "-i", voiceWav, "-map", "0:v:0", "-map", "1:a:0",
     "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", withAudio], { maxBuffer: 1 << 24 });
