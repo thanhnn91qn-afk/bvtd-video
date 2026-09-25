@@ -9,6 +9,9 @@ import { tmpdir } from "node:os";
 import { ART_ENGINE, ART_CSS, IDLE_ENGINE, IDLE_WORD, IDLE_LINE, artBox, pickArt } from "./art.mjs";
 import { assertScenes } from "./scene-check.mjs";
 import { resolveOutDir, outBaseName } from "./out-dir.mjs";
+import { assemble } from "./assemble.mjs";
+import { direct } from "./director.mjs";
+import { gsapTag, GSAP_BRIDGE, WORD_FX, LINE_FX, MARK_CSS, markWords, styleChart, styleStat } from "./motion.mjs";
 
 const exec = promisify(execFile);
 const ROOT = dirname(fileURLToPath(import.meta.url));
@@ -25,6 +28,7 @@ const H = 1080;
 const GAP_SEC = 0.45;
 const STILLS = process.argv.includes("--stills");
 const FORCE = process.argv.includes("--force");
+const NO_TRANS = process.argv.includes("--no-transitions");
 
 const dirs = {
   voice: join(ROOT, "build", "voice-16x9"),
@@ -45,11 +49,12 @@ function easeOutCubic(x){ return 1 - Math.pow(1 - x, 3); }
 function easeOutExpo(x){ return x >= 1 ? 1 : 1 - Math.pow(2, -10 * x); }
 function clamp(x,a,b){ return Math.max(a, Math.min(b, x)); }
 function prog(t, s, e){ return clamp((t - s) / (e - s), 0, 1); }
-function reveal(el, s, e, t, dy){
+function reveal(el, s, e, t, dy, blur){
   if (!el) return 0;
   const p = easeOutCubic(prog(t, s, e));
   el.style.opacity = String(p);
   el.style.transform = "translateY(" + ((1 - p) * (dy === undefined ? 24 : dy)) + "px)";
+  if (blur) el.style.filter = p < 1 ? "blur(" + ((1 - p) * blur).toFixed(2) + "px)" : "none";
   return p;
 }
 window.__frame = function(tMs){
@@ -62,7 +67,7 @@ window.__frame = function(tMs){
   }
   reveal(document.getElementById("kicker"), 0, 380, tMs, 22);
   reveal(document.getElementById("meta"), 80, 460, tMs, 14);
-  reveal(document.getElementById("headline"), 260, 720, tMs, 30);
+  reveal(document.getElementById("headline"), 260, 720, tMs, 30, 10);
   reveal(document.getElementById("sub"), 460, 880, tMs, 20);
   reveal(document.getElementById("logo"), 200, 700, tMs, 14);
   reveal(document.getElementById("frame"), 120, 760, tMs, 26);
@@ -92,7 +97,10 @@ window.__frame = function(tMs){
   }
   const words = document.querySelectorAll("#words .w");
   if (words.length) {
-    const start = 260, per = cfg.wordMs || 190;
+    const start = 260;
+    // A short line of narration cannot wait on a fixed pace: the last word has to
+    // be up before the scene starts dissolving into the next one.
+    const per = Math.min(cfg.wordMs || 190, Math.max(90, (cfg.clipDurMs - 1400) / words.length));
     for (let i = 0; i < words.length; i++) {
       const s = start + i * per;
       const p = easeOutCubic(prog(tMs, s, s + 240));
@@ -100,7 +108,7 @@ window.__frame = function(tMs){
       el.style.opacity = String(p);
       el.style.transform = "translateY(" + ((1 - p) * 18) + "px) scale(" + (0.88 + 0.12 * p) + ")";
       el.classList.toggle("hot", tMs >= s && tMs < s + per + 240 && p > 0.35);
-${IDLE_WORD}    }
+${WORD_FX}${IDLE_WORD}    }
   }
   // stacked result lines, revealed one after another to follow the voice-over
   const lines = document.querySelectorAll("#lines .ln");
@@ -111,7 +119,7 @@ ${IDLE_WORD}    }
       const p = easeOutCubic(prog(tMs, s, s + 440));
       lines[i].style.opacity = String(p);
       lines[i].style.transform = "translateX(" + ((1 - p) * -30) + "px)";
-${IDLE_LINE}    }
+${LINE_FX}${IDLE_LINE}    }
   }
   const statEl = document.getElementById("stat");
   if (statEl) {
@@ -135,6 +143,7 @@ ${IDLE_LINE}    }
   reveal(document.getElementById("en"), 540, 900, tMs, 16);
 ${ART_ENGINE}
 ${IDLE_ENGINE}
+${GSAP_BRIDGE}
 };
 `;
 
@@ -156,11 +165,11 @@ const BASE = `
  .full img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
  .logobar{position:absolute;right:56px;bottom:40px;display:flex;align-items:center}
  .logobar img{height:56px;background:#fff;padding:9px 18px;border-radius:999px}
-${ART_CSS}`;
+${ART_CSS}${MARK_CSS}`;
 
-function shell(css, body, cfg) {
-  return `<!doctype html><html lang="vi"><head><meta charset="utf-8"><style>${BASE}${css}</style></head>
-<body>${body}<script>window.__CFG=${JSON.stringify(cfg)};${ENGINE}</script></body></html>`;
+function shell(css, body, cfg, js = "") {
+  return `<!doctype html><html lang="vi"><head><meta charset="utf-8">${gsapTag(ROOT)}<style>${BASE}${css}</style></head>
+<body>${body}<script>window.__CFG=${JSON.stringify(cfg)};${ENGINE}${js}</script></body></html>`;
 }
 
 // A year (or anything parseStat rejects) gets no count-up, so it must be printed
@@ -253,7 +262,7 @@ function styleGlass(s) {
 
 /** Word-by-word caption across the bottom, Reels style. */
 function styleCaption(s) {
-  const words = esc(s.headline).split(/\s+/).map((w) => `<span class="w">${w}</span>`).join("");
+  const words = markWords(s.headline, s.highlight, esc);
   return shell(
     `
  .tint{position:absolute;inset:0;background:linear-gradient(180deg,rgba(3,20,32,.34) 0%,
@@ -407,10 +416,7 @@ function styleLines(s) {
 
 /** No photograph - words pop in one by one, the spoken one highlighted. */
 function styleKinetic(s) {
-  const words = esc(s.headline)
-    .split(/\s+/)
-    .map((w) => `<span class="w">${w}</span>`)
-    .join("");
+  const words = markWords(s.headline, s.highlight, esc);
   const art = pickArt(s);
   return shell(
     `
@@ -516,10 +522,16 @@ function styleLogo(s) {
   );
 }
 
+/** Shared by the GSAP data scenes in motion.mjs. */
+const MOTION_CTX = { shell, esc, portrait: false,
+  get logoHtml() { return `<div class="logobar" id="logo"><img src="${logoUrl()}"></div>`; } };
+
 const STYLES = {
   cinematic: styleCinematic, split: styleSplit, glass: styleGlass, caption: styleCaption,
   wipe: styleWipe, card: styleCard, shot: styleShot, lines: styleLines,
   kinetic: styleKinetic,
+  chart: (s) => styleChart(s, MOTION_CTX),
+  stat: (s) => styleStat(s, MOTION_CTX),
   plain: stylePlain, logo: styleLogo,
 };
 
@@ -544,6 +556,17 @@ async function durationSec(p) {
   return d;
 }
 
+/** --music=<file> wins; otherwise brand.music, a file under assets/music/. None bundled. */
+function musicPath(cfg) {
+  const flag = process.argv.find((a) => a.startsWith("--music="));
+  if (flag) return flag.slice(8);
+  const m = cfg.brand?.music;
+  if (!m) return null;
+  const p = join(ROOT, "assets", "music", m);
+  if (!existsSync(p)) throw new Error(`khong tim thay nhac nen assets/music/${m}`);
+  return p;
+}
+
 async function main() {
   const scenesArg = process.argv.find((a) => a.startsWith("--scenes="));
   const nameArg = process.argv.find((a) => a.startsWith("--name="));
@@ -554,6 +577,9 @@ async function main() {
   const cfg = JSON.parse(await readFile(join(ROOT, scenesFile), "utf8"));
   // Before the first TTS call: a bad style name or a missing photo is not
   // worth finding out about five minutes into a render.
+  // Fill in whatever the script left to "auto" - style, motif, transition -
+  // before validation, so the checks see the scene as it will be rendered.
+  for (const line of direct(cfg, { portrait: H > W })) console.log(`[dao dien] ${line}`);
   assertScenes(cfg, { styles: Object.keys(STYLES), root: ROOT });
   for (const d of Object.values(dirs)) await mkdir(d, { recursive: true });
 
@@ -626,6 +652,7 @@ async function main() {
         continue;
       }
       const frames = Math.round(s.clipDur * FPS);
+      s.frames = frames;
       const out = join(dirs.clips, `${s.id}.mp4`);
       process.stdout.write(`[clip] ${s.id} (${s.style}, ${frames}f) ... `);
       const ff = spawn("ffmpeg", [
@@ -653,32 +680,13 @@ async function main() {
   }
   if (STILLS) { console.log(`\nStills in ${dirs.stills}`); return; }
 
-  console.log("[audio] concat narration");
-  const aArgs = ["-y", "-hide_banner", "-loglevel", "error"];
-  const parts = [], labels = [];
-  scenes.forEach((s, i) => {
-    aArgs.push("-i", s.wav);
-    parts.push(`[${i}:a]aresample=44100,aformat=sample_fmts=fltp:channel_layouts=mono,` +
-      `apad=pad_dur=${GAP_SEC},atrim=0:${s.clipDur.toFixed(3)},asetpts=N/SR/TB[a${i}]`);
-    labels.push(`[a${i}]`);
+  console.log(NO_TRANS ? "[video] noi canh (khong chuyen canh)" : "[video] noi canh co chuyen canh");
+  const { silent, withAudio, joins } = await assemble({
+    scenes, fps: FPS, gap: GAP_SEC, exec, root: ROOT, name,
+    outDir: dirs.out, base: outBaseName(cfg, name), off: NO_TRANS,
+    music: musicPath(cfg), musicVol: Number(cfg.brand?.musicVolume ?? 0.16),
   });
-  const voiceWav = join(ROOT, "build", `voice-${name}.wav`);
-  aArgs.push("-filter_complex",
-    `${parts.join(";")};${labels.join("")}concat=n=${scenes.length}:v=0:a=1[out]`,
-    "-map", "[out]", "-ar", "44100", "-ac", "1", voiceWav);
-  await exec("ffmpeg", aArgs, { maxBuffer: 1 << 24 });
-
-  console.log("[video] concat + mux");
-  const listFile = join(ROOT, "build", `clips-${name}.txt`);
-  await writeFile(listFile, scenes.map((s) => `file '${s.clip.replace(/\\/g, "/")}'`).join("\n"), "utf8");
-  const base = outBaseName(cfg, name);
-  const silent = join(dirs.out, `${base}-silent.mp4`);
-  await exec("ffmpeg", ["-y", "-hide_banner", "-loglevel", "error",
-    "-f", "concat", "-safe", "0", "-i", listFile, "-c", "copy", silent], { maxBuffer: 1 << 24 });
-  const withAudio = join(dirs.out, `${base}.mp4`);
-  await exec("ffmpeg", ["-y", "-hide_banner", "-loglevel", "error",
-    "-i", silent, "-i", voiceWav, "-map", "0:v:0", "-map", "1:a:0",
-    "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", withAudio], { maxBuffer: 1 << 24 });
+  if (joins.length) console.log(`[video] ${joins.length} lan chuyen canh: ${joins.join(", ")}`);
 
   console.log(`\n=== Done ===\nWith audio : ${withAudio}\nSilent     : ${silent}`);
   console.log(`Total: ${(await durationSec(withAudio)).toFixed(2)}s (${scenes.length} scenes, ${W}x${H})`);

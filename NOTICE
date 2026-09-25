@@ -1,0 +1,20 @@
+bvtd-video
+Bo dung video tuyen truyen cho Benh vien Viet Nam - Thuy Dien Uong Bi.
+
+Phan mem nay co dung hoac chuyen the tu cac du an ben thu ba sau:
+
+HyperFrames - https://github.com/heygen-com/hyperframes
+  Giay phep: Apache License 2.0
+  Cac kieu canh `chart` va `stat` trong motion.mjs chuyen the tu cac khoi
+  data-chart, animated-bar-chart, mk-progress-stat, conic-progress-ring;
+  hieu ung chu (mo roi net dan, to but da) chuyen the tu per-word-rise va
+  marker-highlight. Da viet lai: doc so lieu tu kich ban, bo cuc theo kho
+  doc/ngang, mau benh vien, font co dau tieng Viet.
+
+GSAP - https://gsap.com
+  Giay phep: GSAP Standard "No Charge" License - https://gsap.com/standard-license
+  Dung nguyen ban qua npm (node_modules/gsap), khong sua doi.
+
+Health Icons - https://github.com/resolvetosavelives/healthicons
+  Giay phep: CC0 1.0 (pham vi cong cong)
+  Dung nguyen ban qua npm (@iconify-json/healthicons).

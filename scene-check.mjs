@@ -12,6 +12,7 @@
 import { existsSync } from "node:fs";
 import { join } from "node:path";
 import { ART, pickArt } from "./art.mjs";
+import { XFADE_NAMES } from "./assemble.mjs";
 
 /** Styles that draw a photograph and have nothing to show without one. */
 const NEEDS_PHOTO = new Set(["cinematic", "split", "glass", "caption", "wipe", "card", "shot"]);
@@ -63,6 +64,19 @@ export function checkScenes(cfg, { styles, root }) {
 
     if (USES_LINES.has(s.style) && !(s.lines || []).length)
       errors.push(`${at}: style "lines" can mang "lines"`);
+
+    if (s.style === "chart") {
+      const c = s.chart || [];
+      if (c.length < 2) errors.push(`${at}: style "chart" can mang "chart" it nhat 2 muc`);
+      c.forEach((x, k) => {
+        if (!x || !x.label) errors.push(`${at}: chart[${k}] thieu "label"`);
+        if (!Number.isFinite(Number(x?.value))) errors.push(`${at}: chart[${k}] "value" phai la so`);
+      });
+    }
+    if (s.style === "stat" && !Number.isFinite(Number(s.value)))
+      errors.push(`${at}: style "stat" can "value" la mot con so`);
+    if (s.transition && s.transition !== "none" && !XFADE_NAMES.has(s.transition))
+      errors.push(`${at}: khong co kieu chuyen canh "${s.transition}"`);
 
     let art = null;
     try {

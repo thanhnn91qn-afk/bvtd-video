@@ -1,0 +1,74 @@
+{
+  "brand": {
+    "name": "Bệnh viện Việt Nam - Thụy Điển Uông Bí",
+    "web": "vsh.org.vn",
+    "outName": "clip-TEST-hieu-ung-moi-9x16"
+  },
+  "scenes": [
+    {
+      "id": "t01",
+      "kicker": "Ngày An toàn người bệnh Thế giới",
+      "headline": "Bệnh không lây nhiễm - không thể chủ quan",
+      "highlight": ["không thể chủ quan"],
+      "sub": "Bệnh viện Việt Nam - Thụy Điển Uông Bí",
+      "wordMs": 280,
+      "voice": "Bệnh không lây nhiễm: không thể chủ quan."
+    },
+    {
+      "id": "t02",
+      "kicker": "Tại bệnh viện",
+      "headline": "Người bệnh đang được quản lý, điều trị",
+      "chart": [
+        { "label": "Tim mạch", "value": 3508 },
+        { "label": "Nội tiết", "value": 3278 },
+        { "label": "Ung bướu", "value": 900, "prefix": "hơn " },
+        { "label": "Hô hấp", "value": 343 }
+      ],
+      "voice": "Tại bệnh viện, hiện có ba nghìn năm trăm linh tám người bệnh tim mạch, ba nghìn hai trăm bảy mươi tám người bệnh nội tiết, hơn chín trăm người bệnh ung bướu, và ba trăm bốn mươi ba người bệnh hô hấp đang được quản lý, điều trị."
+    },
+    {
+      "id": "t03",
+      "kicker": "Ngày 17 tháng 9 năm 2026",
+      "headline": "Chăm sóc an toàn cho các bệnh không lây nhiễm",
+      "sub": "Chủ đề Ngày An toàn người bệnh Thế giới do WHO lựa chọn năm 2026.",
+      "photo": "klm-antoan.jpg",
+      "zoom": "in",
+      "voice": "Chủ đề Ngày An toàn người bệnh Thế giới năm nay là: Chăm sóc an toàn cho các bệnh không lây nhiễm."
+    },
+    {
+      "id": "t04",
+      "kicker": "Nhóm đông nhất",
+      "headline": "Người bệnh tim mạch",
+      "sub": "đang được bệnh viện quản lý, điều trị - và có xu hướng gia tăng qua các năm.",
+      "value": 3508,
+      "voice": "Nhóm đông nhất là người bệnh tim mạch, với ba nghìn năm trăm linh tám người, và con số này có xu hướng gia tăng qua các năm."
+    },
+    {
+      "id": "t05",
+      "kicker": "Nhóm nguy cơ cao",
+      "headline": "Cần khám định kỳ và sàng lọc sớm",
+      "lines": [
+        "Người cao tuổi",
+        "Người thừa cân, ít vận động",
+        "Người hút thuốc lá",
+        "Có người thân mắc bệnh mạn tính"
+      ],
+      "voice": "Người cao tuổi, người thừa cân, ít vận động, người hút thuốc lá, hoặc có người thân mắc bệnh mạn tính, cần khám định kỳ và sàng lọc sớm."
+    },
+    {
+      "id": "t06",
+      "kicker": "Ghi nhớ",
+      "headline": "Bốn nhóm bệnh, bốn yếu tố nguy cơ, sáu việc nên làm",
+      "sub": "Phòng bệnh từ lối sống lành mạnh và khám sức khỏe định kỳ.",
+      "photo": "klm-poster-who.jpg",
+      "voice": "Hãy ghi nhớ: phòng bệnh bắt đầu từ lối sống lành mạnh và khám sức khỏe định kỳ."
+    },
+    {
+      "id": "t07",
+      "kicker": "Vsh.org.vn",
+      "headline": "Chăm sóc an toàn hôm nay - Bảo vệ sức khỏe suốt đời",
+      "sub": "Bệnh viện Việt Nam - Thụy Điển Uông Bí",
+      "voice": "Chăm sóc an toàn hôm nay, bảo vệ sức khỏe suốt đời."
+    }
+  ]
+}

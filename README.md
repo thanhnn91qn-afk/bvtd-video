@@ -26,9 +26,13 @@ Khổ dọc 1080×1920 dùng `build-styles.mjs` với cùng bộ tham số.
 
 | Đường dẫn | Là gì |
 |---|---|
-| `build-16x9.mjs` | Bộ dựng ngang 1920×1080 — 11 kiểu cảnh |
-| `build-styles.mjs` | Bộ dựng dọc 1080×1920 — 10 kiểu cảnh |
-| `art.mjs` | Kho hình vẽ nét SVG cho cảnh không có ảnh, tự vẽ dần rồi chuyển động |
+| `build-16x9.mjs` | Bộ dựng ngang 1920×1080 — 13 kiểu cảnh |
+| `build-styles.mjs` | Bộ dựng dọc 1080×1920 — 13 kiểu cảnh |
+| `director.mjs` | **Bộ đạo diễn**: tự chọn kiểu cảnh, hình vẽ, chuyển cảnh cho chỗ kịch bản để trống |
+| `motion.mjs` | Biểu đồ, vòng số đếm (GSAP, chuyển thể từ HyperFrames), hiệu ứng chữ |
+| `assemble.mjs` | Nối cảnh có chuyển cảnh, cắt lời đọc cho khớp, trộn nhạc nền có ducking |
+| `art.mjs` | 38 hình vẽ nét SVG tự vẽ dần + 748 icon y tế nhập sẵn |
+| `scene-check.mjs` | Kiểm tra kịch bản trước khi dựng |
 | `scenes-*.json` | Kịch bản từng clip |
 | `assets/photos/` | Ảnh dùng trong clip |
 | `assets/logo.png` | Logo bệnh viện |

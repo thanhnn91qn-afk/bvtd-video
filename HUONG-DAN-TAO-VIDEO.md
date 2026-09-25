@@ -82,23 +82,55 @@ dùng lại tên cũ thì bản 16:9 sẽ ăn phải các cảnh 1080×1920 đã
 
 ## 3. Cấu trúc file kịch bản
 
+### Cách viết nhanh nhất: chỉ ghi nội dung, để bộ đạo diễn lo phần còn lại
+
 ```jsonc
 {
-  "brand": { "name": "...", "hotline": "...", "web": "vsh.org.vn" },
+  "brand": { "outName": "clip-ten-noi-dung-9x16" },
+  "scenes": [
+    { "id": "s01", "kicker": "…", "headline": "…", "sub": "…", "voice": "…" },
+    { "id": "s02", "headline": "…", "chart": [{ "label": "Tim mạch", "value": 3508 }], "voice": "…" },
+    { "id": "s03", "headline": "…", "photo": "anh.jpg", "voice": "…" },
+    { "id": "s04", "headline": "…", "value": 3508, "voice": "…" },
+    { "id": "s05", "headline": "…", "lines": ["…", "…"], "voice": "…" }
+  ]
+}
+```
+
+Không ghi `style`, `art`, `transition` → bộ đạo diễn (`director.mjs`) tự chọn theo nội
+dung (xem mục 4b). Muốn ép thì ghi thẳng — **cái gì ghi tay thì không bao giờ bị đè**.
+
+### Đầy đủ các trường
+
+```jsonc
+{
+  "brand": {
+    "outName": "clip-abc-9x16",       // tên file xuất ra
+    "music": "nen-nhe.mp3",           // nhạc nền trong assets/music/ — xem mục 5c
+    "musicVolume": 0.16
+  },
   "scenes": [
     {
       "id": "s01",                    // duy nhất, dùng làm tên file cache
-      "style": "cinematic",           // xem bảng mục 4
+      "style": "auto",                // bỏ trống / "auto" = để đạo diễn chọn; xem mục 4
+      "transition": "auto",           // cách VÀO cảnh này; "none" = cắt thẳng; xem mục 4c
       "kicker": "Mở đầu",             // nhãn nhỏ phía trên
       "headline": "Tiêu đề lớn",
+      "highlight": ["không thể chủ quan"],  // cụm từ được tô bút dạ (kinetic, caption)
       "sub": "Câu mô tả bên dưới.",
       "photo": "ten-anh.jpg",         // trong assets/photos/ — bỏ trống nếu không có
+      "poster": true,                 // ảnh là poster/infographic → hiện trọn, không cắt
       "zoom": "in",                   // "in" | "out" — hướng Ken Burns
-      "lines": ["Ý 1", "Ý 2"],        // cho style lines / logo
-      "stat": "200",                  // số lớn, tự đếm tăng dần
+      "lines": ["Ý 1", "Ý 2"],        // danh sách hiện lần lượt
+      "chart": [{ "label": "…", "value": 3508, "prefix": "hơn ", "suffix": "" }],
+      "unit": "người",                // đơn vị chung cho biểu đồ
+      "value": 3508,                  // một con số lớn đếm tăng trong vòng tròn (kiểu stat)
+      "max": 8000,                    // có thì vòng tròn tô tới value/max
+      "prefix": "", "suffix": "%",
+      "stat": "200",                  // số phụ kèm tiêu đề ở các kiểu có ảnh
       "statLabel": "Nhãn của số",
-      "art": "auto",                  // hình vẽ CSS — xem mục 5
-      "wordMs": 260,                  // tốc độ chữ chạy, mặc định 190
+      "art": "auto",                  // hình vẽ; xem mục 5
+      "wordMs": 260,                  // tốc độ chữ chạy (tự nén lại nếu cảnh ngắn)
       "contact": true,                // hiện khối liên hệ (style plain)
       "hotline": "0988 270 115",
       "address": "...",
@@ -124,16 +156,69 @@ dùng lại tên cũ thì bản 16:9 sẽ ăn phải các cảnh 1080×1920 đã
 | `card` | có | Thẻ trắng nổi trên ảnh |
 | `shot` | có | **Ảnh chụp màn hình** — hiện trọn, không bao giờ cắt |
 | `lines` | tuỳ | Danh sách hiện lần lượt; có ảnh, có hình vẽ, hoặc căn giữa |
-| `kinetic` | không | Chữ chạy từng từ trên nền chuyển sắc |
+| `kinetic` | không | Chữ chạy từng từ trên nền chuyển sắc, có thể tô bút dạ cụm từ |
 | `plain` | không | Chữ lớn trên nền sáng, kèm số liệu hoặc khối liên hệ |
+| `chart` | không | **Biểu đồ cột ngang** từ mảng `chart`, cột mọc lần lượt theo lời đọc, số đếm tăng |
+| `stat` | không | **Một con số lớn** đếm tăng trong vòng tròn tự vẽ |
 | `logo` | không | Kết clip |
 
 ### 9:16 (`build-styles.mjs`)
 
 `cinematic`, `glass`, `caption`, `split`, `wipe`, `card`, `shot` (cần ảnh) ·
-`kinetic`, `lines`, `plain`, `logo` (không cần ảnh).
+`kinetic`, `lines`, `plain`, `chart`, `stat`, `logo` (không cần ảnh).
 
 `shot` dùng cho poster hoặc ảnh chụp màn hình: hiện trọn tấm ảnh, không cắt.
+
+---
+
+### Nguồn gốc `chart` và `stat`
+
+Chuyển thể từ các khối `data-chart`, `animated-bar-chart`, `mk-progress-stat`,
+`conic-progress-ring` trong catalog của [HyperFrames](https://github.com/heygen-com/hyperframes)
+(Apache-2.0), chạy bằng GSAP. Đã viết lại để đọc số liệu từ kịch bản, tự bố cục theo
+khổ dọc/ngang, dùng màu bệnh viện và font có đủ dấu tiếng Việt. Xem `NOTICE`.
+
+---
+
+## 4b. Bộ đạo diễn tự động (`director.mjs`)
+
+Chạy ở đầu mỗi lần dựng, **chỉ điền vào chỗ để trống hoặc ghi `"auto"`**, và in ra từng
+quyết định:
+
+```
+[dao dien] t02: kieu chart, vao canh bang fade
+[dao dien] t05: kieu lines, hinh calendar, vao canh bang dissolve
+```
+
+Luật chọn kiểu cảnh, theo thứ tự:
+
+1. Có `chart` (≥ 2 mục) → `chart`. Có `value` là số và không có ảnh → `stat`.
+2. Có ảnh là poster / infographic / ảnh chụp màn hình (`"poster": true`, hoặc tên file
+   chứa `poster`, `infographic`, `screenshot`, `banner`) → `shot`, hiện trọn không cắt.
+3. Có ảnh thường → xoay vòng các kiểu có ảnh, **không để hai cảnh liền nhau cùng kiểu**;
+   cảnh đầu ưu tiên `cinematic`; tiêu đề dài quá 10 từ thì bỏ `caption`.
+4. Không ảnh: có `lines` → `lines`; có `contact` → `plain`; cảnh cuối → `logo`;
+   còn lại xen kẽ `kinetic` và `plain`.
+
+Hình vẽ chỉ gắn khi chính chữ trong cảnh gợi ra một hình, **ưu tiên tiêu đề hơn phần phụ
+và các dòng liệt kê**, và không bao giờ dùng một hình hai lần trong cùng clip.
+
+## 4c. Chuyển cảnh
+
+Mặc định giữa mọi cảnh có một lần chuyển 0,4 giây bằng `xfade` của ffmpeg. Bộ đạo diễn
+chọn theo ngữ cảnh: vào biểu đồ/số → `fade`; vào poster → `circleopen`; giữa hai ảnh →
+`smoothleft`/`smoothright` xen kẽ; từ chữ sang ảnh → `wipeleft`; cảnh kết → `fadewhite`.
+
+Tự chỉ định: `"transition": "slideup"` (tên theo danh sách `xfade` của ffmpeg), hoặc
+`"none"` để cắt thẳng. Tắt cả clip: thêm cờ `--no-transitions`.
+
+**Vì sao không mất lời đọc:** mỗi cảnh vốn kết thúc bằng 0,45 giây lặng (`GAP_SEC`). Hai
+cảnh chỉ chồng lên nhau trong khoảng lặng đó, lời đọc được cắt đúng bằng phần chồng, nên
+hình và tiếng không lệch và không chữ nào bị nuốt. Vì thế thời lượng chuyển cảnh luôn
+được giữ dưới `GAP_SEC`.
+
+Khối chuyển cảnh của HyperFrames không dùng được ở đây: chúng cần cả cảnh trước và cảnh
+sau trong cùng một trang, còn bộ dựng này dựng từng cảnh thành clip riêng.
 
 ---
 
@@ -314,6 +399,40 @@ hiệu ứng nào đụng tới; nếu buộc phải dùng chung thì gộp vào
 
 ---
 
+### Hiệu ứng chữ
+
+Chuyển thể từ `per-word-rise` và `marker-highlight` của HyperFrames:
+
+- **Chữ mờ rồi nét dần** — tiêu đề, từng từ ở kiểu chữ chạy, từng dòng ở kiểu danh sách.
+- **Tô bút dạ** — ghi `"highlight": ["cụm từ"]`; vạch xanh bạc hà quét qua sau chữ, chữ
+  chuyển sang màu đậm như mực. So khớp **cả cụm**, không so từng từ lẻ — so từ lẻ thì
+  mọi chữ "không" khác trong câu cũng bị tô theo.
+- Tốc độ chữ chạy tự nén lại khi cảnh ngắn, để chữ cuối hiện kịp trước khi chuyển cảnh.
+
+---
+
+## 5c. Nhạc nền
+
+**Không kèm sẵn bản nhạc nào.** Thể lệ các cuộc thi đã cảnh báo về nhạc có bản quyền;
+chọn nhạc là việc của người làm clip. Nguồn nhạc miễn phí có thể dùng: YouTube Audio
+Library, Pixabay Music — đọc kỹ điều khoản từng bản.
+
+Đặt file vào `assets/music/` rồi khai trong kịch bản:
+
+```jsonc
+"brand": { "music": "nen-nhe.mp3", "musicVolume": 0.16 }
+```
+
+hoặc cho một lần chạy: `--music=duong/dan/file.mp3`.
+
+Nhạc được lặp cho đủ độ dài, mờ vào 1,5 giây, mờ ra 2,5 giây, và **tự hạ xuống mỗi khi
+có lời đọc** (nén theo tín hiệu giọng — "ducking"). Đo thực tế: lúc đang đọc, nhạc thấp
+hơn khoảng **14 dB**, và nhích lên lại ở các khoảng ngắt nghỉ.
+
+Bản không tiếng (`-silent.mp4`) không có cả lời lẫn nhạc.
+
+---
+
 ## 6. Viết lời đọc cho máy đọc tiếng Việt
 
 Máy đọc **không đọc được chữ số và ký hiệu**. Trong `voice` phải viết thành chữ; trong
@@ -413,6 +532,9 @@ Danh sách tự kiểm:
 | Ảnh rung giật khi chuyển cảnh | `zoompan` của ffmpeg làm tròn về số nguyên. Đã thay bằng `transform: scale()` đặt theo từng khung hình. |
 | Kim đồng hồ quay tại chỗ, lệch khỏi trục | `transform-origin: center` tính theo hộp bao của riêng nét đó. Phải chỉ trục thật bằng `data-origin="x y"` kèm `transform-box: view-box`. |
 | Kiểu `shot` ra khung trắng, không thấy ảnh | Engine 9:16 thiếu dòng hiện `#frame` mà bản 16:9 đã có. Khi port kiểu cảnh giữa hai bộ dựng, nhớ port cả dòng trong engine. |
+| Số đếm trong biểu đồ kẹt ở "0" suốt clip | `timeline.seek(t)` của GSAP mặc định bỏ qua các hàm callback, mà số đếm được ghi bằng `onUpdate`. Phải tua bằng `seek(t, false)`. |
+| Hình virus trên cảnh "Bệnh **không** lây nhiễm" | "lây nhiễm" khớp cả trong "không lây nhiễm" — nghĩa ngược hẳn. Tương tự: "hút thuốc lá" ra viên thuốc, "khen" khớp "hen", "còn gọi là" ra điện thoại. Từ khoá giờ so theo nguyên từ; các câu này được ghim trong `tools/test-art-keywords.mjs`. |
+| Chữ cuối chưa kịp hiện đã chuyển cảnh | Tốc độ chữ chạy cố định trong khi cảnh chỉ dài 2,7 giây. Giờ tốc độ tự nén theo độ dài cảnh. |
 | Chrome treo vô thời hạn | Hồ sơ Chrome mặc định đang bị trình duyệt của người dùng khoá. Phải dùng `--user-data-dir` riêng. |
 | ffmpeg báo thành công nhưng video sai | Chuyện thường. **Luôn trích khung hình ra xem**, đừng tin dòng "Done". |
 

@@ -506,46 +506,58 @@ export const ART = {
  * Keyword -> motif, scanned in order. First hit wins, so the specific entries
  * have to come before the vague ones.
  */
+/**
+ * Builds a keyword matcher that only fires on whole Vietnamese words. A plain
+ * alternation matches inside other words - "hen" (asthma) inside "khen",
+ * "gọi" inside "còn gọi là" - and every such slip puts a wrong drawing on a
+ * scene. Each regression is pinned in tools/test-art-keywords.mjs.
+ */
+const LETTER = "a-zA-Zà-ỹÀ-Ỹ";
+const kw = (...alts) => new RegExp(`(?<![${LETTER}])(?:${alts.join("|")})(?![${LETTER}])`, "iu");
+
 const AUTO = [
-  [/tiêm chủng|vắc ?xin|vaccine|mũi tiêm|chủng ngừa/i, "syringe"],
-  [/cúm|vi ?rút|virus|lây lan|lây nhiễm|truyền nhiễm|dịch bệnh/i, "virus"],
-  [/viêm phổi|hô hấp|phổi|hen|copd|đường thở|khó thở/i, "lungs"],
-  [/châm cứu|điện châm|huyệt|kim châm/i, "needle"],
-  [/thảo dược|bài thuốc|dược liệu|sắc thuốc|cổ truyền/i, "herb"],
-  [/thần kinh|zona|đau rát|bỏng buốt|châm chích|điện giật|kinh lạc/i, "nerve"],
-  [/sơ sinh|trẻ sơ sinh|em bé|thai kỳ|mang thai|sản khoa|nhi khoa/i, "baby"],
-  [/não|đột quỵ|sọ|tâm thần|trí nhớ|nhận thức/i, "brain"],
-  [/xương|khớp|gãy|chấn thương|cột sống|chỉnh hình/i, "bone"],
-  [/mắt|thị lực|giác mạc|nhãn khoa|đục thủy tinh/i, "eye"],
-  [/răng|hàm mặt|nha khoa|sâu răng/i, "tooth"],
-  [/thận|tiết niệu|lọc máu|chạy thận|ghép thận/i, "kidney"],
-  [/vi sinh|giải phẫu bệnh|kính hiển vi|nuôi cấy|mô bệnh học/i, "micro"],
-  [/thuốc|kê đơn|liều|dược|viên nang/i, "pill"],
-  [/lịch|đặt lịch|hẹn giờ|định kỳ|hằng năm|hàng tháng/i, "calendar"],
-  [/hotline|điện thoại|gọi|liên hệ|tổng đài|đăng ký khám/i, "phone"],
-  [/chăm sóc|tận tình|đồng hành|hỗ trợ|sẻ chia|giảm nhẹ/i, "care"],
-  [/uống nước|bổ sung nước|mất nước|dinh dưỡng/i, "water"],
-  [/thuốc lá|khói thuốc|hút thuốc|cai thuốc/i, "nosmoke"],
-  [/hồi sức|theo dõi|monitor|tích cực|cấp cứu/i, "monitor"],
-  [/chẩn đoán hình ảnh|x-quang|chụp ct|cộng hưởng từ|siêu âm|phim chụp/i, "xray"],
-  [/gen|di truyền|adn|dna|miễn dịch|kháng thể/i, "dna"],
-  [/đội ngũ|nhân lực|cán bộ|y bác sĩ|tập thể|cộng đồng/i, "team"],
-  [/giải thưởng|thành tích|danh hiệu|vinh dự|cờ thi đua|chất lượng/i, "award"],
-  [/địa chỉ|đường đi|bản đồ|vị trí|cơ sở|tại khoa/i, "place"],
-  [/rửa tay|vệ sinh|khử khuẩn|nhiễm khuẩn|sát khuẩn/i, "wash"],
-  [/bệnh viện|khoa phòng|trung tâm|toà nhà|nhập viện/i, "hospital"],
-  [/thăm khám|khám bệnh|bác sĩ khám|tư vấn|ống nghe/i, "stetho"],
-  [/đường huyết|xét nghiệm|lấy máu|tiểu đường|đái tháo đường|mẫu bệnh phẩm/i, "drop"],
-  [/hồ sơ|bệnh án|rà soát|tầm soát|kiểm tra|sàng lọc|phát hiện/i, "doc"],
-  [/an toàn|bảo vệ|bảo mật|dữ liệu|riêng tư|quy định/i, "shield"],
-  [/tỉ lệ|phần trăm|%|một phần|cơ cấu/i, "donut"],
-  [/xu hướng|theo thời gian|biểu đồ|diễn biến|thống kê/i, "trend"],
-  [/kết quả|hiệu quả|tiết kiệm|tăng|giảm/i, "chart"],
-  [/thời gian|kéo dài|chờ|phút|giờ|tháng|năm/i, "clock"],
-  [/hệ thống|tích hợp|kết nối|nội bộ|máy chủ|phần mềm/i, "network"],
-  [/tim mạch|huyết áp|nhịp tim|sức khỏe/i, "pulse"],
-  [/nguyên tắc|tiêu chí|danh sách|các bước|lưu ý|khuyến cáo/i, "check"],
+  [kw("tiêm chủng", "tiêm phòng", "vắc ?xin", "vaccine", "mũi tiêm", "chủng ngừa"), "syringe"],
+  // "không lây nhiễm" is NON-communicable - it once put a virus on heart disease.
+  [kw("cúm", "vi ?rút", "virus", "lây lan", "(?<!không )lây nhiễm", "truyền nhiễm", "dịch bệnh"), "virus"],
+  [kw("viêm phổi", "hô hấp", "phổi", "hen phế quản", "hen suyễn", "bệnh hen", "copd", "đường thở", "khó thở"), "lungs"],
+  [kw("châm cứu", "điện châm", "huyệt", "kim châm"), "needle"],
+  [kw("thảo dược", "bài thuốc", "dược liệu", "sắc thuốc", "cổ truyền"), "herb"],
+  [kw("thần kinh", "zona", "đau rát", "bỏng buốt", "châm chích", "điện giật", "kinh lạc"), "nerve"],
+  [kw("sơ sinh", "em bé", "thai kỳ", "mang thai", "thai phụ", "sản khoa", "nhi khoa", "trẻ nhỏ"), "baby"],
+  [kw("não", "đột quỵ", "sọ não", "tâm thần", "trí nhớ", "sa sút trí tuệ"), "brain"],
+  [kw("xương", "khớp", "gãy xương", "chấn thương", "cột sống", "chỉnh hình"), "bone"],
+  [kw("mắt", "thị lực", "giác mạc", "nhãn khoa", "đục thủy tinh thể"), "eye"],
+  [kw("răng", "hàm mặt", "nha khoa"), "tooth"],
+  [kw("thận", "tiết niệu", "lọc máu", "chạy thận"), "kidney"],
+  [kw("vi sinh", "giải phẫu bệnh", "kính hiển vi", "nuôi cấy", "mô bệnh học"), "micro"],
+  // Tobacco before medicine: "hút thuốc lá" is not about pills.
+  [kw("thuốc lá", "khói thuốc", "hút thuốc", "cai thuốc"), "nosmoke"],
+  [kw("(?<!(?:hút|khói|cai) )thuốc(?! lá)", "kê đơn", "đổi liều", "liều thuốc", "dược phẩm", "viên nang"), "pill"],
+  [kw("lịch khám", "lịch tiêm", "lịch hẹn", "đặt lịch", "hẹn giờ", "tái khám", "định kỳ", "hằng năm", "hàng năm", "hàng tháng"), "calendar"],
+  [kw("hotline", "điện thoại", "gọi ngay", "gọi điện", "tổng đài", "liên hệ", "đăng ký khám"), "phone"],
+  [kw("chăm sóc", "tận tình", "đồng hành", "sẻ chia", "giảm nhẹ"), "care"],
+  [kw("uống nước", "bổ sung nước", "mất nước", "dinh dưỡng"), "water"],
+  [kw("hồi sức", "theo dõi", "hồi sức tích cực", "cấp cứu"), "monitor"],
+  [kw("chẩn đoán hình ảnh", "x-?quang", "x quang", "chụp ct", "cộng hưởng từ", "siêu âm", "phim chụp"), "xray"],
+  [kw("di truyền", "gen", "adn", "dna", "miễn dịch", "kháng thể"), "dna"],
+  [kw("đội ngũ", "nhân lực", "cán bộ", "y bác sĩ", "tập thể", "cộng đồng", "nhân viên y tế"), "team"],
+  [kw("giải thưởng", "thành tích", "danh hiệu", "vinh dự", "cờ thi đua"), "award"],
+  [kw("địa chỉ", "đường đi", "bản đồ", "vị trí"), "place"],
+  [kw("rửa tay", "vệ sinh tay", "vệ sinh", "khử khuẩn", "nhiễm khuẩn", "sát khuẩn"), "wash"],
+  [kw("bệnh viện", "khoa phòng", "trung tâm y tế", "nhập viện", "nằm viện"), "hospital"],
+  [kw("thăm khám", "khám bệnh", "khám sức khỏe", "tư vấn", "ống nghe"), "stetho"],
+  [kw("đường huyết", "xét nghiệm", "lấy máu", "tiểu đường", "đái tháo đường", "mẫu bệnh phẩm"), "drop"],
+  [kw("hồ sơ", "bệnh án", "rà soát", "tầm soát", "sàng lọc", "kiểm tra", "phát hiện sớm"), "doc"],
+  [kw("an toàn", "bảo vệ", "bảo mật", "dữ liệu", "riêng tư", "phòng ngừa", "phòng bệnh"), "shield"],
+  [kw("tỉ lệ", "tỷ lệ", "phần trăm", "cơ cấu"), "donut"],
+  [kw("xu hướng", "gia tăng", "biểu đồ", "diễn biến", "thống kê"), "trend"],
+  [kw("kết quả", "hiệu quả", "tiết kiệm", "tăng trưởng", "số liệu"), "chart"],
+  [kw("thời gian", "kéo dài", "chờ đợi", "âm thầm", "nhiều năm", "phút"), "clock"],
+  [kw("hệ thống", "tích hợp", "kết nối", "nội bộ", "máy chủ", "phần mềm"), "network"],
+  [kw("tim mạch", "huyết áp", "nhịp tim", "sức khỏe"), "pulse"],
+  [kw("nguyên tắc", "tiêu chí", "danh sách", "các bước", "lưu ý", "khuyến cáo", "tuân thủ"), "check"],
 ];
+
 
 /**
  * Resolve a scene's `art` field. "auto" reads the scene's own words and may
@@ -565,9 +577,7 @@ export function pickArt(scene) {
     if (!ART[want]) throw new Error(`unknown art: ${want} (scene ${scene.id})`);
     return want;
   }
-  const hay = [scene.headline, scene.kicker, scene.sub, ...(scene.lines || [])].join(" ");
-  for (const [re, name] of AUTO) if (re.test(hay)) return name;
-  return null;
+  return artCandidates(scene)[0] ?? null;
 }
 
 /** Spliced into window.__frame - see the markup contract at the top. */
@@ -711,3 +721,23 @@ export const artBox = (name, cls = "") => {
   const body = imported ? healthIcon(name.slice(5)) : ART[name];
   return `<div class="artbox ${imported ? "icon " : ""}${cls}" id="art">${body}</div>`;
 };
+
+/**
+ * Every hand-drawn motif whose keywords the scene mentions, best first. The
+ * director walks this list to find one not yet used in the clip, where
+ * pickArt alone would hand back the same favourite for every similar scene.
+ */
+export function artCandidates(scene) {
+  // What the scene is about lives in its headline; the sub and the bullet list
+  // only elaborate. Matching them all as one blob once put a no-smoking sign on
+  // "Cần khám định kỳ và sàng lọc sớm" because one bullet mentioned smokers.
+  const tiers = [
+    [scene.headline, scene.kicker].join(" "),
+    scene.sub || "",
+    (scene.lines || []).join(" "),
+  ];
+  const out = [];
+  for (const hay of tiers)
+    for (const [re, name] of AUTO) if (re.test(hay) && !out.includes(name)) out.push(name);
+  return out;
+}
