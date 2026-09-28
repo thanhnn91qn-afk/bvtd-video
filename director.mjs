@@ -13,7 +13,7 @@
  *     twice in one clip - a repeated drawing reads like a repeated photo
  *   - transitions stay calm and vary; the close fades through white
  */
-import { artCandidates } from "./art.mjs";
+import { artCandidates, kw } from "./art.mjs";
 import { TRANSITIONS } from "./assemble.mjs";
 
 const POSTERISH = /screenshot|poster|infographic|banner|chup-man-hinh/i;
@@ -68,6 +68,47 @@ function chooseTransition(s, i, scenes, prevTrans) {
 }
 
 /**
+ * A sound on the way into a scene, keyed to how the scene arrives. Most joins
+ * stay silent on purpose: a whoosh on every cut turns a health message into a
+ * trailer. Never the same sound twice in a row.
+ */
+function chooseSfx(s, i, scenes, prevSfx) {
+  if (i === 0) return "none";
+  let want = "none";
+  if (s.style === "logo" && i === scenes.length - 1) want = "chime";
+  else if (s.style === "shot") want = "sparkle";
+  else if (s.style === "chart" || s.style === "stat") want = "ping";
+  else if (/^(smooth(left|right)|wipeleft|slide)/.test(s.transition || "")) want = "whoosh-short";
+  return want === prevSfx ? "none" : want;
+}
+
+/**
+ * The music's mood, from the words of the whole clip - HyperFrames' idea of
+ * inferring the bed from the content, with this hospital's topics. The most
+ * frequent family wins; with little to go on, the bed stays calm.
+ */
+const MOOD_WORDS = {
+  bright: kw("giải thưởng", "thành tích", "vinh dự", "cờ thi đua", "kỷ niệm", "chào mừng",
+    "lần đầu tiên", "thành công", "danh hiệu"),
+  warm: kw("ung thư", "ung bướu", "đột quỵ", "tử vong", "biến chứng", "nguy cơ", "nguy hiểm",
+    "không thể chủ quan", "cảnh báo", "diễn biến nặng"),
+  hopeful: kw("đổi mới", "sáng kiến", "cải tiến", "công nghệ", "ứng dụng", "triển khai",
+    "phục hồi", "hiện đại", "trí tuệ nhân tạo", "chuyển đổi số"),
+};
+
+export function chooseMood(cfg) {
+  const text = (cfg.scenes || [])
+    .map((s) => [s.kicker, s.headline, s.sub, ...(s.lines || []), s.voice].join(" "))
+    .join(" ");
+  let best = "calm", top = 1;
+  for (const [mood, re] of Object.entries(MOOD_WORDS)) {
+    const n = (text.match(new RegExp(re.source, "giu")) || []).length;
+    if (n > top) { best = mood; top = n; }
+  }
+  return best;
+}
+
+/**
  * Fills in the blanks in place and returns a log of what was decided, one line
  * per scene, so a build shows its choices instead of making them silently.
  */
@@ -102,6 +143,20 @@ export function direct(cfg, { portrait }) {
       if (line >= 0) log[line] += `, ${note}`; else log.push(`${s.id}: ${note}`);
     }
     prevTrans = s.transition === "none" ? null : s.transition;
+  });
+
+  // third pass: sounds, which follow from the final style and transition
+  let prevSfx = null;
+  scenes.forEach((s, i) => {
+    if (isAuto(s.sfx)) {
+      s.sfx = chooseSfx(s, i, scenes, prevSfx);
+      if (s.sfx !== "none") {
+        const line = log.findIndex((l) => l.startsWith(`${s.id}:`));
+        const note = `tieng ${s.sfx}`;
+        if (line >= 0) log[line] += `, ${note}`; else log.push(`${s.id}: ${note}`);
+      }
+    }
+    prevSfx = s.sfx === "none" ? null : s.sfx;
   });
   return log;
 }

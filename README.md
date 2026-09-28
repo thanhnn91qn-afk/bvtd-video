@@ -33,6 +33,8 @@ Khổ dọc 1080×1920 dùng `build-styles.mjs` với cùng bộ tham số.
 | `assemble.mjs` | Nối cảnh có chuyển cảnh, cắt lời đọc cho khớp, trộn nhạc nền có ducking |
 | `art.mjs` | 38 hình vẽ nét SVG tự vẽ dần + 748 icon y tế nhập sẵn |
 | `scene-check.mjs` | Kiểm tra kịch bản trước khi dựng |
+| `tools/make-music.py` | Sinh nhạc nền (Python + numpy), 4 tâm trạng, lặp liền mạch |
+| `assets/sfx/` | 6 tiếng hiệu ứng (Pixabay) kèm bảng cân mức `sfx.json` |
 | `scenes-*.json` | Kịch bản từng clip |
 | `assets/photos/` | Ảnh dùng trong clip |
 | `assets/logo.png` | Logo bệnh viện |
@@ -41,6 +43,8 @@ Khổ dọc 1080×1920 dùng `build-styles.mjs` với cùng bộ tham số.
 ## Cần có trên máy
 
 Node 18+ · Google Chrome · ffmpeg · một máy chủ TTS nhận `POST /tts {text}` và trả WAV.
+
+Tuỳ chọn: Python 3 + numpy để tự sinh nhạc nền (thiếu thì clip vẫn dựng, chỉ không có nhạc).
 
 Ba đường dẫn phụ thuộc máy nằm ở đầu hai file `build-*.mjs` — sửa cho khớp trước khi chạy.
 

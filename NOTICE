@@ -18,3 +18,12 @@ GSAP - https://gsap.com
 Health Icons - https://github.com/resolvetosavelives/healthicons
   Giay phep: CC0 1.0 (pham vi cong cong)
   Dung nguyen ban qua npm (@iconify-json/healthicons).
+
+Tieng hieu ung trong assets/sfx/ - lay tu bo media-use cua HyperFrames
+  Nguon goc: Pixabay (https://pixabay.com/sound-effects/)
+  Giay phep: Pixabay Content License - dung thuong mai va phi thuong mai, duoc
+  sua doi, duoc phan phoi kem san pham phai sinh, khong bat buoc ghi nguon.
+  Xem assets/sfx/CREDITS.md.
+
+Nhac nen tu sinh (tools/make-music.py) - tong hop tu dau, khong dung mau hay
+ban nhac nao cua ben thu ba.

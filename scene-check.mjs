@@ -9,7 +9,7 @@
  * Errors stop the build. Warnings are printed and the build continues, because
  * they are judgement calls rather than certainties.
  */
-import { existsSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { ART, pickArt } from "./art.mjs";
 import { XFADE_NAMES } from "./assemble.mjs";
@@ -77,6 +77,12 @@ export function checkScenes(cfg, { styles, root }) {
       errors.push(`${at}: style "stat" can "value" la mot con so`);
     if (s.transition && s.transition !== "none" && !XFADE_NAMES.has(s.transition))
       errors.push(`${at}: khong co kieu chuyen canh "${s.transition}"`);
+
+    if (s.sfx && s.sfx !== "none" && s.sfx !== "auto") {
+      const lib = join(root, "assets", "sfx", "sfx.json");
+      const names = existsSync(lib) ? Object.keys(JSON.parse(readFileSync(lib, "utf8"))).filter((k) => !k.startsWith("_")) : [];
+      if (!names.includes(s.sfx)) errors.push(`${at}: khong co tieng hieu ung "${s.sfx}". Co: ${names.join(", ")}`);
+    }
 
     let art = null;
     try {

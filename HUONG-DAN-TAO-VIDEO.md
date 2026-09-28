@@ -411,25 +411,69 @@ Chuyển thể từ `per-word-rise` và `marker-highlight` của HyperFrames:
 
 ---
 
-## 5c. Nhạc nền
+## 5c. Âm thanh: nhạc nền và tiếng hiệu ứng
 
-**Không kèm sẵn bản nhạc nào.** Thể lệ các cuộc thi đã cảnh báo về nhạc có bản quyền;
-chọn nhạc là việc của người làm clip. Nguồn nhạc miễn phí có thể dùng: YouTube Audio
-Library, Pixabay Music — đọc kỹ điều khoản từng bản.
+Mặc định **mỗi clip đều có nhạc nền tự sinh và tiếng hiệu ứng ở các lần chuyển cảnh**.
+Không cần làm gì thêm.
 
-Đặt file vào `assets/music/` rồi khai trong kịch bản:
+### Nhạc nền tự sinh (`tools/make-music.py`)
 
-```jsonc
-"brand": { "music": "nen-nhe.mp3", "musicVolume": 0.16 }
-```
+Nhạc được **tổng hợp từ đầu bằng Python + numpy** — pad êm, piano điện rải nốt nhẹ, bass
+sóng sin, vang phòng — nên **không dính bản quyền của ai**. Bốn tâm trạng:
 
-hoặc cho một lần chạy: `--music=duong/dan/file.mp3`.
+| Tâm trạng | Khi nào | Nhịp |
+|---|---|---|
+| `calm` | Mặc định: giáo dục sức khỏe, phòng bệnh, tiêm chủng | 70 |
+| `warm` | Chủ đề nặng: ung thư, đột quỵ, nguy cơ, biến chứng | 64 |
+| `hopeful` | Đổi mới, kỹ thuật mới, công nghệ, phục hồi | 82 |
+| `bright` | Thành tích, giải thưởng, kỷ niệm, lần đầu tiên | 96 |
 
-Nhạc được lặp cho đủ độ dài, mờ vào 1,5 giây, mờ ra 2,5 giây, và **tự hạ xuống mỗi khi
-có lời đọc** (nén theo tín hiệu giọng — "ducking"). Đo thực tế: lúc đang đọc, nhạc thấp
-hơn khoảng **14 dB**, và nhích lên lại ở các khoảng ngắt nghỉ.
+Bộ đạo diễn đếm từ khoá trong toàn bộ kịch bản để chọn tâm trạng — ý tưởng mượn từ
+HyperFrames. Muốn ép thì ghi `"brand": { "musicMood": "hopeful" }`.
 
-Bản không tiếng (`-silent.mp4`) không có cả lời lẫn nhạc.
+Mỗi bản là **một vòng lặp liền mạch**: một vòng được dựng trên bộ đệm tròn, đuôi âm nào
+vượt quá cuối vòng thì vòng về cộng vào đầu, nên chỗ nối không nghe thấy. Sinh mất khoảng
+1 giây, chỉ tốn vài MB bộ nhớ, lưu ở `build/music/` và dùng lại lần sau.
+
+Cần **Python 3 + numpy** (`pip install numpy`). Máy không có thì clip vẫn dựng bình
+thường, chỉ không có nhạc — không bao giờ làm hỏng lượt dựng vì nhạc.
+
+Nghe rõ là nhạc máy: hợp làm nền mỏng dưới lời đọc, không thay được một bản nhạc thật.
+
+### Dùng nhạc của mình thay nhạc tự sinh
+
+Đặt file vào `assets/music/` rồi ghi `"brand": { "music": "ten-file.mp3" }`, hoặc
+`--music=duong/dan/file.mp3` cho một lần chạy. Chỉ dùng nhạc miễn bản quyền (YouTube Audio
+Library, Pixabay Music…) — thể lệ các cuộc thi thường loại bài dùng nhạc có bản quyền.
+
+### Tiếng hiệu ứng (`assets/sfx/`)
+
+6 tiếng lấy từ bộ của HyperFrames, giấy phép Pixabay (dùng thương mại, không cần ghi
+nguồn): `whoosh-short`, `sparkle`, `ping`, `pop`, `chime`, `click-soft`. Các tiếng
+glitch, lỗi, bass dội trong bộ gốc bị bỏ vì không hợp nội dung y tế.
+
+Bộ đạo diễn gắn theo cách vào cảnh: ảnh lướt sang → `whoosh-short`; poster mở ra →
+`sparkle`; biểu đồ, con số → `ping`; cảnh kết → `chime`. **Các lần chuyển còn lại cố ý
+để im** — tiếng ở mọi lần chuyển biến bài tuyên truyền sức khỏe thành trailer phim.
+Không bao giờ hai cảnh liền nhau cùng một tiếng. Ghi tay: `"sfx": "pop"` hoặc `"none"`.
+
+Mọi tiếng đã được cân về cùng mức, thấp hơn giọng đọc khoảng 9 dB, và đặt sao cho đỉnh
+tiếng rơi đúng **đầu** lần chuyển cảnh — khoảng lặng giữa hai câu. Đặt vào giữa lần chuyển
+thì tiếng đè lên chữ đầu tiên của câu sau.
+
+### Cách trộn
+
+Giọng đọc + tiếng hiệu ứng trộn thành một đường; nhạc nền bị chính đường đó **ép xuống
+mỗi khi có tiếng** (đo được ~14 dB khi đang đọc) rồi nhích lên ở chỗ ngắt nghỉ; nhạc mờ vào
+1,5 giây, mờ ra 2,5 giây.
+
+| Tắt | Cách |
+|---|---|
+| Nhạc | `--no-music`, hoặc `"brand": { "music": "none" }` |
+| Tiếng hiệu ứng | `--no-sfx`, hoặc `"brand": { "sfx": false }` |
+| Âm lượng | `"brand": { "musicVolume": 0.16, "sfxVolume": 1 }` |
+
+Bản không tiếng (`-silent.mp4`) không có cả lời, nhạc lẫn tiếng hiệu ứng.
 
 ---
 
@@ -535,6 +579,9 @@ Danh sách tự kiểm:
 | Số đếm trong biểu đồ kẹt ở "0" suốt clip | `timeline.seek(t)` của GSAP mặc định bỏ qua các hàm callback, mà số đếm được ghi bằng `onUpdate`. Phải tua bằng `seek(t, false)`. |
 | Hình virus trên cảnh "Bệnh **không** lây nhiễm" | "lây nhiễm" khớp cả trong "không lây nhiễm" — nghĩa ngược hẳn. Tương tự: "hút thuốc lá" ra viên thuốc, "khen" khớp "hen", "còn gọi là" ra điện thoại. Từ khoá giờ so theo nguyên từ; các câu này được ghim trong `tools/test-art-keywords.mjs`. |
 | Chữ cuối chưa kịp hiện đã chuyển cảnh | Tốc độ chữ chạy cố định trong khi cảnh chỉ dài 2,7 giây. Giờ tốc độ tự nén theo độ dài cảnh. |
+| Cả bài nhỏ đi 3 dB sau khi thêm nhạc | Đổi giọng mono sang stereo bằng `aformat` áp luật chia công suất, tự hạ 3 dB. Phải nhân đôi kênh bằng `pan=stereo\|c0=c0\|c1=c0`. |
+| Nhạc tự sinh có tiếng "tách" mỗi lần lặp | Dựng nhiều vòng rồi cắt lấy một: làm tròn số mẫu làm các vòng lệch nhau một mẫu. Giờ dựng đúng một vòng trên bộ đệm tròn. |
+| Sinh nhạc báo hết bộ nhớ khi xin chỉ vài MB | Máy thường chỉ còn vài trăm MB bộ nhớ ảo. Một phép FFT cho cả bài đòi vài trăm MB; giờ đảo vang theo từng khối nhỏ. |
 | Chrome treo vô thời hạn | Hồ sơ Chrome mặc định đang bị trình duyệt của người dùng khoá. Phải dùng `--user-data-dir` riêng. |
 | ffmpeg báo thành công nhưng video sai | Chuyện thường. **Luôn trích khung hình ra xem**, đừng tin dòng "Done". |
 

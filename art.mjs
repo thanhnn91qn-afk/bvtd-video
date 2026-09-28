@@ -513,7 +513,7 @@ export const ART = {
  * scene. Each regression is pinned in tools/test-art-keywords.mjs.
  */
 const LETTER = "a-zA-Zà-ỹÀ-Ỹ";
-const kw = (...alts) => new RegExp(`(?<![${LETTER}])(?:${alts.join("|")})(?![${LETTER}])`, "iu");
+export const kw = (...alts) => new RegExp(`(?<![${LETTER}])(?:${alts.join("|")})(?![${LETTER}])`, "iu");
 
 const AUTO = [
   [kw("tiêm chủng", "tiêm phòng", "vắc ?xin", "vaccine", "mũi tiêm", "chủng ngừa"), "syringe"],

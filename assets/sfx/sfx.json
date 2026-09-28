@@ -1,0 +1,40 @@
+{
+  "_note": "Sound effects from the HyperFrames media-use skill (Pixabay Content License, see CREDITS.md). peak = seconds from file start to the loudest 50 ms, used to land the peak where a transition begins. gainDb brings every file to about -27 dBFS at its peak, roughly 9 dB under the narration (median -18 dBFS), measured 2026-09-28. whoosh.mp3 was dropped: byte-identical to whoosh-short.mp3.",
+  "whoosh-short": {
+    "file": "whoosh-short.mp3",
+    "peak": 0.15,
+    "gainDb": -16.6,
+    "use": "a photo sliding or wiping into the next"
+  },
+  "sparkle": {
+    "file": "sparkle.mp3",
+    "peak": 0.1,
+    "gainDb": -9.1,
+    "use": "a poster or infographic opening up"
+  },
+  "ping": {
+    "file": "ping.mp3",
+    "peak": 0.35,
+    "gainDb": 0.5,
+    "use": "a chart or a key figure arriving"
+  },
+  "pop": {
+    "file": "pop.mp3",
+    "peak": 0.1,
+    "gainDb": -12.3,
+    "use": "a small element appearing"
+  },
+  "chime": {
+    "file": "chime.mp3",
+    "peak": 0.4,
+    "gainDb": -0.4,
+    "use": "the closing card",
+    "mono": true
+  },
+  "click-soft": {
+    "file": "click-soft.mp3",
+    "peak": 0.05,
+    "gainDb": -0.5,
+    "use": "a quiet tick, list or UI"
+  }
+}
