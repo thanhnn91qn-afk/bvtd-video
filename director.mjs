@@ -26,7 +26,7 @@ const PHOTO_POOL = {
 const words = (t) => String(t || "").trim().split(/\s+/).filter(Boolean).length;
 const isAuto = (v) => v === undefined || v === null || v === "" || v === "auto";
 
-function chooseStyle(s, i, n, prev, prev2, portrait) {
+function chooseStyle(s, i, n, prev, prev2, portrait, used) {
   if (Array.isArray(s.chart) && s.chart.length >= 2) return "chart";
   if (!s.photo && Number.isFinite(Number(s.value)) && s.value !== "") return "stat";
 
@@ -38,10 +38,16 @@ function chooseStyle(s, i, n, prev, prev2, portrait) {
       // word-by-word across a photo gets messy once the line is long
       .filter((st) => st !== "caption" || words(s.headline) <= 10);
     if (i === 0 && pool.includes("cinematic")) return "cinematic";
-    return pool.find((st) => st !== prev && st !== prev2) || pool[0];
+    // Least used so far in this clip, then pool order. Only avoiding the two
+    // previous scenes sent every photo after a text scene back to "cinematic".
+    const ok = pool.filter((st) => st !== prev && st !== prev2);
+    const cand = ok.length ? ok : pool;
+    return cand.reduce((best, st) => ((used[st] || 0) < (used[best] || 0) ? st : best), cand[0]);
   }
 
   if ((s.lines || []).length) return "lines";
+  // a marker highlight only exists in the word-by-word style
+  if ((s.highlight || []).length && i !== n - 1) return "kinetic";
   if (i === n - 1 && !s.contact) return "logo";
   if (s.contact) return "plain";
   if (words(s.headline) <= 12 && prev !== "kinetic") return "kinetic";
@@ -118,12 +124,14 @@ export function direct(cfg, { portrait }) {
   const log = [];
   const usedArt = new Set(scenes.map((s) => s.art).filter((a) => a && !isAuto(a) && a !== "none"));
 
+  const usedStyle = {};
   scenes.forEach((s, i) => {
     const notes = [];
     if (isAuto(s.style)) {
-      s.style = chooseStyle(s, i, n, scenes[i - 1]?.style, scenes[i - 2]?.style, portrait);
+      s.style = chooseStyle(s, i, n, scenes[i - 1]?.style, scenes[i - 2]?.style, portrait, usedStyle);
       notes.push(`kieu ${s.style}`);
     }
+    usedStyle[s.style] = (usedStyle[s.style] || 0) + 1;
     if (!s.photo && takesArt(s.style, portrait) && isAuto(s.art)) {
       const pick = artCandidates(s).find((a) => !usedArt.has(a));
       if (pick) { s.art = pick; usedArt.add(pick); notes.push(`hinh ${pick}`); }
