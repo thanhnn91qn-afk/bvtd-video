@@ -22,7 +22,7 @@
       ],
       "sub": "Bệnh viện gửi lời chào mừng đến cán bộ, viên chức, người lao động và người bệnh.",
       "wordMs": 260,
-      "voice": "Mỗi năm, khi tháng Mười về, cả nước lại cùng hướng về Ngày hội đổi mới sáng tạo quốc gia, ngày để mỗi người, mỗi đơn vị nhìn lại những ý tưởng mới, cách làm hay đang góp phần làm cho công việc và cuộc sống tốt đẹp hơn. Nhân dịp này, bệnh viện xin gửi lời chào mừng đến toàn thể cán bộ, viên chức, người lao động và người bệnh."
+      "voice": "Chủ đề năm nay: Đổi mới sáng tạo, động lực phát triển của toàn xã hội. Nhân dịp này, bệnh viện xin gửi lời chào mừng đến toàn thể cán bộ, viên chức, người lao động và người bệnh."
     },
     {
       "id": "d03",
@@ -30,11 +30,10 @@
       "headline": "Ngày 01/10 hằng năm là Ngày hội đổi mới sáng tạo quốc gia",
       "lines": [
         "Bộ Khoa học và Công nghệ chủ trì",
-        "Năm 2026: hoạt động từ 25/9 đến hết 05/10",
-        "Lan tỏa tinh thần đổi mới sáng tạo trong toàn dân",
-        "Biểu dương tập thể, cá nhân tiêu biểu"
+        "Năm 2026: từ 25/9 đến hết 05/10",
+        "Lan tỏa tinh thần đổi mới sáng tạo"
       ],
-      "voice": "Chính phủ đã ban hành Nghị định số hai trăm sáu mươi tám, quy định ngày một tháng Mười hằng năm là Ngày hội đổi mới sáng tạo quốc gia, do Bộ Khoa học và Công nghệ chủ trì. Năm nay, các hoạt động hưởng ứng diễn ra từ ngày hai mươi lăm tháng Chín đến hết ngày năm tháng Mười, nhằm lan tỏa tinh thần đổi mới sáng tạo trong toàn dân, khuyến khích ứng dụng công nghệ, và biểu dương những tập thể, cá nhân tiêu biểu."
+      "voice": "Ngày một tháng Mười hằng năm là Ngày hội đổi mới sáng tạo quốc gia. Năm nay, các hoạt động diễn ra từ hai mươi lăm tháng Chín đến năm tháng Mười, nhằm lan tỏa tinh thần đổi mới sáng tạo."
     },
     {
       "id": "d04",
@@ -45,19 +44,19 @@
       ],
       "sub": "Ở bệnh viện, đó có thể chỉ là một cải tiến nhỏ trong công việc hằng ngày.",
       "wordMs": 270,
-      "voice": "Nhiều người nghĩ đổi mới sáng tạo là chuyện lớn, chỉ dành cho nhà khoa học hay người làm công nghệ. Thực tế, ở bệnh viện, đó có thể chỉ là một cải tiến nhỏ."
+      "voice": "Đổi mới sáng tạo không chỉ là chuyện lớn của nhà khoa học."
     },
     {
       "id": "d05",
       "kicker": "Đổi mới từ việc gần gũi",
       "headline": "Một cải tiến nhỏ cũng là đổi mới",
       "lines": [
-        "Người bệnh bớt một thủ tục, bớt một lần đi lại",
-        "Sắp xếp lại quy trình để khoa, phòng gọn hơn",
-        "Biểu mẫu, phần mềm nhỏ đỡ thời gian ghi chép",
-        "Giải pháp công nghệ chẩn đoán nhanh, chính xác hơn"
+        "Người bệnh bớt một thủ tục",
+        "Quy trình khoa, phòng gọn hơn",
+        "Phần mềm nhỏ đỡ thời gian ghi chép",
+        "Công nghệ chẩn đoán nhanh, chính xác hơn"
       ],
-      "voice": "Đó có thể là một cải tiến giúp người bệnh bớt một thủ tục, bớt một lần đi lại; là cách sắp xếp lại quy trình để khoa, phòng làm việc gọn hơn; là một biểu mẫu hay một phần mềm nhỏ giúp điều dưỡng, bác sĩ đỡ mất thời gian ghi chép; hoặc là một giải pháp công nghệ giúp chẩn đoán nhanh hơn, chính xác hơn. Tất cả đều vì mục tiêu phục vụ người bệnh tốt hơn."
+      "voice": "Ở bệnh viện, đó có thể là một cải tiến giúp người bệnh bớt một thủ tục, một quy trình gọn hơn, một phần mềm nhỏ giúp bác sĩ đỡ mất thời gian ghi chép, hay một giải pháp công nghệ giúp chẩn đoán nhanh hơn, chính xác hơn."
     },
     {
       "id": "d06",
@@ -68,16 +67,7 @@
       "statLabel": "năm hoạt động (1981 - 2026)",
       "photo": "history-1981.jpg",
       "zoom": "in",
-      "voice": "Bệnh viện được thành lập ngày mười bảy tháng Ba năm một nghìn chín trăm tám mươi mốt, với sự giúp đỡ của Chính phủ và nhân dân Thụy Điển. Năm nay, bệnh viện tròn bốn mươi lăm năm hoạt động."
-    },
-    {
-      "id": "d07",
-      "kicker": "Không ngừng cải tiến",
-      "headline": "Học hỏi, làm chủ kỹ thuật mới",
-      "sub": "Tập thể bệnh viện không ngừng cải tiến cách làm việc.",
-      "photo": "cdss-phong-can-thiep.jpg",
-      "zoom": "out",
-      "voice": "Trong chặng đường ấy, tập thể bệnh viện luôn học hỏi, làm chủ kỹ thuật mới và không ngừng cải tiến cách làm việc."
+      "voice": "Được thành lập với sự giúp đỡ của Thụy Điển, năm nay bệnh viện tròn bốn mươi lăm năm, luôn học hỏi, làm chủ kỹ thuật mới."
     },
     {
       "id": "d08",
@@ -85,7 +75,7 @@
       "headline": "Bệnh án điện tử từ 01/4/2025",
       "sub": "Liên thông dữ liệu với hệ thống quốc gia, đơn thuốc điện tử thay cho đơn giấy.",
       "photo": "benh-an-dien-tu-poster.jpg",
-      "voice": "Những năm gần đây, bệnh viện triển khai bệnh án điện tử từ ngày một tháng Tư năm hai nghìn không trăm hai mươi lăm, liên thông dữ liệu với hệ thống quốc gia, và sử dụng đơn thuốc điện tử thay cho đơn giấy."
+      "voice": "Từ tháng Tư năm hai nghìn không trăm hai mươi lăm, bệnh viện dùng bệnh án điện tử, liên thông dữ liệu quốc gia và đơn thuốc điện tử."
     },
     {
       "id": "d09",
@@ -93,7 +83,7 @@
       "headline": "AI hỗ trợ chẩn đoán, giám định và quản lý hồ sơ",
       "sub": "Hỗ trợ chẩn đoán hình ảnh, giám định bảo hiểm y tế và quản lý hồ sơ bệnh án.",
       "photo": "screenshot-danhsach.jpg",
-      "voice": "Trí tuệ nhân tạo được ứng dụng để hỗ trợ chẩn đoán hình ảnh, giám định bảo hiểm y tế và quản lý hồ sơ bệnh án."
+      "voice": "Trí tuệ nhân tạo hỗ trợ chẩn đoán hình ảnh, giám định bảo hiểm và quản lý hồ sơ bệnh án."
     },
     {
       "id": "d10",
@@ -102,16 +92,16 @@
       "sub": "Giúp người bệnh tìm đúng khoa, phòng cần đến.",
       "art": "icon:artificial-intelligence-outline",
       "wordMs": 280,
-      "voice": "Với người bệnh, những thay đổi này thể hiện ngay từ cổng bệnh viện. Robot dẫn đường có ứng dụng trí tuệ nhân tạo giúp người bệnh tìm đúng khoa, phòng cần đến."
+      "voice": "Robot dẫn đường ứng dụng trí tuệ nhân tạo giúp người bệnh tìm đúng khoa, phòng."
     },
     {
       "id": "d11",
       "kicker": "Kiosk đăng ký khám tự động",
       "headline": "Rút ngắn thời gian chờ ở khâu tiếp đón",
-      "sub": "Kiosk tra cứu giúp người bệnh tự xem kết quả, cách dùng thuốc.",
+      "sub": "Đăng ký khám, tra cứu kết quả tự động.",
       "photo": "cdss-sanh-cho.jpg",
       "zoom": "in",
-      "voice": "Kiosk đăng ký khám tự động giúp rút ngắn thời gian chờ ở khâu tiếp đón. Kiosk tra cứu cho phép người bệnh tự xem kết quả, cách dùng thuốc, và biết đợt khám của mình đã có kết quả hay chưa."
+      "voice": "Kiosk đăng ký khám tự động giúp rút ngắn thời gian chờ ở khâu tiếp đón. Kiosk tra cứu cho phép người bệnh tự xem kết quả và cách dùng thuốc."
     },
     {
       "id": "d12",
@@ -119,7 +109,7 @@
       "headline": "Thanh toán bằng mã QR, đỡ phải chờ",
       "photo": "cdss-thanh-toan-qr.jpg",
       "zoom": "in",
-      "voice": "Việc thanh toán không dùng tiền mặt, chỉ cần quét mã trên điện thoại, cũng giúp người bệnh đỡ phải chờ đợi.",
+      "voice": "Thanh toán không dùng tiền mặt, chỉ cần quét mã, người bệnh đỡ phải chờ.",
       "style": "shot"
     },
     {
@@ -131,7 +121,7 @@
         "Mạnh dạn dùng công nghệ số",
         "Chia sẻ cách làm hay để cùng nhân rộng"
       ],
-      "voice": "Nhân Ngày hội, bệnh viện kêu gọi các khoa, phòng và toàn thể cán bộ, viên chức, người lao động chủ động nghĩ và đề xuất sáng kiến, cải tiến gắn với công việc của mình; mạnh dạn dùng công nghệ số để làm việc hiệu quả hơn; và chia sẻ những cách làm hay để đồng nghiệp cùng học hỏi, nhân rộng."
+      "voice": "Bệnh viện kêu gọi mỗi khoa, phòng chủ động đề xuất sáng kiến, mạnh dạn dùng công nghệ số, và chia sẻ cách làm hay để đồng nghiệp cùng học hỏi, nhân rộng."
     },
     {
       "id": "d14",
@@ -147,7 +137,7 @@
       "kicker": "Vsh.org.vn",
       "headline": "Đổi mới sáng tạo - Động lực phát triển của toàn xã hội",
       "sub": "Bệnh viện Việt Nam - Thụy Điển Uông Bí",
-      "voice": "Đó cũng là cách thiết thực nhất để Bệnh viện Việt Nam Thụy Điển Uông Bí hưởng ứng tinh thần: Đổi mới sáng tạo, động lực phát triển của toàn xã hội."
+      "voice": "Bệnh viện Việt Nam Thụy Điển Uông Bí, chung tay vì một nền y tế đổi mới sáng tạo."
     }
   ]
 }

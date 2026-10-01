@@ -608,7 +608,12 @@ const STYLES = {
 };
 
 async function tts(text, outWav) {
-  if (existsSync(outWav) && !FORCE) return;
+  // The cache is keyed by scene id, so the text it was made from is kept next
+  // to it. Without that, editing a scene's narration silently reused the old
+  // recording - a shortened script still came out at its old length.
+  const stamp = `${outWav}.txt`;
+  if (existsSync(outWav) && !FORCE && existsSync(stamp) &&
+      (await readFile(stamp, "utf8")) === text) return;
   const res = await fetch(`${TTS_ENDPOINT}/tts`, {
     method: "POST",
     headers: { "Content-Type": "application/json; charset=utf-8" },
@@ -616,6 +621,7 @@ async function tts(text, outWav) {
   });
   if (!res.ok) throw new Error(`TTS ${res.status}`);
   await writeFile(outWav, Buffer.from(await res.arrayBuffer()));
+  await writeFile(stamp, text, "utf8");
 }
 
 async function durationSec(path) {
