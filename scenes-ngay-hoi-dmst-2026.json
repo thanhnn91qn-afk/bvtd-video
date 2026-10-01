@@ -6,130 +6,117 @@
   },
   "scenes": [
     {
-      "id": "d01",
+      "id": "e01",
       "kicker": "Ngày hội Đổi mới sáng tạo quốc gia 2026",
-      "headline": "Bệnh viện Việt Nam - Thụy Điển Uông Bí hưởng ứng",
-      "sub": "Đổi mới sáng tạo - Động lực phát triển của toàn xã hội",
+      "headline": "Đổi mới sáng tạo góp phần tạo động lực phát triển y tế",
+      "sub": "Bệnh viện Việt Nam - Thụy Điển Uông Bí",
       "photo": "ndmst-2026-poster.png",
-      "voice": "Bệnh viện Việt Nam Thụy Điển Uông Bí hưởng ứng Ngày hội đổi mới sáng tạo quốc gia năm hai nghìn không trăm hai mươi sáu."
+      "voice": "Bệnh viện Việt Nam Thụy Điển Uông Bí: Đổi mới sáng tạo góp phần tạo động lực phát triển y tế."
     },
     {
-      "id": "d02",
-      "kicker": "Chủ đề năm 2026",
-      "headline": "Đổi mới sáng tạo - Động lực phát triển của toàn xã hội",
-      "highlight": [
-        "Động lực phát triển"
-      ],
-      "sub": "Bệnh viện gửi lời chào mừng đến cán bộ, viên chức, người lao động và người bệnh.",
-      "wordMs": 260,
-      "voice": "Chủ đề năm nay: Đổi mới sáng tạo, động lực phát triển của toàn xã hội. Nhân dịp này, bệnh viện xin gửi lời chào mừng đến toàn thể cán bộ, viên chức, người lao động và người bệnh."
-    },
-    {
-      "id": "d03",
-      "kicker": "Nghị định 268/2025/NĐ-CP",
-      "headline": "Ngày 01/10 hằng năm là Ngày hội đổi mới sáng tạo quốc gia",
-      "lines": [
-        "Bộ Khoa học và Công nghệ chủ trì",
-        "Năm 2026: từ 25/9 đến hết 05/10",
-        "Lan tỏa tinh thần đổi mới sáng tạo"
-      ],
-      "voice": "Ngày một tháng Mười hằng năm là Ngày hội đổi mới sáng tạo quốc gia. Năm nay, các hoạt động diễn ra từ hai mươi lăm tháng Chín đến năm tháng Mười, nhằm lan tỏa tinh thần đổi mới sáng tạo."
-    },
-    {
-      "id": "d04",
-      "kicker": "Đổi mới sáng tạo là gì",
-      "headline": "Không chỉ là chuyện lớn của nhà khoa học",
-      "highlight": [
-        "chuyện lớn"
-      ],
-      "sub": "Ở bệnh viện, đó có thể chỉ là một cải tiến nhỏ trong công việc hằng ngày.",
-      "wordMs": 270,
-      "voice": "Đổi mới sáng tạo không chỉ là chuyện lớn của nhà khoa học.",
+      "id": "e02",
+      "style": "caption",
+      "kicker": "Đổi mới từ việc gần gũi",
+      "headline": "Không nhất thiết bắt đầu từ công nghệ lớn",
+      "highlight": ["công nghệ lớn"],
+      "sub": "Nhân viên y tế làm việc hiệu quả hơn, người bệnh giảm thời gian chờ đợi.",
       "photo": "quay-tiep-don.jpg",
       "zoom": "in",
-      "style": "caption"
+      "wordMs": 260,
+      "voice": "Đổi mới sáng tạo trong bệnh viện không nhất thiết bắt đầu từ những công nghệ lớn. Đó có thể là một quy trình được cải tiến, một thủ tục được rút gọn, một thao tác được số hóa."
     },
     {
-      "id": "d05",
-      "kicker": "Đổi mới từ việc gần gũi",
-      "headline": "Một cải tiến nhỏ cũng là đổi mới",
+      "id": "e03",
+      "kicker": "Nghị định 268/2025/NĐ-CP",
+      "headline": "Ngày 01/10 hằng năm là Ngày hội Đổi mới sáng tạo quốc gia",
       "lines": [
-        "Người bệnh bớt một thủ tục",
-        "Quy trình khoa, phòng gọn hơn",
-        "Phần mềm nhỏ đỡ thời gian ghi chép",
-        "Công nghệ chẩn đoán nhanh, chính xác hơn"
+        "Năm 2026: từ 25/9 đến 05/10",
+        "Lan tỏa tinh thần đổi mới sáng tạo",
+        "Khuyến khích chủ động ứng dụng công nghệ"
       ],
-      "voice": "Ở bệnh viện, đó có thể là một cải tiến giúp người bệnh bớt một thủ tục, một quy trình gọn hơn, một phần mềm nhỏ giúp bác sĩ đỡ mất thời gian ghi chép, hay một giải pháp công nghệ giúp chẩn đoán nhanh hơn, chính xác hơn."
+      "voice": "Theo Nghị định của Chính phủ, ngày một tháng Mười hằng năm là Ngày hội Đổi mới sáng tạo quốc gia. Năm nay, các hoạt động hưởng ứng diễn ra từ hai mươi lăm tháng Chín đến năm tháng Mười."
     },
     {
-      "id": "d06",
-      "kicker": "Thành lập ngày 17/3/1981",
-      "headline": "Gần nửa thế kỷ đồng hành cùng người bệnh",
-      "sub": "Ra đời với sự giúp đỡ của Chính phủ và nhân dân Thụy Điển.",
+      "id": "e04",
+      "kicker": "Quan điểm của bệnh viện",
+      "headline": "Đổi mới sáng tạo bắt đầu từ thực tiễn",
+      "highlight": ["thực tiễn"],
+      "sub": "Hướng đến nâng cao chất lượng khám bệnh, chữa bệnh, phục vụ người bệnh.",
+      "wordMs": 280,
+      "voice": "Bệnh viện xác định đổi mới sáng tạo phải bắt đầu từ thực tiễn, từ những vấn đề cần giải quyết, hướng đến nâng cao chất lượng khám bệnh, chữa bệnh, phục vụ người bệnh."
+    },
+    {
+      "id": "e05",
+      "kicker": "45 năm xây dựng và phát triển",
+      "headline": "Học hỏi, làm chủ kỹ thuật mới, không ngừng cải tiến",
+      "sub": "Thành lập ngày 17/3/1981 với sự giúp đỡ của Chính phủ và nhân dân Thụy Điển.",
       "stat": "45",
-      "statLabel": "năm hoạt động (1981 - 2026)",
+      "statLabel": "năm (1981 - 2026)",
       "photo": "history-1981.jpg",
       "zoom": "in",
-      "voice": "Được thành lập với sự giúp đỡ của Thụy Điển, năm nay bệnh viện tròn bốn mươi lăm năm, luôn học hỏi, làm chủ kỹ thuật mới."
+      "voice": "Bốn mươi lăm năm qua, tinh thần học hỏi, làm chủ kỹ thuật mới và không ngừng cải tiến đã trở thành một phần hành trình phát triển của bệnh viện."
     },
     {
-      "id": "d08",
+      "id": "e06",
       "kicker": "Chuyển đổi số",
       "headline": "Bệnh án điện tử từ 01/4/2025",
-      "sub": "Liên thông dữ liệu với hệ thống quốc gia, đơn thuốc điện tử thay cho đơn giấy.",
+      "sub": "Cùng đơn thuốc điện tử.",
       "photo": "benh-an-dien-tu-poster.jpg",
-      "voice": "Từ tháng Tư năm hai nghìn không trăm hai mươi lăm, bệnh viện dùng bệnh án điện tử, liên thông dữ liệu quốc gia và đơn thuốc điện tử."
+      "voice": "Những năm gần đây, chuyển đổi số được đẩy mạnh, với bệnh án điện tử từ tháng Tư năm hai nghìn không trăm hai mươi lăm, và đơn thuốc điện tử."
     },
     {
-      "id": "d09",
+      "id": "e07",
       "kicker": "Trí tuệ nhân tạo",
-      "headline": "AI hỗ trợ chẩn đoán, giám định và quản lý hồ sơ",
-      "sub": "Hỗ trợ chẩn đoán hình ảnh, giám định bảo hiểm y tế và quản lý hồ sơ bệnh án.",
+      "headline": "Ứng dụng AI trong một số hoạt động chuyên môn",
       "photo": "screenshot-danhsach.jpg",
-      "voice": "Trí tuệ nhân tạo hỗ trợ chẩn đoán hình ảnh, giám định bảo hiểm và quản lý hồ sơ bệnh án."
+      "voice": "Các giải pháp công nghệ và trí tuệ nhân tạo được ứng dụng trong một số hoạt động chuyên môn."
     },
     {
-      "id": "d10",
-      "kicker": "Ngay từ cổng bệnh viện",
-      "headline": "Robot dẫn đường có ứng dụng AI",
-      "sub": "Giúp người bệnh tìm đúng khoa, phòng cần đến.",
-      "voice": "Robot dẫn đường ứng dụng trí tuệ nhân tạo giúp người bệnh tìm đúng khoa, phòng.",
+      "id": "e08",
+      "style": "split",
+      "focus": "76% 50%",
+      "kicker": "Từ khu vực tiếp đón",
+      "headline": "Robot dẫn đường ứng dụng AI",
       "photo": "robot-dan-duong.jpg",
       "zoom": "in",
-      "style": "split",
-      "focus": "76% 50%"
+      "voice": "Từ khu vực tiếp đón, nhiều tiện ích số được đưa vào phục vụ người bệnh: robot dẫn đường ứng dụng trí tuệ nhân tạo,"
     },
     {
-      "id": "d11",
-      "kicker": "Tiếp đón nhanh hơn",
-      "headline": "Kiosk đăng ký khám và tra cứu tự động",
-      "sub": "Rút ngắn thời gian chờ; người bệnh tự xem kết quả, cách dùng thuốc.",
+      "id": "e09",
+      "focus": "78% 45%",
+      "kicker": "Tiện ích số",
+      "headline": "Kiosk đăng ký khám, kiosk tra cứu thông tin",
       "photo": "kiosk-tiep-don.jpg",
-      "zoom": "in",
-      "voice": "Kiosk đăng ký khám tự động giúp rút ngắn thời gian chờ ở khâu tiếp đón. Kiosk tra cứu cho phép người bệnh tự xem kết quả và cách dùng thuốc.",
-      "focus": "78% 45%"
+      "voice": "kiosk đăng ký khám, kiosk tra cứu thông tin,"
     },
     {
-      "id": "d12",
+      "id": "e10",
       "kicker": "Không dùng tiền mặt",
-      "headline": "Thanh toán bằng mã QR, đỡ phải chờ",
+      "headline": "Thanh toán bằng mã QR",
+      "sub": "Giảm thao tác, giảm thời gian chờ, chủ động và thuận tiện cho người bệnh.",
       "photo": "thanh-toan-qr-dien-thoai.jpg",
-      "zoom": "in",
-      "voice": "Thanh toán không dùng tiền mặt, chỉ cần quét mã, người bệnh đỡ phải chờ."
+      "voice": "và thanh toán không dùng tiền mặt bằng cách quét mã. Những giải pháp này giúp giảm thao tác, giảm thời gian chờ, tăng tính chủ động và thuận tiện cho người bệnh."
     },
     {
-      "id": "d13",
+      "id": "e11",
+      "kicker": "Giá trị thật",
+      "headline": "Công nghệ có ý nghĩa khi tạo giá trị thiết thực cho người bệnh",
+      "sub": "Đổi mới còn là cải tiến từng quy trình, từng cách làm hằng ngày.",
+      "voice": "Với bệnh viện, công nghệ chỉ thực sự có ý nghĩa khi tạo ra giá trị thiết thực cho người bệnh."
+    },
+    {
+      "id": "e12",
       "kicker": "Lời kêu gọi",
       "headline": "Mỗi khoa, phòng cùng đổi mới",
       "lines": [
-        "Chủ động đề xuất sáng kiến, cải tiến",
-        "Mạnh dạn dùng công nghệ số",
-        "Chia sẻ cách làm hay để cùng nhân rộng"
+        "Chủ động phát hiện vấn đề, đề xuất sáng kiến",
+        "Mạnh dạn ứng dụng công nghệ số",
+        "Chia sẻ cách làm hiệu quả để nhân rộng"
       ],
-      "voice": "Bệnh viện kêu gọi mỗi khoa, phòng chủ động đề xuất sáng kiến, mạnh dạn dùng công nghệ số, và chia sẻ cách làm hay để đồng nghiệp cùng học hỏi, nhân rộng."
+      "voice": "Bệnh viện kêu gọi các khoa, phòng chủ động phát hiện vấn đề, đề xuất sáng kiến, mạnh dạn ứng dụng công nghệ số, và chia sẻ cách làm hiệu quả để cùng nhân rộng."
     },
     {
-      "id": "d14",
+      "id": "e13",
       "kicker": "Vì người bệnh",
       "headline": "Mỗi sáng kiến, dù nhỏ, đều đáng giá",
       "sub": "Góp phần để người bệnh được chăm sóc tốt hơn.",
@@ -138,11 +125,11 @@
       "voice": "Mỗi sáng kiến, dù nhỏ, đều góp phần để người bệnh được chăm sóc tốt hơn."
     },
     {
-      "id": "d15",
+      "id": "e14",
       "kicker": "Vsh.org.vn",
-      "headline": "Đổi mới sáng tạo - Động lực phát triển của toàn xã hội",
-      "sub": "Bệnh viện Việt Nam - Thụy Điển Uông Bí",
-      "voice": "Bệnh viện Việt Nam Thụy Điển Uông Bí, chung tay vì một nền y tế đổi mới sáng tạo."
+      "headline": "Tất cả vì sự hài lòng của người bệnh",
+      "sub": "Đổi mới sáng tạo - Động lực phát triển của toàn xã hội",
+      "voice": "Vì mục tiêu xuyên suốt bốn mươi lăm năm: Tất cả vì sự hài lòng của người bệnh."
     }
   ]
 }
