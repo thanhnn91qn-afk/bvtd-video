@@ -43,6 +43,17 @@ const fileUrl = (p) => pathToFileURL(p).href;
 const photoUrl = (name) => fileUrl(join(ROOT, "assets", "photos", name));
 const logoUrl = () => fileUrl(join(ROOT, "assets", "logo.png"));
 
+/**
+ * `scene.focus` ("x% y%") keeps the subject in frame when a landscape photo is
+ * cropped for a narrower frame - the crop is centred otherwise, and a robot
+ * standing at the right edge of the shot simply fell out of its own scene.
+ * The Ken Burns zoom heads for the same point.
+ */
+const focusAttr = (s) =>
+  s.focus && /^\d{1,3}% \d{1,3}%$/.test(s.focus)
+    ? ` style="object-position:${s.focus};transform-origin:${s.focus}"`
+    : "";
+
 /** Same frame-accurate engine as the 9:16 build: Node pushes the time in. */
 const ENGINE = `
 function easeOutCubic(x){ return 1 - Math.pow(1 - x, 3); }
@@ -196,7 +207,7 @@ function styleCinematic(s) {
  #stat b{font-size:76px;color:#7ff0c8;font-weight:800;line-height:1}
  #stat span{font-size:26px;color:#cfe3ee}
 `,
-    `<div class="full"><img id="photo" src="${photoUrl(s.photo)}"></div><div class="scrim"></div>
+    `<div class="full"><img id="photo" src="${photoUrl(s.photo)}"${focusAttr(s)}></div><div class="scrim"></div>
      <div class="wrap"><div id="kicker">${esc(s.kicker)}</div>
        <h1 id="headline">${esc(s.headline)}</h1><p id="sub">${esc(s.sub)}</p>${statBlock(s)}</div>
      <div class="logobar" id="logo"><img src="${logoUrl()}"></div>`,
@@ -223,7 +234,7 @@ function styleSplit(s) {
  #stat b{font-size:80px;color:#7ff0c8;font-weight:800;line-height:1}
  #stat span{font-size:25px;color:#cfe6f6;max-width:420px}
 `,
-    `<div class="ph"><img id="photo" src="${photoUrl(s.photo)}"></div>
+    `<div class="ph"><img id="photo" src="${photoUrl(s.photo)}"${focusAttr(s)}></div>
      <div id="block"><div id="kicker">${esc(s.kicker)}</div>
        <h1 id="headline">${esc(s.headline)}</h1><p id="sub">${esc(s.sub)}</p>${statBlock(s)}</div>
      <div class="logobar" id="logo"><img src="${logoUrl()}"></div>`,
@@ -252,7 +263,7 @@ function styleGlass(s) {
  #stat b{font-size:74px;color:#7ff0c8;font-weight:800;line-height:1}
  #stat span{font-size:25px;color:#eaf6fb;font-weight:600}
 `,
-    `<div class="full"><img id="photo" src="${photoUrl(s.photo)}"></div><div class="tint"></div>
+    `<div class="full"><img id="photo" src="${photoUrl(s.photo)}"${focusAttr(s)}></div><div class="tint"></div>
      <div id="glass"><div id="kicker">${esc(s.kicker)}</div>
        <h1 id="headline">${esc(s.headline)}</h1><p id="sub">${esc(s.sub)}</p>${statBlock(s)}</div>
      <div class="logobar" id="logo"><img src="${logoUrl()}"></div>`,
@@ -278,7 +289,7 @@ function styleCaption(s) {
  #sub{position:absolute;left:160px;right:160px;bottom:122px;text-align:center;font-size:28px;
    color:#d8ebf6;margin:0;font-weight:500;opacity:0}
 `,
-    `<div class="full"><img id="photo" src="${photoUrl(s.photo)}"></div><div class="tint"></div>
+    `<div class="full"><img id="photo" src="${photoUrl(s.photo)}"${focusAttr(s)}></div><div class="tint"></div>
      <div id="kicker">${esc(s.kicker)}</div><div id="words">${words}</div>
      <p id="sub">${esc(s.sub)}</p>
      <div class="logobar" id="logo"><img src="${logoUrl()}"></div>`,
@@ -309,7 +320,7 @@ function styleWipe(s) {
  #stat b{font-size:72px;color:#12a37a;font-weight:800;line-height:1}
  #stat span{font-size:25px;color:#5b7a8c}
 `,
-    `<div class="ph"><img id="photo" src="${photoUrl(s.photo)}"></div>
+    `<div class="ph"><img id="photo" src="${photoUrl(s.photo)}"${focusAttr(s)}></div>
      <div id="meta">${esc(s.meta || "BENH VIEN VIET NAM - THUY DIEN UONG BI")}</div>
      <div class="panel"><div class="rule"></div><div id="kicker">${esc(s.kicker)}</div>
        <div id="wipe"><h1 id="headline">${esc(s.headline)}</h1></div>
@@ -336,7 +347,7 @@ function styleCard(s) {
  #stat b{font-size:76px;color:#12a37a;font-weight:800;line-height:1}
  #stat span{font-size:25px;color:#5b7a8c;max-width:400px}
 `,
-    `<div class="full"><img id="photo" src="${photoUrl(s.photo)}"></div><div class="tint"></div>
+    `<div class="full"><img id="photo" src="${photoUrl(s.photo)}"${focusAttr(s)}></div><div class="tint"></div>
      <div class="card"><div id="kicker">${esc(s.kicker)}</div>
        <h1 id="headline">${esc(s.headline)}</h1><p id="sub">${esc(s.sub)}</p>${statBlock(s)}</div>
      <div class="logobar" id="logo"><img src="${logoUrl()}"></div>`,

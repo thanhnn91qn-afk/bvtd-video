@@ -14,3 +14,6 @@ assets/press/
 
 # Thu muc xuat video - rieng tung may
 out-dir.txt
+
+# Cho nguoi dung tha anh moi; anh dung trong clip duoc chep sang assets/photos voi ten ro nghia
+anh/

@@ -44,7 +44,10 @@
       ],
       "sub": "Ở bệnh viện, đó có thể chỉ là một cải tiến nhỏ trong công việc hằng ngày.",
       "wordMs": 270,
-      "voice": "Đổi mới sáng tạo không chỉ là chuyện lớn của nhà khoa học."
+      "voice": "Đổi mới sáng tạo không chỉ là chuyện lớn của nhà khoa học.",
+      "photo": "quay-tiep-don.jpg",
+      "zoom": "in",
+      "style": "caption"
     },
     {
       "id": "d05",
@@ -90,27 +93,29 @@
       "kicker": "Ngay từ cổng bệnh viện",
       "headline": "Robot dẫn đường có ứng dụng AI",
       "sub": "Giúp người bệnh tìm đúng khoa, phòng cần đến.",
-      "art": "icon:artificial-intelligence-outline",
-      "wordMs": 280,
-      "voice": "Robot dẫn đường ứng dụng trí tuệ nhân tạo giúp người bệnh tìm đúng khoa, phòng."
+      "voice": "Robot dẫn đường ứng dụng trí tuệ nhân tạo giúp người bệnh tìm đúng khoa, phòng.",
+      "photo": "robot-dan-duong.jpg",
+      "zoom": "in",
+      "style": "split",
+      "focus": "76% 50%"
     },
     {
       "id": "d11",
-      "kicker": "Kiosk đăng ký khám tự động",
-      "headline": "Rút ngắn thời gian chờ ở khâu tiếp đón",
-      "sub": "Đăng ký khám, tra cứu kết quả tự động.",
-      "photo": "cdss-sanh-cho.jpg",
+      "kicker": "Tiếp đón nhanh hơn",
+      "headline": "Kiosk đăng ký khám và tra cứu tự động",
+      "sub": "Rút ngắn thời gian chờ; người bệnh tự xem kết quả, cách dùng thuốc.",
+      "photo": "kiosk-tiep-don.jpg",
       "zoom": "in",
-      "voice": "Kiosk đăng ký khám tự động giúp rút ngắn thời gian chờ ở khâu tiếp đón. Kiosk tra cứu cho phép người bệnh tự xem kết quả và cách dùng thuốc."
+      "voice": "Kiosk đăng ký khám tự động giúp rút ngắn thời gian chờ ở khâu tiếp đón. Kiosk tra cứu cho phép người bệnh tự xem kết quả và cách dùng thuốc.",
+      "focus": "78% 45%"
     },
     {
       "id": "d12",
       "kicker": "Không dùng tiền mặt",
       "headline": "Thanh toán bằng mã QR, đỡ phải chờ",
-      "photo": "cdss-thanh-toan-qr.jpg",
+      "photo": "thanh-toan-qr-dien-thoai.jpg",
       "zoom": "in",
-      "voice": "Thanh toán không dùng tiền mặt, chỉ cần quét mã, người bệnh đỡ phải chờ.",
-      "style": "shot"
+      "voice": "Thanh toán không dùng tiền mặt, chỉ cần quét mã, người bệnh đỡ phải chờ."
     },
     {
       "id": "d13",
@@ -128,7 +133,7 @@
       "kicker": "Vì người bệnh",
       "headline": "Mỗi sáng kiến, dù nhỏ, đều đáng giá",
       "sub": "Góp phần để người bệnh được chăm sóc tốt hơn.",
-      "photo": "cdss-buong-benh.jpg",
+      "photo": "bac-si-tu-van.jpg",
       "zoom": "out",
       "voice": "Mỗi sáng kiến, dù nhỏ, đều góp phần để người bệnh được chăm sóc tốt hơn."
     },

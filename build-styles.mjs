@@ -44,6 +44,17 @@ const photoUrl = (name) => fileUrl(join(ROOT, "assets", "photos", name));
 const logoUrl = () => fileUrl(join(ROOT, "assets", "logo.png"));
 
 /**
+ * `scene.focus` ("x% y%") keeps the subject in frame when a landscape photo is
+ * cropped for a narrower frame - the crop is centred otherwise, and a robot
+ * standing at the right edge of the shot simply fell out of its own scene.
+ * The Ken Burns zoom heads for the same point.
+ */
+const focusAttr = (s) =>
+  s.focus && /^\d{1,3}% \d{1,3}%$/.test(s.focus)
+    ? ` style="object-position:${s.focus};transform-origin:${s.focus}"`
+    : "";
+
+/**
  * One timing engine for every style. Each style's markup opts in simply by
  * using the ids the engine knows; missing ids are skipped. Time is pushed in
  * from Node per frame, so nothing depends on the browser's own clock.
@@ -201,7 +212,7 @@ function styleCinematic(s) {
  #stat span{font-size:30px;color:#cfe3ee;font-weight:400;max-width:520px}
  .brandbar{color:#eaf6fb;font-size:26px;letter-spacing:2px}
 `,
-    `<div class="full"><img id="photo" src="${photoUrl(s.photo)}"></div>
+    `<div class="full"><img id="photo" src="${photoUrl(s.photo)}"${focusAttr(s)}></div>
      <div class="scrim"></div>
      <div class="wrap">
        <div id="kicker">${esc(s.kicker)}</div>
@@ -253,7 +264,7 @@ function styleGlass(s) {
  .crow.small{font-size:27px;color:#eaf6fb;font-weight:500}
  .brandbar{filter:drop-shadow(0 3px 12px rgba(0,0,0,.5))}
 `,
-    `<div class="full"><img id="photo" src="${photoUrl(s.photo)}"></div>
+    `<div class="full"><img id="photo" src="${photoUrl(s.photo)}"${focusAttr(s)}></div>
      <div class="tint"></div>
      <div id="glass">
        <div id="kicker">${esc(s.kicker)}</div>
@@ -286,7 +297,7 @@ function styleCaption(s) {
    margin:0;font-weight:500;opacity:0}
  .brandbar{filter:drop-shadow(0 3px 12px rgba(0,0,0,.5))}
 `,
-    `<div class="full"><img id="photo" src="${photoUrl(s.photo)}"></div>
+    `<div class="full"><img id="photo" src="${photoUrl(s.photo)}"${focusAttr(s)}></div>
      <div class="tint"></div>
      <div id="kicker">${esc(s.kicker)}</div>
      <div id="words">${words}</div>
@@ -319,7 +330,7 @@ function styleSplit(s) {
  #stat span{font-size:30px;color:#cfe6f6}
  .brandbar img{background:#fff;padding:12px 24px;border-radius:999px}
 `,
-    `<div class="photo"><img id="photo" src="${photoUrl(s.photo)}"></div>
+    `<div class="photo"><img id="photo" src="${photoUrl(s.photo)}"${focusAttr(s)}></div>
      <div id="block">
        <div id="kicker">${esc(s.kicker)}</div>
        <h1 id="headline">${esc(s.headline)}</h1>
@@ -354,7 +365,7 @@ function styleWipe(s) {
  #stat b{font-size:94px;color:#12a37a;font-weight:800;line-height:1}
  #stat span{font-size:30px;color:#5b7a8c;max-width:520px}
 `,
-    `<div class="photo"><img id="photo" src="${photoUrl(s.photo)}"></div>
+    `<div class="photo"><img id="photo" src="${photoUrl(s.photo)}"${focusAttr(s)}></div>
      <div id="meta">${esc(s.meta || "BENH VIEN VIET NAM - THUY DIEN // VSH.ORG.VN")}</div>
      <div class="panel">
        <div class="rule"></div>
@@ -391,7 +402,7 @@ function styleCard(s) {
  #stat span{font-size:34px;color:#5b7a8c}
  .brandbar{background:#f2f8fc;border-top:3px solid #dceaf4}
 `,
-    `<div class="photo"><img id="photo" src="${photoUrl(s.photo)}"></div>
+    `<div class="photo"><img id="photo" src="${photoUrl(s.photo)}"${focusAttr(s)}></div>
      <div id="kicker">${esc(s.kicker)}</div>
      <div class="panel">
        <h1 id="headline">${esc(s.headline)}</h1>

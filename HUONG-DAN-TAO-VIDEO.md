@@ -120,6 +120,7 @@ dung (xem mục 4b). Muốn ép thì ghi thẳng — **cái gì ghi tay thì kh�
       "sub": "Câu mô tả bên dưới.",
       "photo": "ten-anh.jpg",         // trong assets/photos/ — bỏ trống nếu không có
       "poster": true,                 // ảnh là poster/infographic → hiện trọn, không cắt
+      "focus": "76% 50%",             // điểm phải giữ trong khung khi ảnh ngang bị cắt dọc (mặc định giữa ảnh)
       "zoom": "in",                   // "in" | "out" — hướng Ken Burns
       "lines": ["Ý 1", "Ý 2"],        // danh sách hiện lần lượt
       "chart": [{ "label": "…", "value": 3508, "prefix": "hơn ", "suffix": "" }],
@@ -582,6 +583,7 @@ Danh sách tự kiểm:
 | Cả bài nhỏ đi 3 dB sau khi thêm nhạc | Đổi giọng mono sang stereo bằng `aformat` áp luật chia công suất, tự hạ 3 dB. Phải nhân đôi kênh bằng `pan=stereo\|c0=c0\|c1=c0`. |
 | Nhạc tự sinh có tiếng "tách" mỗi lần lặp | Dựng nhiều vòng rồi cắt lấy một: làm tròn số mẫu làm các vòng lệch nhau một mẫu. Giờ dựng đúng một vòng trên bộ đệm tròn. |
 | Sinh nhạc báo hết bộ nhớ khi xin chỉ vài MB | Máy thường chỉ còn vài trăm MB bộ nhớ ảo. Một phép FFT cho cả bài đòi vài trăm MB; giờ đảo vang theo từng khối nhỏ. |
+| Robot biến mất khỏi chính cảnh nói về robot | Ảnh ngang cắt cho khung dọc luôn lấy phần giữa, mà robot đứng ở mép phải. Ghi `"focus": "76% 50%"` (vị trí chủ thể theo chiều ngang, chiều dọc) để giữ đúng chỗ. **Đổi kiểu cảnh là độ cắt đổi theo** — sau khi đổi, xem lại ảnh tĩnh. |
 | Chrome treo vô thời hạn | Hồ sơ Chrome mặc định đang bị trình duyệt của người dùng khoá. Phải dùng `--user-data-dir` riêng. |
 | ffmpeg báo thành công nhưng video sai | Chuyện thường. **Luôn trích khung hình ra xem**, đừng tin dòng "Done". |
 

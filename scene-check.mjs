@@ -84,6 +84,9 @@ export function checkScenes(cfg, { styles, root }) {
       if (!names.includes(s.sfx)) errors.push(`${at}: khong co tieng hieu ung "${s.sfx}". Co: ${names.join(", ")}`);
     }
 
+    if (s.focus && !/^\d{1,3}% \d{1,3}%$/.test(s.focus))
+      errors.push(`${at}: "focus" phai co dang "x% y%", vi du "70% 50%"`);
+
     let art = null;
     try {
       art = s.photo ? null : pickArt(s);
